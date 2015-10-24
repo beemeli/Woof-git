@@ -26,8 +26,52 @@ class RegistrarCentro {
         else{
             return 1;
         }
+    }
+    function bajaCentro($centro){
+        $conexion= new mysqli('localhost','root','150193','woof')
+        or die("Fallo en el establecimiento de la conexion");
 
+        $sql = "DELETE FROM centro_adopcion WHERE nombre='". $centro ."'";
+        
+        if($conexion->query($sql) === false){
+                //echo "error";
+                return "error";
+        }
+        else{
+            return 1;
+        }
+    }
+    
+    function cambioCentro($centro, $direccion, $telefono, $contacto, $latitud, $longitud){
+        $conexion= new mysqli('localhost','root','150193','woof')
+        or die("Fallo en el establecimiento de la conexion");
 
+        $sql = "UPDATE centro_adopcion SET direccion='".$direccion."', telefono='".$telefono."', contacto='".$contacto."', latitud=".$latitud.", longitud=".$longitud." WHERE nombre='".$centro."'";
+
+        if($conexion->query($sql) === false){
+                //echo "error";
+                return "error";
+        }
+        else{
+            return 1;
+        }
+    }
+    
+    function consultaCentro($centro){
+        $conexion= new mysqli('localhost','root','150193','woof')
+        or die("Fallo en el establecimiento de la conexion");
+
+        $sql = "SELECT * FROM centro_adopcion WHERE nombre='".$centro."'";
+       // $results = mysqli_query($conexion, $sql);
+        $result = $conexion->query($sql);
+
+        
+        if($conexion->query($sql) === false){
+                return "error";
+        }
+        else{      
+            return $result;            
+        }
     }
 
 

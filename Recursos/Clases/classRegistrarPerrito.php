@@ -11,68 +11,69 @@
  *
  * @author Meel
  */
-class registrarPersona {
-    function altaPersona($usuario, $password, $edad,$correo){
+//NOTA: LAS BUSQUEDAS SE PUEDEN HACER TAMBIEN POR EDAD, RAZA, PESO, ETC.
+
+
+class registrarPerrito {
+    function altaPerrito($nombre, $edad,$raza,$tamano,$consideraciones,$peso){
         $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "insert into visitante(usuario, password, edad, correo) values('". $usuario ."','". $password."',".$edad.",'".$correo."')";
+        $sql = "insert into perrito(nombre,edad,raza,tamano,consideraciones,peso) values('". $nombre ."',". $edad.",'".$raza."','".$tamano."','".$consideraciones."', ".$peso.")";
         if($conexion->query($sql) === false){
                 //echo "error";
-                return "error";
+                return $sql;
         }
         else{
             return 1;
         }
     }
 
-    function bajaPersona($usuario){
+    
+    function bajaPerrito($id_perrito){
         $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "DELETE FROM VISITANTE WHERE usuario='". $usuario ."'";
+        $sql = "DELETE FROM perrito WHERE id_perrito='". $id_perrito ."'";
         if($conexion->query($sql) === false){
                 //echo "error";
-                return "error";
+                return $sql;
         }
         else{
             return 1;
         }
     }
     
-    function cambioPersona($usuario, $password,$correo){
+    function cambioPerrito($nombre,$consideraciones,$peso){
         $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "UPDATE VISITANTE SET password='".$password."', correo='".$correo."' WHERE usuario='".$usuario."'";
-
+        $sql = "UPDATE perrito SET nombre='".$nombre."', consideraciones='".$consideraciones."', peso='".$peso."'";
         if($conexion->query($sql) === false){
                 //echo "error";
-                return "error";
+                return $sql;
         }
         else{
             return 1;
         }
     }
-
-    function consultarPersona($usuario){
+    
+    function consultaPerrito($id_perrito){
         $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "SELECT * FROM visitante WHERE usuario='".$usuario."'";
-       // $results = mysqli_query($conexion, $sql);
-        $result = $conexion->query($sql);
-
-        
+        $sql = "SELECT * FROM perrito WHERE id_perrito='".$id_perrito."'";
         if($conexion->query($sql) === false){
-                return "error";
+                //echo "error";
+                return $sql;
         }
-        else{      
-            return $result;            
+        else{
+            return 1;
         }
     }
-
-
-
-
+    
 }
+
+
+
+

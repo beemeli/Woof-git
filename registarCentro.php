@@ -1,3 +1,12 @@
+<?php
+   // session_start();
+ 
+    //$_SESSION['usuarioSesion'] = $_POST['usuarioSesion'];
+ 
+    //if(empty($_SESSION['usuarioSesion'])) { // ADMINISTRADOR!!!!!!!!
+      //  header('Location: login.php');
+    //}
+?>
 <!DOCTYPE html>
 
 <html>

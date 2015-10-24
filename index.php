@@ -1,3 +1,13 @@
+<?php
+    session_start();
+ 
+    //$_SESSION['usuarioSesion'] = $_POST['usuarioSesion'];
+ 
+    if(empty($_SESSION['usuarioSesion'])) { // Recuerda usar corchetes.
+        header('Location: login.php');
+    }
+?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -12,6 +22,13 @@ and open the template in the editor.
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script type="text/javascript" src="js/controller.js"></script>
     </head>
+    
+    <a href="perfil.php">Perfil</a>
+    <a href="registarCentro.php">Registrar Centro</a>
+    <a href="registrarAcopio.php">Registrar Acopio</a>
+    <a href="registrarPerrito.php">Registrar Perrito</a>
+    <a href="registrarUsuario.php">Registrar Usuario</a>
+    
     
         <div style="position:absolute;top:150px;background-color: #FF9966; height:20px;width:500px;">
             Tamagotchi

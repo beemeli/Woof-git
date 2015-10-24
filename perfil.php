@@ -1,3 +1,13 @@
+<?php
+    session_start();
+ 
+    //$_SESSION['usuarioSesion'] = $_POST['usuarioSesion'];
+ 
+    
+    if(empty($_SESSION['usuarioSesion'])) { // Recuerda usar corchetes.
+        header('Location: login.php');
+    }
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -11,25 +21,24 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>        
-        <script type="text/javascript" src="js/controllerUsuario.js"></script>
-        
+        <script type="text/javascript" src="js/controllerPerfil.js"></script>
+        <script>
+            var test = '<?php echo $_SESSION['usuarioSesion'] ?>';
+            console.log("user-->"+test);
+        </script>
+
     </head>
     <body>
         <div>
             
-            <form>
-                Usuario: <input type="text" id="usuario"/> <br/><br/>
 
-                Password: <input type="password" id="password"/> <br/><br/>
-
-                Edad: <input type="number" id="edad"/> <br/><br/>
-
-                Correo: <input type="text" id="correo" /> <br/><br/>                      
-            </form>        
-            <div id="registrarUsuario" class="botonEnviar" >
-                Agregar persona
-            </div>
             <div id="divRespuesta"></div>
+
+        
+        
+        
+            
+                       
             
         </div>
     </body>

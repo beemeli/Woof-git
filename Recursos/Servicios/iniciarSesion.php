@@ -23,7 +23,7 @@
                 if($row["password"]== $password){
                     session_start();  
                     //Almacenamos el nombre de usuario en una variable de sesión usuario
-                    $_SESSION['usuario'] = $usuario;  
+                    $_SESSION['usuarioSesion'] = $usuario;  
                     //Redireccionamos a la pagina: index.php
                     header('Location: ../../index.php');
                 }

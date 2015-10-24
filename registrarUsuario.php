@@ -30,7 +30,7 @@ and open the template in the editor.
                 Agregar persona
             </div>
             <div id="divRespuesta"></div>
-            
+            <a href="registrarUsuario.php"></a>
         </div>
     </body>
 </html>
