@@ -8,14 +8,6 @@
     }
 ?>
 
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-
-
 <html>
     <head>
         <title>Woof a Friend</title>
@@ -35,19 +27,8 @@ and open the template in the editor.
     </head>
        
         
-        
-    </head>
+
     
-<<<<<<< HEAD:index.php
-    <a href="perfil.php">Perfil</a>
-    <a href="registarCentro.php">Registrar Centro</a>
-    <a href="registrarAcopio.php">Registrar Acopio</a>
-    <a href="registrarPerrito.php">Registrar Perrito</a>
-    <a href="registrarUsuario.php">Registrar Usuario</a>
-    
-    
-        <div style="position:absolute;top:150px;background-color: #FF9966; height:20px;width:500px;">
-=======
     <body>
 
          <div id="navbar-full">
@@ -122,6 +103,15 @@ and open the template in the editor.
    
         
        <div class ="container" id="contenido">
+           
+           
+           <a href="perfil.php">Perfil</a>
+    <a href="registarCentro.php">Registrar Centro</a>
+    <a href="registrarAcopio.php">Registrar Acopio</a>
+    <a href="registrarPerrito.php">Registrar Perrito</a>
+    <a href="registrarUsuario.php">Registrar Usuario</a>
+    
+           
              <h1>Woof</h1>
              <h1>Woof</h1>
              <h1>Woof</h1>
