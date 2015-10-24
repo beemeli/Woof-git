@@ -18,8 +18,9 @@ $(document).ready(function(){
             if(usuario!==""){
                     $.post("recursos/servicios/consultarPersona.php", {usuario:usuario},
                             function (res){
-
-                                    $("#divRespuesta").css('opacity', '1').html(res);
+                                    console.log("arreglo 0: ".res[0]);
+                                    console.log("arreglo 1: ".res[1]);
+                                    //$("#divRespuesta").css('opacity', '1').html(res);
 
                                     });
 
