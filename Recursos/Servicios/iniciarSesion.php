@@ -25,7 +25,7 @@
                     //Almacenamos el nombre de usuario en una variable de sesión usuario
                     $_SESSION['usuario'] = $usuario;  
                     //Redireccionamos a la pagina: index.php
-                    header('Location: ../../index.html');
+                    header('Location: ../../index.php');
                 }
                 else{
                     
