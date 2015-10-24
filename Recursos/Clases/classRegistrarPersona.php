@@ -51,6 +51,7 @@ class registrarPersona {
                 return "error";
         }
         else{
+            
             return 1;
         }
     }

@@ -11,6 +11,8 @@
 	$password = $_POST['password'];
 	$correo = $_POST['correo'];
         $usuario="";
+        
+        session_start();
         if(!empty($_SESSION['usuarioSesion'])) { // Recuerda usar corchetes.
             $usuario=$_SESSION['usuarioSesion'];
         }

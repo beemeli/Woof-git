@@ -30,11 +30,29 @@ and open the template in the editor.
     </head>
     <body>
         <div>
-            
+        <a href="index.php">Home</a>    
+            <table>
+                
+                <tr>
+                    <td>Usuario</td>
+                    <td><div id="divUsuario"></div></td>
+                </tr>
+                <tr>
+                    <td>Edad</td>
+                    <td><div id="divEdad"></div></td>                    
+                </tr>
+
+                <tr>
+                    <td>Correo  </td>
+                    <td><div id="divCorreo"></div></td>
+                    
+                </tr>
+            </table>
             
             <div id="divRespuesta"></div>
 
-        
+            <br/><br/>
+        <a href="modificarPerfil.php">Modificar</a>
         
         
             

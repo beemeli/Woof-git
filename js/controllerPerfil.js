@@ -18,16 +18,20 @@ $(document).ready(function(){
             if(usuario!==""){
                     $.post("recursos/servicios/consultarPersona.php", {usuario:usuario},
                             function (res){
-                                    console.log("arreglo 0: ".res[0]);
-                                    console.log("arreglo 1: ".res[1]);
-                                    //$("#divRespuesta").css('opacity', '1').html(res);
+                                
+                                
+                                    var arr=JSON.parse(res);
+                                    
+                                    $("#divUsuario").css('opacity', '1').html(arr[0]);
+                                    $("#divEdad").css('opacity', '1').html(arr[3]);
+                                    $("#divCorreo").css('opacity', '1').html(arr[1]);
 
                                     });
 
 
 
             }else{
-                    $("#divRespuesta").css('opacity', '1').html("Incluya todos los datos");
+                    $("#divRespuesta").css('opacity', '1').html("Error, no hay usuario");
             }
 	}
 });

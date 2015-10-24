@@ -30,7 +30,7 @@ $(document).ready(function(){
             var usuario = test;
             
             if(usuario!==""){
-                    $.post("recursos/servicios/consultarPersonaModificar.php", {usuario:usuario},
+                    $.post("recursos/servicios/consultarPersona.php", {usuario:usuario},
                             function (res){
                                     
                                     var arr=JSON.parse(res);
@@ -50,8 +50,8 @@ $(document).ready(function(){
 
 	$(".botonEnviar").click(function(){
 		$("#divResultado").css('opacity', '0');
-                var pass = $('#password').val();
-                
+            var pass = $('#password').val();
+            
             if(con=== pass){    
                 if(validarContrasenas()){
                     var password = $('#password1').val();
