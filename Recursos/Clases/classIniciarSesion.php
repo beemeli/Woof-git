@@ -18,7 +18,7 @@ class iniciarSesion {
         $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "SELECT password FROM visitante WHERE usuario='$usuario'";
+        $sql = "SELECT `id_usuario`,`usuario`,`password` FROM visitante WHERE usuario='$usuario'";
         $results = mysqli_query($conexion, $sql);
         $result = $conexion->query($sql);
 
