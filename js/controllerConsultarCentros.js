@@ -104,8 +104,6 @@ $("#divCentros").on("click", "tr.centros", function(){
 		if(idCentro!==""){
                     $.post("recursos/servicios/ConsultarPerritos.php", {idCentro:idCentro},
                         function (res){
-
-
                             var perritos=JSON.parse(res);
                             
                            var tabla="<table>";
