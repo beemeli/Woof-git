@@ -63,15 +63,31 @@ class registrarPerrito {
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "SELECT * FROM perrito WHERE id_perrito='".$id_perrito."'";
+        $result = $conexion->query($sql);
+
+        
         if($conexion->query($sql) === false){
-                //echo "error";
-                return $sql;
+                return "error";
         }
-        else{
-            return 1;
+        else{      
+            return $result;            
         }
     }
-    
+    function consultaPerritoCentro($idCentro){
+        $conexion= new mysqli('localhost','root','150193','woof')
+        or die("Fallo en el establecimiento de la conexion");
+
+        $sql = "SELECT * FROM perrito WHERE id_centro=".$idCentro."";
+        $result = $conexion->query($sql);
+
+        
+        if($conexion->query($sql) === false){
+                return "error";
+        }
+        else{      
+            return $result;            
+        }
+    }    
 }
 
 

@@ -26,31 +26,33 @@ and open the template in the editor.
             var test = '<?php echo $_SESSION['usuarioSesion'] ?>';
             console.log("user-->"+test);
         </script>
-        <style>
-            .centros:hover{
-                
-            }
-        </style>
-    </head>
+
     <body>
-        <h2></h2>
-    
-        <table>
-<tr class="rows"><td>cell1</td><td>cell2</td></tr>
-<tr class="rows"><td>cell1</td><td>cell2</td></tr>
-</table>
+
         
         <div>
         <a href="index.php">Home</a>    
         
         <div id="divCentros"></div>
         
-            <div id="divRespuesta"></div>
-            <div id="modificarPerfil" class="botonEnviar" >
-                Aceptar
-            </div>
+        <br/><br/>
 
-            <br/><br/>
+        <div id="divRespuesta">
+            <div id="nombreC"></div>
+            <div id="direccionC"></div>
+            <div id="telefonoC"></div>
+            <div id="contactoC"></div>
+            <div id="latitudC"></div>
+            <div id="longitudC"></div>
+        </div>
+
+        <br/>
+        <div class="botonVerPerritos">
+            Clic para ver perritos
+        </div>
+
+        <br/>
+        <div id="divPerritos"></div>
         
        
             
