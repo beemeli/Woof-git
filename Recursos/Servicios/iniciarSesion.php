@@ -20,7 +20,7 @@
         $res = mysqli_fetch_array($result);
         
         if($res !== null){
-            if($row["password"]== $password){
+            if($res["password"]== $password){
                 session_start();
                 $_SESSION['id_usuario'] = $res['id_usuario'];
                 $_SESSION['usuarioSesion'] = $res['usuario'];
