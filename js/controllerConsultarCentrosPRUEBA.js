@@ -21,25 +21,25 @@ $(document).ready(function(){
                             
                             var centros=JSON.parse(res);
                             
-                            var tabla="<table>";
-                            
-                                for(var i = 0; i < centros.length; i++) {
-                                    var centro = centros[i];
-                                    tabla +="<tr>";
-                                    for(var j = 0; j < centro.length; j++) {
-                                         tabla+='<td><div id="'+centros[i][0]+'" class="centros">'+ centros[i][j]+"</div></td>";
-                                        /*if(j===0){
-                                            tabla+='<td> <input type="radio" name="idCentro" value="'+centros[i][j]+'">'+ centros[i][j]+"</td>";
-                                        }else{
-                                            tabla+="<td>"+ centros[i][j]+"</td>";
-                                        }*/
-                                        
-                                    }
-                                    tabla+="</tr>";
-                                }
-                            tabla+="</table>";
-                            elem.innerHTML=tabla;    
-                                 //   $("#divRespuesta").css('opacity', '1').html(arr[0][0]);
+//                            var tabla="<table>";
+//                            
+//                                for(var i = 0; i < centros.length; i++) {
+//                                    var centro = centros[i];
+//                                    tabla +="<tr>";
+//                                    for(var j = 0; j < centro.length; j++) {
+//                                         tabla+='<td><div id="'+centros[i][0]+'" class="centros">'+ centros[i][j]+"</div></td>";
+//                                        /*if(j===0){
+//                                            tabla+='<td> <input type="radio" name="idCentro" value="'+centros[i][j]+'">'+ centros[i][j]+"</td>";
+//                                        }else{
+//                                            tabla+="<td>"+ centros[i][j]+"</td>";
+//                                        }*/
+//                                        
+//                                    }
+//                                    tabla+="</tr>";
+//                                }
+//                            tabla+="</table>";
+//                            elem.innerHTML=tabla;    
+//                                 //   $("#divRespuesta").css('opacity', '1').html(arr[0][0]);
                     });
 
 

@@ -4,15 +4,24 @@ $(document).ready(function(){
         
 	$('.botonEnviar').css('cursor', 'pointer').hover(function(){
 		$(this).animate({opacity:.7}, 200);
+                
 	}, function(){
 		$(this).animate({opacity:1}, 200);
-	});
 
+	});
+/*
 	$('.centros').css('cursor', 'pointer').hover(function(){
 		$(this).animate({opacity:.7}, 200);
 	}, function(){
 		$(this).animate({opacity:1}, 200);
+                                
 	});
+*/
+
+
+$("#divCentros").on("click", "tr.centros", function(){
+    $(this).css('cursor', 'pointer');
+});
 
 	mostrarCentros();
         
@@ -25,7 +34,26 @@ $(document).ready(function(){
                             
                             var centros=JSON.parse(res);
                             
-                            var tabla = document.createElement("TABLE");
+                           var tabla="<table>";
+                                for(var i = 0; i < centros.length; i++) {
+                                    var centro = centros[i];
+                                    tabla +='<tr id="'+centros[i][0]+'"class="centros">';
+                                    tabla +='<td>'+centros[i][0]+'</td>';
+                                    
+                                   /* for(var j = 0; j < centro.length; j++) {
+                                         tabla+='<td><div id="'+centros[i][0]+'" >'+ centros[i][j]+"</div></td>";                                       
+                                    }
+                                    tabla+="</tr>";*/
+                                }
+                            tabla+="</table>";
+                            console.log(tabla);
+    //                        elem.innerHTML=tabla;    
+                            $("#divCentros").append(tabla);
+ 
+                            
+                            
+                            
+/*                            var tabla = document.createElement("TABLE");
                             tabla.setAttribute("id", "myTable");
                             document.body.appendChild(tabla);
 
@@ -41,7 +69,7 @@ $(document).ready(function(){
                                     var t = document.createTextNode(centros[i][0]);
                                     z.appendChild(t);
                                     document.getElementById(centros[i][0]).appendChild(z);                                    
-                                }
+                                }*/
                                  //   $("#divRespuesta").css('opacity', '1').html(arr[0][0]);
                     });
 	}

@@ -33,6 +33,13 @@ and open the template in the editor.
         </style>
     </head>
     <body>
+        <h2></h2>
+    
+        <table>
+<tr class="rows"><td>cell1</td><td>cell2</td></tr>
+<tr class="rows"><td>cell1</td><td>cell2</td></tr>
+</table>
+        
         <div>
         <a href="index.php">Home</a>    
         
