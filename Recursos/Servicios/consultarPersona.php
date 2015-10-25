@@ -19,26 +19,16 @@
 	//$result = $admin->consultarHist();
 	//Respuesta del servicio
 	if ($result->num_rows > 0) {
-            echo "<table>";
-                echo "<tr>";
-                    echo "<td>Usuario </td>";
-                    echo "<td>Edad </td>";
-                    echo "<td>Correo</td>";
-                echo "</tr>";
-		while($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                        echo "<td>".$row["usuario"]."</td>";
 
-                        echo "<td>".$row["edad"]."</td>";
+		if($row = $result->fetch_assoc()) {
+                    $persona =array($row["usuario"], $row["correo"],$row["password"],$row["edad"]);
+                    echo json_encode($persona);
+                }
 
-                        echo "<td>".$row["correo"]."</td>";
-                    echo "</tr>";
-
-            }
-            echo "</table>";
 	} else {
 		echo "0 results";
 	}
+        
 
     }else{
         echo "Error servicio consultarPersona";
