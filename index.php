@@ -110,6 +110,8 @@
     <a href="registrarAcopio.php">Registrar Acopio</a>
     <a href="registrarPerrito.php">Registrar Perrito</a>
     <a href="registrarUsuario.php">Registrar Usuario</a>
+    <a href="registrarSolicitudAdopcion.php">Solicitar Adopción </a>
+    <a href="consultarSolicitudAdopcion.php">Consultar Solicitud Adopcion</a>
     
            
              <h1>Woof</h1>
