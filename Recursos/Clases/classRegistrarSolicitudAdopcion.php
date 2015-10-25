@@ -55,7 +55,7 @@ class registrarSolicitudAdopcion {
         }
     }
 
-    function consultarSolicitudAdmin($usuario){
+    function consultarSolicitudAdmin(){
         $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
 
