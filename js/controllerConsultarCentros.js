@@ -8,11 +8,15 @@ $(document).ready(function(){
 		$(this).animate({opacity:1}, 200);
 	});
 
+	$('.centros').css('cursor', 'pointer').hover(function(){
+		$(this).animate({opacity:.7}, 200);
+	}, function(){
+		$(this).animate({opacity:1}, 200);
+	});
+
 	mostrarCentros();
         
         function mostrarCentros(){
-
-            
 
                     $.post("recursos/servicios/consultarCentros.php", {},
                             function (res){
@@ -21,28 +25,25 @@ $(document).ready(function(){
                             
                             var centros=JSON.parse(res);
                             
-                            var tabla="<table>";
-                            
+                            var tabla = document.createElement("TABLE");
+                            tabla.setAttribute("id", "myTable");
+                            document.body.appendChild(tabla);
+
                                 for(var i = 0; i < centros.length; i++) {
                                     var centro = centros[i];
-                                    tabla +="<tr>";
-                                    for(var j = 0; j < centro.length; j++) {
-                                        if(j===0){
-                                            tabla+='<td> <input type="radio" name="idCentro" value="'+centros[i][j]+'">'+ centros[i][j]+"</td>";
-                                        }else{
-                                            tabla+="<td>"+ centros[i][j]+"</td>";
-                                        }
-                                        
-                                    }
-                                    tabla+="</tr>";
+                                    
+                                    var y = document.createElement("TR");
+                                    y.setAttribute("id", centros[i][0]);
+                                    y.className = "centros";
+                                    document.getElementById("myTable").appendChild(y);
+                                    
+                                    var z = document.createElement("TD");
+                                    var t = document.createTextNode(centros[i][0]);
+                                    z.appendChild(t);
+                                    document.getElementById(centros[i][0]).appendChild(z);                                    
                                 }
-                            tabla+="</table>";
-                            elem.innerHTML=tabla;    
                                  //   $("#divRespuesta").css('opacity', '1').html(arr[0][0]);
                     });
-
-
-
 	}
 });
 

@@ -26,11 +26,7 @@ and open the template in the editor.
             var test = '<?php echo $_SESSION['usuarioSesion'] ?>';
             console.log("user-->"+test);
         </script>
-        <style>
-            .centros:hover{
-                
-            }
-        </style>
+
     </head>
     <body>
         <div>
