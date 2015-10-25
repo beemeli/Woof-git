@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/Woof/Recursos/Servicios/iniciarSesion.php</file>
-            <file>file:/C:/wamp/www/Woof/login.html</file>
-            <file>file:/C:/wamp/www/Woof/index.html</file>
+            <file>file:/C:/wamp/www/Woof%20git/Woof-git/js/controllerConsultarCentros.js</file>
+            <file>file:/C:/wamp/www/Woof%20git/Woof-git/Recursos/Servicios/consultarPerritos.php</file>
+            <file>file:/C:/wamp/www/Woof%20git/Woof-git/Recursos/Clases/classRegistrarPerrito.php</file>
+            <file>file:/C:/wamp/www/Woof%20git/Woof-git/consultarCentro.php</file>
+            <file>file:/C:/wamp/www/Woof%20git/Woof-git/Recursos/Servicios/consultarCentros.php</file>
+            <file>file:/C:/wamp/www/Woof%20git/Woof-git/Recursos/Clases/classRegistrarPersona.php</file>
         </group>
     </open-files>
 </project-private>
