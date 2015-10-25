@@ -17,26 +17,21 @@
 
         $result = $admin->login($usuario, $password);
 
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                //echo "password: ".$row["password"];
-                if($row["password"]== $password){
-                    session_start();  
-                    //Almacenamos el nombre de usuario en una variable de sesión usuario
-                    $_SESSION['usuarioSesion'] = $usuario;  
-                    //Redireccionamos a la pagina: index.php
-                    header('Location: ../../index.php');
-                }
-                else{
+        $res = mysqli_fetch_array($result);
+        
+        if($res !== null){
+            if($row["password"]== $password){
+                session_start();
+                $_SESSION['id_usuario'] = $res['id_usuario'];
+                $_SESSION['usuarioSesion'] = $res['usuario'];
+                header("Location: ../../index.php");
+            }else{
                     
                     echo "contraseña incorrecta!!!!";
                 }
-            }
-	} else {
-		echo "0 results";
-	}
- 
-
+        }else{
+            echo "El usuario o contraseña son incorrectos";
+        } 
     }else{
         echo "Error servicio iniciarSesion";
     }
