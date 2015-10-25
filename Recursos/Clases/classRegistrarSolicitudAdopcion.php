@@ -54,5 +54,21 @@ class registrarSolicitudAdopcion {
             return $result;            
         }
     }
+
+    function consultarSolicitudAdmin($usuario){
+        $conexion= new mysqli('localhost','root','150193','woof')
+        or die("Fallo en el establecimiento de la conexion");
+
+        $sql = "SELECT * FROM solicitud_adopcion";
+       // $results = mysqli_query($conexion, $sql);
+        $result = $conexion->query($sql);
+        
+        if($conexion->query($sql) === false){
+                return "error";
+        }
+        else{      
+            return $result;            
+        }
+    }
 }
 
