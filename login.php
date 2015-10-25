@@ -25,7 +25,7 @@ and open the template in the editor.
     <body>
         
         
-            <div class="container">
+        <div class="container">
 
       <form  action="Recursos/Servicios/iniciarSesion.php" method="post">
         <h2 >Identifícate</h2>
