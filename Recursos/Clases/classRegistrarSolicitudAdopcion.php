@@ -39,14 +39,13 @@ class registrarSolicitudAdopcion {
         }
     }
 
-    function consultarPersona($usuario){
+    function consultarSolicitud($usuario){
         $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "SELECT * FROM solicitud_adopcion WHERE id_usuario=".$usuario."";
        // $results = mysqli_query($conexion, $sql);
         $result = $conexion->query($sql);
-
         
         if($conexion->query($sql) === false){
                 return "error";
