@@ -16,12 +16,12 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Ver Perfil</title>
+        <title>Ver Centros de adopción</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>        
-        <script type="text/javascript" src="js/controllerPerfil.js"></script>
+        <script type="text/javascript" src="js/controllerConsultarCentros.js"></script>
         <script>
             var test = '<?php echo $_SESSION['usuarioSesion'] ?>';
             console.log("user-->"+test);
@@ -31,28 +31,16 @@ and open the template in the editor.
     <body>
         <div>
         <a href="index.php">Home</a>    
-            <table>
-                
-                <tr>
-                    <td>Usuario</td>
-                    <td><div id="divUsuario"></div></td>
-                </tr>
-                <tr>
-                    <td>Edad</td>
-                    <td><div id="divEdad"></div></td>                    
-                </tr>
-
-                <tr>
-                    <td>Correo  </td>
-                    <td><div id="divCorreo"></div></td>
-                    
-                </tr>
-            </table>
-            
+        
+        <div id="divCentros"></div>
+        
             <div id="divRespuesta"></div>
+            <div id="modificarPerfil" class="botonEnviar" >
+                Aceptar
+            </div>
 
             <br/><br/>
-        <a href="modificarPerfil.php">Modificar</a>
+        
        
             
         </div>
