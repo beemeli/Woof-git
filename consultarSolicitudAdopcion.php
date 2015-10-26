@@ -1,54 +1,54 @@
 <?php
     session_start();
+ 
+    //$_SESSION['usuarioSesion'] = $_POST['usuarioSesion'];
+ 
+    
     if(empty($_SESSION['usuarioSesion'])) { // Recuerda usar corchetes.
         header('Location: login.php');
     }
 ?>
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
     <head>
-    	 <meta charset="UTF-8">
-    	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Solicitud de Adopción</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>        
-        <script type="text/javascript" src="js/controllerPerrito.js"></script>
-        
-        <title>Consultar Adopciones</title>
-    </head>
+        <script type="text/javascript" src="js/controllerConsultarSolicitudesDeAdopcion.js"></script>
+        <script>
+            var test = '<?php echo $_SESSION['usuarioSesion'] ?>';
+            console.log("user-->"+test);
+        </script>
+
     <body>
-        <div id="preguntas">
-            <?php
 
-            require_once '../Clases/classRegistrarSolicitudAdopcion.php';
-            $admin = new registrarSolicitudAdopcion();
-
-            $result = $admin->consultarSolicitudAdmin();
-            $contador = 0;
-       
-            $json="";
-           while($row = $result->fetch_array(MYSQL_ASSOC)) {
-            $contador++;
-            echo $table = "<table>"; 
-            if($contador >= 0){
-                echo $res  = "<tr>".
-                        "<form action='actualizarSolicitud' method='post'>".
-                        "<td>".
-                        "<input type='text' id='id_solicitud' value ="."'".$row['id_solicitud']."'"."readonly/>".
-                         "</td><td>".
-                        "<input type='text' id='fecha' value ="."'".$row['fecha']."'"." readonly/>".
-                        "</td><td>".
-                        "<input type='text' id='estatus' value ="."'".$row['estatus']."'"."readonly /></td>".
-                        "</td><td>".
-                        "<input type='text' id='observaciones' value ="."'".$row['observaciones']."'"."readonly /></td>". 
-                        "</td><td>".
-                        "<input type='submit' value ='Detalles'/></td>".
-                        "<form action='Detalles' method='post'>".
-                        "</tr> </form>";       
-                }
-            }                  
-            ?>
-        </div>
-            <div id="divRespuesta"></div>
         
+        <div>
+        <a href="index.php">Home</a>    
+        
+        <div id="divSolicitudes"></div>
+        
+        <br/><br/>
+
+       <div id="divRespuesta">
+            <div id="id_solicitud"></div>
+            <div id="id_usuario"></div>
+            <div id="id_perro"></div>
+            <div id="fecha"></div>
+            <div id="observaciones"></div>
+            <div id="experiencia"></div>           
+            <div id="tamano"></div>
+            <div id="personalidad"></div>
+            <div id="estatus"></div>
+        </div>
+          
         </div>
     </body>
 </html>

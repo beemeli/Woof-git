@@ -14,10 +14,10 @@ class registrarSolicitudAdopcion {
         }
     }
 
-    function bajaSolicitud($usuario){
+    function bajaSolicitud($id_solicitud){
         $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
-        $sql = "DELETE FROM solicitud_adopcion WHERE id_usuario=". $usuario ."";
+        $sql = "DELETE FROM solicitud_adopcion WHERE id_solicitud=". $id_solicitud ."";
         if($conexion->query($sql) === false){
                 //echo "error";
                 return "error";
@@ -41,11 +41,11 @@ class registrarSolicitudAdopcion {
         }
     }
 
-    function consultarSolicitud($usuario){
+    function consultarSolicitud($id_solicitud){
         $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "SELECT * FROM solicitud_adopcion WHERE id_usuario=".$usuario."";
+        $sql = "SELECT * FROM solicitud_adopcion WHERE id_solicitud=".$id_solicitud."";
        // $results = mysqli_query($conexion, $sql);
         $result = $conexion->query($sql);
         
@@ -57,10 +57,10 @@ class registrarSolicitudAdopcion {
         }
     }
 
-    function consultarSolicitudAdmin(){
+    function consultarSolicitudTodos(){
         $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
-
+        
         $sql = "SELECT * FROM solicitud_adopcion";
        // $results = mysqli_query($conexion, $sql);
         $result = $conexion->query($sql);
@@ -68,7 +68,8 @@ class registrarSolicitudAdopcion {
         if($conexion->query($sql) === false){
                 return "error";
         }
-        else{      
+        else{
+            //echo "Si los busca";
             return $result;            
         }
     }
