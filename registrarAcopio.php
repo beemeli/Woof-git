@@ -1,6 +1,6 @@
-<!--
+<?php
 
-
+?>
 <!DOCTYPE html>
 
 <html>
@@ -11,32 +11,30 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>        
         <script type="text/javascript" src="js/controllerCentro.js"></script>
         
-        <title>Registrar Centro de Adopción</title>
+        <title>Registrar Centro de Acopio</title>
     </head>
     <body>
         <div>
             <form>
             
-                <input type="text" id="centro" placeholder="Centro de Adopción"/> <br/>
+                <input type="text" id="nombre" placeholder="Centro de Acopio" name="nombre"/> <br/>
 
-                <input type="text" id="direccion" placeholder="Dirección"/> <br/>
+                <input type="text" id="responsable" placeholder="Contacto" name="responsable"/> <br/>
 
-                <input type="number" id="telefono" placeholder="Teléfono"/> <br/>
+                <input type="number" id="telefono" placeholder="Teléfono" name="telefono"/> <br/>
 
-                <input type="text" id="contacto" placeholder="Nombre del Contacto"/> <br/>                      
+                <input type="number" id="latitud" placeholder="Latitud" name="latitud"/> <br/>   
 
-                <input type="number" id="latitud" placeholder="Latitud"/> <br/>   
-
-                <input type="number" id="longitud" placeholder="Longitud"/> <br/>   
+                <input type="number" id="longitud" placeholder="Longitud" name="longitud"/> <br/>   
 
                 
             </form>
             
-            <div id="registrarCentro" class="botonEnviar" >
+            <div id="registrarAcopio" class="botonEnviar" >
                 Agregar
             </div>
             <div id="divRespuesta"></div>
         
         </div>
     </body>
-</html>-->
+</html>
