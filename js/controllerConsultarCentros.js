@@ -63,17 +63,30 @@ $("#divCentros").on("click", "tr.centros", function(){
 	}
         
         function initialize() {
-          var mapProp = {
-            center:myCenter,
-            zoom:5,
-            mapTypeId:google.maps.MapTypeId.ROADMAP
-          };
-          var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            var mapProp = {
+                center:myCenter,
+                zoom:5,
+                mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
             var marker=new google.maps.Marker({
-              position:myCenter,
-              });
+                position:myCenter,
+            });
 
             marker.setMap(map);
+            
+            google.maps.event.addListener(marker,'click',function() {
+                map.setZoom(9);
+                map.setCenter(marker.getPosition());
+            });
+            
+            var infowindow = new google.maps.InfoWindow({
+              content:mapContent
+              });
+
+            google.maps.event.addListener(marker, 'click', function() {
+              infowindow.open(map,marker);
+              });
           
         }
         
@@ -82,6 +95,7 @@ $("#divCentros").on("click", "tr.centros", function(){
         var centro="";
         var idCentro;
         var myCenter;
+        var mapContent;
         
         $("#divCentros").on("click", "tr.centros", function(){
                                       
@@ -102,7 +116,9 @@ $("#divCentros").on("click", "tr.centros", function(){
                                         $("#latitudC").html("Latitud: "+centros[4]);
                                         $("#longitudC").html("Longitud: "+centros[5]);
                                         myCenter=new google.maps.LatLng(centros[4],centros[5]);                   
-                                        google.maps.event.addDomListener(window, 'load', initialize());      
+                                        mapContent="Telefono: "+centros[2];
+                                        google.maps.event.addDomListener(window, 'load', initialize());
+                                        
                                         idCentro = centros[6];
                                         
 					//$("#divRespuesta").css('opacity', '1').html(centros[0]);
