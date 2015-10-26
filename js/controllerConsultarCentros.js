@@ -62,10 +62,29 @@ $("#divCentros").on("click", "tr.centros", function(){
                     });
 	}
         
+        function initialize() {
+          var mapProp = {
+            center:myCenter,
+            zoom:5,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+          var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            var marker=new google.maps.Marker({
+              position:myCenter,
+              });
+
+            marker.setMap(map);
+          
+        }
+        
+        
+        
         var centro="";
         var idCentro;
+        var myCenter;
         
         $("#divCentros").on("click", "tr.centros", function(){
+                                      
 		$("#divResultado").css('opacity', '0');
                 
                 centro =$(this).attr('id');
@@ -82,6 +101,8 @@ $("#divCentros").on("click", "tr.centros", function(){
                                         $("#contactoC").html("Contacto: "+centros[3]);
                                         $("#latitudC").html("Latitud: "+centros[4]);
                                         $("#longitudC").html("Longitud: "+centros[5]);
+                                        myCenter=new google.maps.LatLng(centros[4],centros[5]);                   
+                                        google.maps.event.addDomListener(window, 'load', initialize());      
                                         idCentro = centros[6];
                                         
 					//$("#divRespuesta").css('opacity', '1').html(centros[0]);

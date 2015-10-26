@@ -19,7 +19,7 @@ and open the template in the editor.
         <title>Ver Centros de adopción</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <script src="http://maps.googleapis.com/maps/api/js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>        
         <script type="text/javascript" src="js/controllerConsultarCentros.js"></script>
         <script>
@@ -44,6 +44,8 @@ and open the template in the editor.
             <div id="contactoC"></div>
             <div id="latitudC"></div>
             <div id="longitudC"></div>
+            <div id="googleMap" style="width:500px;height:380px;"></div>
+
         </div>
 
         <br/>
