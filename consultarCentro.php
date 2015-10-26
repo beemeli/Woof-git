@@ -55,9 +55,22 @@ and open the template in the editor.
 
         <br/>
         <div id="divPerritos"></div>
-        
-       
+        <br/><br/>
+        <div id="divRespuestaPerrito">
+            <div id="nombreP"></div>
+            <div id="edadP"></div>
+            <div id="razaP"></div>
+            <div id="tamanoP"></div>
+            <div id="consideracionesP"></div>
+            <div id="pesoP"></div>
+        </div>        
+        <br/><br/>
+        <div class="botonAdoptar">
+            Clic para solicitar adoptar a este perrito
+        </div>       
+        <div id="resSolicitud">
             
+        </div>                   
         </div>
     </body>
 </html>

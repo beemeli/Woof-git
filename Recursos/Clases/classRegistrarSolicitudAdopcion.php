@@ -1,10 +1,10 @@
 <?php
 class registrarSolicitudAdopcion {
-    function altaSolicitud($usuario,$fecha,$estatus,$observaciones,$experiencia,$tamano,$personalidad){
+    function altaSolicitud($usuario,$fecha,$estatus,$observaciones,$experiencia,$tamano,$personalidad,$perrito){
         $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
         //modificar para adoptar a un perrito, enviando su id
-        $perrito = 1;
+        
         $query = "insert into solicitud_adopcion (id_usuario,id_perrito,fecha,estatus,observaciones,experiencia,tamano,personalidad) values(".$usuario.",".$perrito.",'". $fecha."','".$estatus."','".$observaciones."','".$experiencia."','".$tamano."','".$personalidad."');";       
         if($conexion->query($query) === false){
             return "error";

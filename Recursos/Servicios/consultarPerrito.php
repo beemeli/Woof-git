@@ -6,17 +6,17 @@
 
    
 
-   if(isset($_POST['idCentro'])  ){
+   if(isset($_POST['idPerrito'])  ){
 
 	require_once('../Clases/classRegistrarPerrito.php');
 
-	$centro = $_POST['idCentro'];
+	$idPerrito = $_POST['idPerrito'];
  
         //instancia del DAO
         $admin = new registrarPerrito();
         //Le enviamos el parámetro a guardar. Idealmente, en un objeto de negocio para no pasar parámetros sueltos
 
-        $result = $admin->consultaPerritoCentro($centro);
+        $result = $admin->consultaPerrito($idPerrito);
 
 	//Respuesta del servicio
         //
@@ -26,12 +26,12 @@
         
         
 	if ($result->num_rows > 0) {
-            $perritos=array();
-		while($row = $result->fetch_assoc()) {
-                    $perrito =array($row["id_perrito"],$row["nombre"], $row["edad"],$row["raza"],$row["tamano"],$row["consideraciones"],$row["peso"]);
-                    array_push($perritos, $perrito);
+            
+		if($row = $result->fetch_assoc()) {
+                    $perrito =array($row["nombre"], $row["edad"],$row["raza"],$row["tamano"],$row["consideraciones"],$row["peso"]);
+            
                 }
-            echo json_encode($perritos);
+            echo json_encode($perrito);
                 
                 
 	} else {

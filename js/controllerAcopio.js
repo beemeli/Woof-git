@@ -18,7 +18,7 @@ $(document).ready(function(){
                 var longitud = $('#longitud').val();
 
 		if(nombre!="" && responsable!="" && telefono!="" && latitud!="" && longitud !=""){
-			$.post("recursos/servicios/classRegistrarAcopio.php", {nombre:nombre, responsable:responsable, telefono:telefono, latitud:latitud, longitud:longitud},
+			$.post("recursos/servicios/registrarAcopio.php", {nombre:nombre, responsable:responsable, telefono:telefono, latitud:latitud, longitud:longitud},
 				function (res){
 					$("#divRespuesta").css('opacity', '1').html(res);
 					});

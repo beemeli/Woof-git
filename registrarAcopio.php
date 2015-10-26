@@ -9,7 +9,7 @@
     	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>        
-        <script type="text/javascript" src="js/controllerCentro.js"></script>
+        <script type="text/javascript" src="js/controllerAcopio.js"></script>
         
         <title>Registrar Centro de Acopio</title>
     </head>
