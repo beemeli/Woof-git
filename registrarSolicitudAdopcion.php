@@ -32,7 +32,7 @@
                 <input type="radio" name="tamano_mascota" value="pequeña"/>Peque&ntilde;o  <br/>
             </form>        
             <div id="registrarSolicitud" class="botonEnviar" >
-                Agregar persona
+                Solicitar Adopción
             </div>
             <div id="divRespuesta"></div>
             <a href="registrarSolicitudAdopcion.php"></a>
