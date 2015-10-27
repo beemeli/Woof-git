@@ -130,6 +130,7 @@ and open the template in the editor.
         
         <div class="main">
         <div class="container">
+             <h1 class="text-center">Perfil </h1>
             
             <ul class="collection">
       Usuario <li class="collection-item " id="divUsuario"></li>
@@ -137,6 +138,12 @@ and open the template in the editor.
       Correo <li class="collection-item" id="divCorreo"></li>
       
     </ul>
+            
+            
+              <form action="modificarPerfil.php">
+   <button class="btn waves-effect waves-light  blue lighten-3" type="submit" Value="Iniciar Sesión">Modificar
+                       
+                    </button>
             
             <div id="divRespuesta"></div>
             
@@ -146,10 +153,19 @@ and open the template in the editor.
     
         
         <div>
-             
+            
+            
+            
+   
+</form>
+            
 
             <br/><br/>
-        <a href="modificarPerfil.php">Modificar</a>
+            
+            
+                
+            
+       
        
             
         </div>
