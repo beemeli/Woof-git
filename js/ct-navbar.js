@@ -1,3 +1,4 @@
+/* Obtenido de http://demos.creative-tim.com/navbar-with-icons */
 searchVisible = 0;
 transparent = true;
 hasTransparent = false;
