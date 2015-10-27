@@ -48,7 +48,7 @@
 
     <body>
         
-        <div class="barra">
+        
         <div id="navbar-full">
             <div id="navbar">
                 <!--    
@@ -118,7 +118,7 @@
 
         </div>
         <!-- end menu-dropdown -->
-        </div>
+       
 
         <div class="main">
 

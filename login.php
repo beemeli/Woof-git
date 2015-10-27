@@ -36,7 +36,7 @@ and open the template in the editor.
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <link rel="stylesheet" href="css/ct-navbar.css" type="text/css">
     
-
+    </head>
 
     <body>
 
