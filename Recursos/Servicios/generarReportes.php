@@ -32,7 +32,7 @@
                if ($result->num_rows > 0) {
                 $registros=array();
                     while($row = $result->fetch_assoc()) {
-                        $registro =array($row["nombre_centro"],$row["count(*)"]);
+                        $registro =array($row["nombre"],$row["count(*)"]);
                         array_push($registros, $registro);
                     }
                 echo json_encode($registros);                             

@@ -6,11 +6,11 @@
             <file>file:/C:/wamp/www/Woof%20git/Woof-git/js/controllerConsultarCentros.js</file>
             <file>file:/C:/wamp/www/Woof%20git/Woof-git/Recursos/Servicios/consultarPerritos.php</file>
             <file>file:/C:/wamp/www/Woof%20git/Woof-git/Recursos/Clases/classRegistrarPerrito.php</file>
-            <file>file:/C:/wamp/www/Woof%20git/Woof-git/Recursos/Clases/classRegistrarCentro.php</file>
-            <file>file:/C:/wamp/www/Woof%20git/Woof-git/consultarSolicitudAdopcion.php</file>
+            <file>file:/C:/wamp/www/Woof%20git/Woof-git/Recursos/Clases/classRegistrarSolicitudAdopcion.php</file>
+            <file>file:/C:/wamp/www/Woof%20git/Woof-git/Recursos/Servicios/consultarPerrito.php</file>
             <file>file:/C:/wamp/www/Woof%20git/Woof-git/consultarCentro.php</file>
-            <file>file:/C:/wamp/www/Woof%20git/Woof-git/Recursos/Servicios/consultarCentros.php</file>
-            <file>file:/C:/wamp/www/Woof%20git/Woof-git/Recursos/Clases/classIniciarSesion.php</file>
+            <file>file:/C:/wamp/www/Woof%20git/Woof-git/Recursos/Servicios/registrarSolicitudAdopcion.php</file>
+            <file>file:/C:/wamp/www/Woof%20git/Woof-git/js/controllerSolicitudAdopcion.js</file>
         </group>
     </open-files>
 </project-private>

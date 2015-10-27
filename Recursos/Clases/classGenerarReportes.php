@@ -26,7 +26,7 @@ class generarReporte {
         $conexion= new mysqli('127.0.0.1','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "select nombre_centro, count(*) from centro_adopcion,perrito where centro_adopcion.id_centro = perrito.id_centro group by nombre_centro";
+        $sql = "select centro_adopcion.nombre, count(*) from centro_adopcion, perrito where centro_adopcion.id_centro = perrito.id_centro group by centro_adopcion.nombre";
         $result = $conexion->query($sql);
 
         if($conexion->query($sql) === false){
@@ -42,7 +42,7 @@ class generarReporte {
         $conexion= new mysqli('127.0.0.1','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "select tamanio, count(*) from perrito group by tamanio";
+        $sql = "select tamano, count(*) from perrito group by tamano";
         $result = $conexion->query($sql);
 
         if($conexion->query($sql) === false){

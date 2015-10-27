@@ -7,10 +7,11 @@ $(document).ready(function(){
 	});
 
 	$("#generarReporte").click(function(){
+            
 		var tipo = $("#opcionesReporte").val();
                  $.post("recursos/servicios/generarReportes.php", {tipo:tipo},
                         function (res){
-                            
+            
                             var registros = JSON.parse(res);
 
                              var tabla="<table>";
