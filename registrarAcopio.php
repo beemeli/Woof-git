@@ -142,6 +142,8 @@
                     <label for="telefono">Telefono</label>
                 </div>
                 
+              
+                   
                     <div class="input-field col s12 ">
                     <input id="latitud" name="latitud" type="number" class="validate" required>
                     <label for="latitud">Latitud</label>

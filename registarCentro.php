@@ -37,7 +37,7 @@
         
         <script type="text/javascript" src="js/controllerCentro.js"></script>
         
-        <title>Registrar Centro de Acopio</title>
+        <title>Registrar Centro de Adopción</title>
     </head>
     <body>
         
@@ -125,23 +125,28 @@
             <form>
                 <div id="divRespuesta"></div>
 
-                <h1 class="text-center">Registrar Centro </h1>
+                <h1 class="text-center">Registrar Centro de Adopción </h1>
                 <br>
                 <br>
 
                 <div class="input-field col s12 ">
-                    <input id="nombre" name="nombre" type="text" class="validate" required>
-                    <label for="nombre">Centro de Acopio</label>
+                    <input id="centro" name="centro" type="text" class="validate" required>
+                    <label for="centro">Centro de Adopción</label>
                 </div>
 
                 <div class="input-field col s12">
-                    <input id="responsable" name="responsable" type="text" class="validate" required>
-                    <label for="responsable">Responsable</label>
+                    <input id="direccion" name="direccion" type="text" class="validate" required>
+                    <label for="direccion">Direccion</label>
                 </div>
 
                 <div class="input-field col s12 ">
                     <input id="telefono" name="telefono" type="number" class="validate" required>
                     <label for="telefono">Telefono</label>
+                </div>
+                
+                  <div class="input-field col s12 ">
+                    <input id="contacto" name="contacto" type="text" class="validate" required>
+                    <label for="contacto">Nombre del Contacto</label>
                 </div>
                 
                     <div class="input-field col s12 ">
