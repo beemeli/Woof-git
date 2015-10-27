@@ -127,8 +127,7 @@
     <select id="opcionesReporte">
       <option value="" disabled selected>Selecciona el Reporte</option>
      <option value="1"> Número de Solicitudes de adopción ordenadas por mes y año </option>
-        <option value="2"> Número de perritos en cada albergue</option>
-        <option value="3"> Número de perritos ordenados por tamaño </option> 
+        
     </select>
     <label>Selecciona el Reporte</label>
   </div>
