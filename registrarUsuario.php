@@ -142,24 +142,22 @@ and open the template in the editor.
                     <input id="edad" name="edad" type="number" class="validate" required>
                     <label for="edad">Edad</label>
                 </div>
-                
-                 <div class="input-field col s12 ">
+
+                <div class="input-field col s12 ">
                     <input id="correo" name="correo" type="email" class="validate" required>
                     <label for="correo">Correo Electronico</label>
                 </div>
 
-               
+
                 <br>
             </form>
-            
-            <button class="btn waves-effect waves-light  blue lighten-3 botonEnviar" >Enviar
-                        <i class="material-icons right">send</i>
-                    </button>
-             <br>
-             <br>
-             <br>
-            
-            
+
+            <button class="btn waves-effect waves-light  blue lighten-3 botonEnviar">Enviar
+                <i class="material-icons right">send</i>
+            </button>
+            <br>
+            <br>
+            <br>
 
 
 

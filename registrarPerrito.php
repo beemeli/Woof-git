@@ -13,18 +13,32 @@
     <head>
     	 <meta charset="UTF-8">
     	        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>        
-                <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        
-        
+
+
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="css/ct-navbar.css" type="text/css">
+        
         <script src="js/ct-navbar.js"></script>
         <link rel="stylesheet" href="css/style.css" type="text/css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" src="js/controller.js"></script>
+
+
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <link rel="stylesheet" href="css/ct-navbar.css" type="text/css">
         <script type="text/javascript" src="js/controllerPerrito.js"></script>
         
         <title>Registrar Perrito</title>
@@ -101,62 +115,71 @@
           <div class="container">
               
 
-      <form  >
+              
+                          <form>
+                <div id="divRespuesta"></div>
+
+                <h1 class="text-center">Registrar Perrito </h1>
+               
+
+                <div class="input-field col s12 ">
+                    <input id="nombre" name="nombre" type="text" class="validate" required>
+                    <label for="nombre">Nombre</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <input id="edad" name="edad" type="number" class="validate" required>
+                    <label for="edad">Edad</label>
+                </div>
+
+                <div class="input-field col s12 ">
+                    <input id="raza" name="raza" type="text" class="validate" required>
+                    <label for="raza">Raza</label>
+                </div>
+
+                <div class="input-field col s12 ">
+                    <input id="tamano" name="tamano" type="text" class="validate" required>
+                    <label for="tamano">Tamaño</label>
+                </div>
+                              
+                
+                <div class="input-field col s12 ">
+                    <input id="consideraciones" name="consideraciones" type="text" class="validate" required>
+                    <label for="consideraciones">Consideraciones</label>
+                </div>
+                              
+                 <div class="input-field col s12 ">
+                    <input id="peso" name="peso" type="number" class="validate" required>
+                    <label for="peso">Peso</label>
+                </div>
+
+
+
+                <br>
+            </form>
+              
+              
+              
+     
+           <button class="btn waves-effect waves-light  blue lighten-3 botonEnviar">Enviar
+                <i class="material-icons right">send</i>
+            </button>
            <div id="divRespuesta"></div>
           
-        <h1 class="text-center"  >Regístrate </h1>
-          <br>
-          <br>
-          
-         <h4>Nombre</h4> <input type="text" id="nombre" placeholder="Nombre" class="form-control"  required>
-        
-          <h4>Edad</h4> <input type="password" placeholder="Contraseña" id="password"type="number" id="edad" placeholder="Edad" class="form-control" required>
-          
-          <h4>Raza</h4> <input type="text" id="raza" placeholder="Raza" class="form-control"  required>
-          
-         <h4>Tamaño</h4> <input type="text" id="tamano" placeholder="Tamaño" class="form-control" required>
-          <h4>Consideraciones</h4> <input type="text" id="consideraciones" placeholder="Consideraciones" class="form-control" required>
-          <br>
-          <br>
-            </form>
-                          <button  id="registrarPerrito" class="btn btn-lg btn-primary btn-block botonEnviar " >Enviar</button>
- 
-      
         
           
-  
-    
-              
-              
-           
-
-    </div> 
         
         
-       
-        </div>
-        <div>
-            <form>
-            
-                <input /> <br/>
-
-                <input /> <br/>
-
-                <input /> <br/>
-
-                <input /> <br/>                      
-
-                <input type="text" id="consideraciones" placeholder="Consideraciones"/> <br/>   
-
-                <input type="number" id="peso" placeholder="Peso"/> <br/>   
-
-                
-            </form>
-            
-            <div id="registrarPerrito" class="botonEnviar" >
-                Agregar
+         
+          
+         
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+         
             </div>
-            <div id="divRespuesta"></div>
         
         </div>
     </body>
