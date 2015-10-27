@@ -17,16 +17,41 @@ and open the template in the editor.
 <html>
     <head>
         <title>Ver Centros de adopción</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        
+        <script src="js/ct-navbar.js"></script>
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript" src="js/controller.js"></script>
+
+
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <link rel="stylesheet" href="css/ct-navbar.css" type="text/css">
         <script src="http://maps.googleapis.com/maps/api/js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>        
+             
         <script type="text/javascript" src="js/controllerConsultarCentros.js"></script>
         <script>
             var test = '<?php echo $_SESSION['usuarioSesion'] ?>';
             console.log("user-->"+test);
         </script>
-
+    </head>
     <body>
 
         
