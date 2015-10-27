@@ -113,6 +113,7 @@
     <a href="registrarSolicitudAdopcion.php">Solicitar Adopción </a>
     <a href="consultarSolicitudAdopcion.php">Consultar Solicitud Adopcion</a>
     <a href="consultarCentro.php">Consultar Centros</a>
+    <a href="GenerarReportes.php">Generar Reportes</a>
     
            
              <h1>Woof</h1>
