@@ -41,8 +41,7 @@ and open the template in the editor.
     <body>
 
 
-
-        <div id="navbar-full">
+   <div id="navbar-full">
             <div id="navbar">
                 <!--    
         navbar-default can be changed with navbar-ct-blue navbar-ct-azzure navbar-ct-red navbar-ct-green navbar-ct-orange  
@@ -70,9 +69,9 @@ and open the template in the editor.
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
-                                    <a href="#">
+                                    <a href="consultarCentro.php">
 
-                                        <p>Adopta</p>
+                                        <p>Centros de adopción</p>
                                     </a>
                                 </li>
 
@@ -111,7 +110,6 @@ and open the template in the editor.
 
         </div>
         <!-- end menu-dropdown -->
-
         <div class="main">
             <div class="container">
 

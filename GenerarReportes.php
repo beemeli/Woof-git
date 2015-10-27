@@ -64,7 +64,7 @@
                                 <span class="icon-bar"></span>
                             </button>
 
-                            <a class="navbar-brand navbar-brand-logo" href="">
+                            <a class="navbar-brand navbar-brand-logo" href="index.php">
                                 <div class="logo">
                                     <img src="images/wooficonNuevo.png">
                                 </div>
@@ -75,9 +75,9 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
-                                    <a href="#">
+                                    <a href="consultarCentro.php">
 
-                                        <p>Adopta</p>
+                                        <p>Centros de adopción</p>
                                     </a>
                                 </li>
 
