@@ -118,12 +118,12 @@ and open the template in the editor.
 
 
                     <div class="input-field col s12 ">
-                        <input id="usuario" name="usuario" type="text" class="validate" length="10" required>
+                        <input id="usuario" name="usuario" type="text" class="validate" maxlength="15" required>
                         <label for="usuario">Usuario</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input id="password" name="password" type="password" class="validate" length="20" required>
+                        <input id="password" name="password" type="password" class="validate" maxlength="15" required>
                         <label for="password">Contraseña</label>
                     </div>
 
