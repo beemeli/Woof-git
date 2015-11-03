@@ -114,7 +114,7 @@ and open the template in the editor.
             <div class="container">
 
                 <form action="Recursos/Servicios/iniciarSesion.php" method="post">
-                    <h1 class="text-center">Identifícate</h1>
+                    <h1 class="text-center">Iniciar Sesión</h1>
 
 
                     <div class="input-field col s12 ">
