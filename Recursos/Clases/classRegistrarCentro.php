@@ -21,7 +21,7 @@ class RegistrarCentro {
         
         if($conexion->query($sql) === false){
                 //echo "error";
-                return "error";
+                return $sql;
         }
         else{
             return 1;

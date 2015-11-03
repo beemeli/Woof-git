@@ -34,7 +34,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <link rel="stylesheet" href="css/ct-navbar.css" type="text/css">  
-        
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <script type="text/javascript" src="js/controllerCentro.js"></script>
         
         <title>Registrar Centro de Adopción</title>
@@ -149,15 +149,7 @@
                     <label for="contacto">Nombre del Contacto</label>
                 </div>
                 
-                    <div class="input-field col s12 ">
-                    <input id="latitud" name="latitud" type="number" class="validate" required>
-                    <label for="latitud">Latitud</label>
-                </div>
-                
-                    <div class="input-field col s12 ">
-                    <input id="longitud" name="longitud" type="number" class="validate" required>
-                    <label for="longitud">Longitud</label>
-                </div>
+                    
 
 
 

@@ -25,6 +25,6 @@
 
 
     }else{
-        echo "Error servicio registrarPersona";
+        echo "Error servicio registrarCentro";
     }
 

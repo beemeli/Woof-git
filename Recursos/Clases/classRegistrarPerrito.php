@@ -22,7 +22,7 @@ class registrarPerrito {
         $sql = "insert into perrito(nombre,edad,raza,tamano,consideraciones,peso) values('". $nombre ."',". $edad.",'".$raza."','".$tamano."','".$consideraciones."', ".$peso.")";
         if($conexion->query($sql) === false){
                 //echo "error";
-                return $sql;
+                return "error";
         }
         else{
             return 1;
@@ -37,7 +37,7 @@ class registrarPerrito {
         $sql = "DELETE FROM perrito WHERE id_perrito='". $id_perrito ."'";
         if($conexion->query($sql) === false){
                 //echo "error";
-                return $sql;
+                return "error";
         }
         else{
             return 1;
@@ -51,7 +51,7 @@ class registrarPerrito {
         $sql = "UPDATE perrito SET nombre='".$nombre."', consideraciones='".$consideraciones."', peso='".$peso."'";
         if($conexion->query($sql) === false){
                 //echo "error";
-                return $sql;
+                return "error";
         }
         else{
             return 1;
