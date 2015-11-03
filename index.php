@@ -11,7 +11,7 @@
     <html>
 
     <head>
-        <title>Woof a Friend</title>
+        <title>Woof</title>
         <meta charset="utf-8">
         <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -85,7 +85,7 @@
 
                                 <li>
                                     <a href="#">
-                                        <p>Adopta mas</p>
+                                        <p>Adopta más</p>
                                     </a>
                                 </li>
                                 <li class="dropdown">
@@ -140,7 +140,7 @@
 
                 <h1> Woof a Friend </h1>
 
-                <p>Wooof a friend es la mejor opcion para adoptar porque bla bla bla Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
+                <p>Wooof a friend es la mejor opción para adoptar perritos en el Distrito Federal. Así mismo, es una red social en donde podrás compartir información de perritos que te encuentres en las calles de la ciudad, para que una persona de los Centros de Apoyo acuda y lo ayude. Únete y sé parte del cambio social de México.</p>
 
 
                 <div class="row">
@@ -154,7 +154,7 @@
                             <div class="card-content">
                                 <span class="card-title activator grey-text text-darken-4">Noticias<i class="material-icons right">more_vert</i></span>
                                 <p>
-                                    <a href="#"></a>
+                                    ultimakdslkdjflajdckl isjdlkfcj
                                 </p>
                             </div>
                             <div class="card-reveal">

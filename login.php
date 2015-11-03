@@ -118,17 +118,17 @@ and open the template in the editor.
 
 
                     <div class="input-field col s12 ">
-                        <input id="usuario" name="usuario" type="text" class="validate" required>
+                        <input id="usuario" name="usuario" type="text" class="validate" length="10" required>
                         <label for="usuario">Usuario</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input id="password" name="password" type="password" class="validate" required>
+                        <input id="password" name="password" type="password" class="validate" length="20" required>
                         <label for="password">Contraseña</label>
                     </div>
 
                     <br>
-                    <button class="btn waves-effect waves-light  blue lighten-3" type="submit" Value="Iniciar Sesión">Entar
+                    <button class="btn waves-effect waves-light  blue lighten-3" type="submit" Value="Iniciar Sesión">Entrar
                         <i class="material-icons right">send</i>
                     </button>
 
