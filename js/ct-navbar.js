@@ -1,3 +1,4 @@
+/* Obtenido de http://demos.creative-tim.com/navbar-with-icons */
 searchVisible = 0;
 transparent = true;
 hasTransparent = false;
@@ -11,7 +12,7 @@ $(document).ready(function(){
 
 $(document).scroll(function() {
    if(hasTransparent){
-        if( $(this).scrollTop() > 260 ) {
+        if( $(this).scrollTop() > 100 ) {
             if(transparent) {
                 transparent = false;
                 $('nav[role="navigation"]').removeClass('navbar-transparent');

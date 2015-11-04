@@ -130,22 +130,22 @@
                 <br>
 
                 <div class="input-field col s12 ">
-                    <input id="centro" name="centro" type="text" class="validate" required>
+                    <input id="centro" name="centro" type="text" class="validate" maxlength="90" required>
                     <label for="centro">Centro de Adopción</label>
                 </div>
 
                 <div class="input-field col s12">
-                    <input id="direccion" name="direccion" type="text" class="validate" required>
+                    <input id="direccion" name="direccion" type="text" class="validate" maxlength="80" required>
                     <label for="direccion">Direccion</label>
                 </div>
 
                 <div class="input-field col s12 ">
-                    <input id="telefono" name="telefono" type="number" class="validate" required>
+                    <input id="telefono" name="telefono" type="text" class="validate" maxlength="15" required>
                     <label for="telefono">Telefono</label>
                 </div>
                 
                   <div class="input-field col s12 ">
-                    <input id="contacto" name="contacto" type="text" class="validate" required>
+                    <input id="contacto" name="contacto" type="text" class="validate" maxlength="100" required>
                     <label for="contacto">Nombre del Contacto</label>
                 </div>
                 
