@@ -61,7 +61,7 @@ class RegistrarCentro {
         $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "SELECT * FROM centro_adopcion WHERE nombre='".$centro."'";
+        $sql = "SELECT * FROM centro_adopcion WHERE id_centro='".$centro."'";
        // $results = mysqli_query($conexion, $sql);
         $result = $conexion->query($sql);
 

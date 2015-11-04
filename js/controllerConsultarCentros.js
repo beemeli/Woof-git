@@ -37,7 +37,7 @@ $("#divCentros").on("click", "tr.centros", function(){
                            var tabla="<table>";
                                 for(var i = 0; i < centros.length; i++) {
                                     var centro = centros[i];
-                                    tabla +='<tr id="'+centros[i][0]+'"class="centros">';
+                                    tabla +='<tr id="'+centros[i][6]+'"class="centros">';
                                     tabla +='<td>'+centros[i][0]+'</td>';
                                 }
                             tabla+="</table>";

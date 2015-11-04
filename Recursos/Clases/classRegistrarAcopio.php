@@ -3,11 +3,11 @@
 */
 class RegistrarAcopio {
 
-    function altaAcopio($nombre, $responsable, $telefono, $latitud, $longitud){
+    function altaAcopio($nombre, $responsable, $telefono, $latitud, $longitud,$direccion){
         $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "insert into acopio(nombre, responsable, telefono, latitud, longitud) values('". $nombre."','". $responsable."','".$telefono."',".$latitud.",".$longitud.")";
+        $sql = "insert into acopio(nombre, responsable, telefono, latitud, longitud,direccion) values('". $nombre."','". $responsable."','".$telefono."',".$latitud.",".$longitud.",'".$direccion."')";
         
         if($conexion->query($sql) === false){
                 //echo "error";

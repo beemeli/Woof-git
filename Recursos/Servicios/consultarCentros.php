@@ -22,7 +22,7 @@
 	if ($result->num_rows > 0) {
             $centros=array();
 		while($row = $result->fetch_assoc()) {
-                    $centro =array($row["nombre"], $row["direccion"],$row["telefono"],$row["contacto"],$row["latitud"],$row["longitud"]);
+                    $centro =array($row["nombre"], $row["direccion"],$row["telefono"],$row["contacto"],$row["latitud"],$row["longitud"],$row["id_centro"]);
                     
                     array_push ($centros, $centro);
                     
