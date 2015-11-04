@@ -126,10 +126,10 @@ and open the template in the editor.
 
                 <h1 class="text-center">Regístrate </h1>
                 <br>
-                <br>
-
+                <br>               
+                
                 <div class="input-field col s12 ">
-                    <input id="usuario" name="usuario" type="text" class="validate" required>
+                    <input id="usuario" name="usuario" type="text" class="validate" required><span id="user-result"></span>
                     <label for="usuario">Usuario</label>
                 </div>
 

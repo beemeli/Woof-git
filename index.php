@@ -126,17 +126,23 @@
             <div class="container" id="contenido">
 
 
-
-                <a href="perfil.php">Perfil</a>
-                <a href="registarCentro.php">Registrar Centro</a>
-                <a href="registrarAcopio.php">Registrar Acopio</a>
-                <a href="registrarPerrito.php">Registrar Perrito</a>
-                <a href="registrarUsuario.php">Registrar Usuario</a>
-                <a href="registrarSolicitudAdopcion.php">Solicitar Adopción </a>
-                <a href="consultarSolicitudAdopcion.php">Consultar Solicitud Adopcion</a>
-                <a href="consultarCentro.php">Consultar Centros</a>
-                <a href="GenerarReportes.php">Generar Reportes</a>
-                <a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a>
+                Usuario: <br/>
+                <a href="perfil.php">Perfil</a><br/>
+                <a href="registrarUsuario.php">Registrar Usuario</a><br/>
+                <a href="registrarSolicitudAdopcion.php">Solicitar Adopción </a><br/>
+                <a href="consultarSolicitudAdopcion.php">Consultar Solicitud Adopcion</a><br/>
+                <a href="consultarCentro.php">Consultar Centros</a><br/>
+                <a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a><br/>
+                Admin:<br/>
+                <a href="registarCentro.php">Registrar Centro</a><br/>
+                <a href="registrarAcopio.php">Registrar Centro de Acopio</a><br/>
+                <a href="registrarPerrito.php">Registrar Perrito</a><br/>
+                <a href="consultarCentro.php">Consultar Centros</a><br/>
+                <a href="GenerarReportes.php">Generar Reportes</a><br/>
+                <a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a><br/>
+                
+                
+                
 
 
                 <h1> Woof a Friend </h1>
