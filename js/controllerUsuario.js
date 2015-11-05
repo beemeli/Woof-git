@@ -25,7 +25,46 @@ $(document).ready(function(){
         }
 
 
-        
+//---
+        $("#correo").keyup(function (e){
+            clearTimeout(x_timer);
+            var mail = $(this).val();
+            x_timer = setTimeout(function(){
+                check_mail_ajax(mail);
+            }, 1000);
+        }); 
+
+        function check_mail_ajax(mail){
+
+            $("#mail-result").html('<img src="images/loading.gif" />');
+            $.post('recursos/servicios/mail-checker.php', {'correo':mail}, function(data) {
+                if(data==0){
+                    //correo invalido                  
+                    $("#mail-result").html('<img src="images/notAvailable.png" />');                    
+                }else if(data==1){
+                    $("#mail-result").html('<img src="images/available.png" />');
+                    //correo valido
+                    
+                }
+            });
+        }
+
+       /* $("#edad").keyup(function (e){
+            clearTimeout(x_timer);
+            var age = $(this).val();
+            x_timer = setTimeout(function(){
+                check_age(age);
+            }, 1000);
+        }); 
+        function check_age(age){
+            if(age >15 && age <90){
+                return 1; //la edad es correcta
+            }
+            else{
+                return 0;
+            }
+        }
+*/
         
 	$('.botonEnviar').css('cursor', 'pointer').hover(function(){
 		$(this).animate({opacity:.7}, 200);

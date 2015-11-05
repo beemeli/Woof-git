@@ -139,12 +139,12 @@ and open the template in the editor.
                 </div>
 
                 <div class="input-field col s12 ">
-                    <input id="edad" name="edad" type="number" class="validate" required>
+                    <input id="edad" name="edad" type="number" class="validate" required  min="18" max="90">
                     <label for="edad">Edad</label>
                 </div>
 
                 <div class="input-field col s12 ">
-                    <input id="correo" name="correo" type="email" class="validate" required>
+                    <input id="correo" name="correo" type="email" class="validate" required><span id="mail-result"></span>
                     <label for="correo">Correo Electronico</label>
                 </div>
 
