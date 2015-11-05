@@ -33,7 +33,8 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <link rel="stylesheet" href="css/ct-navbar.css" type="text/css">  
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    
         <script type="text/javascript" src="js/controllerAcopio1.js"></script>
         
         <title>Registrar Centro de Acopio</title>
@@ -146,7 +147,7 @@
                     <input id="direccion" name="direccion" type="text" class="validate" required>
                     <label for="direccion">Dirección</label>
                 </div>                
-              
+                <div id="googleMap1" style="width:250px;height:190px;"></div>
 
 
 

@@ -49,22 +49,38 @@ $(document).ready(function(){
             });
         }
 
-       /* $("#edad").keyup(function (e){
+        $("#password1").keyup(function (e){
             clearTimeout(x_timer);
-            var age = $(this).val();
+            var pass = $(this).val();
+            var pass1 = $("#password").val();
             x_timer = setTimeout(function(){
-                check_age(age);
+                check_pass(pass,pass1);
             }, 1000);
         }); 
-        function check_age(age){
-            if(age >15 && age <90){
-                return 1; //la edad es correcta
+        var contraIguales = false;
+        
+        function check_pass(pass, pass1){
+            if(pass ==pass1){
+                contraIguales=true;
             }
             else{
-                return 0;
+                contraIguales=false;
             }
+            /*
+            var passw=  /^[A-Za-z]\w{7,14}$/;  
+            if(pass.value.match(passw))   
+            {   
+                alert('Correct, try another...')  
+                return true;  
+            }  
+            else  
+            {   
+                alert('Wrong...!')  
+                return false;  
+            }  */
+            console.log(contraIguales);
         }
-*/
+
         
 	$('.botonEnviar').css('cursor', 'pointer').hover(function(){
 		$(this).animate({opacity:.7}, 200);
@@ -77,18 +93,31 @@ $(document).ready(function(){
                 
 		var usuario = $('#usuario').val();
                 var password = $('#password').val();
+                var password1 = $('#password1').val();
                 var edad = $('#edad').val();
                 var correo = $('#correo').val();
 
-		if(usuario!="" && password!="" && edad!="" && correo !=""){
+		if(usuario!="" && password!="" && edad!="" && correo !="" && password1!=""){
+                    if(contraIguales){
 			$.post("recursos/servicios/RegistrarPersona.php", {usuario:usuario, password:password, edad:edad, correo:correo},
 				function (res){
 
 					$("#divRespuesta").css('opacity', '1').html(res);
-
+                                        document.getElementById('usuario').value = "";
+                                        document.getElementById('password').value = "";
+                                        document.getElementById('password1').value = "";
+                                        document.getElementById('edad').value = "";
+                                        document.getElementById('correo').value = "";
+                                        
+                                        
+                                        
+                                        
 					});
 
-
+                    }
+                    else{
+                        $("#divRespuesta").css('opacity', '1').html("Las contraseñas son diferentes");
+                    }
 
 		}else{
 			$("#divRespuesta").css('opacity', '1').html("Incluya todos los datos");

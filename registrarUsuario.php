@@ -138,6 +138,11 @@ and open the template in the editor.
                     <label for="password">Contraseña</label>
                 </div>
 
+                <div class="input-field col s12">
+                    <input id="password1" name="password1" type="password" class="validate" required>
+                    <label for="password1">Repite tu contraseña</label>
+                </div>
+                
                 <div class="input-field col s12 ">
                     <input id="edad" name="edad" type="number" class="validate" required  min="18" max="90">
                     <label for="edad">Edad</label>
