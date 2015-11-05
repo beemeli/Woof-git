@@ -83,7 +83,14 @@ $(document).ready(function(){
                                 $.post("recursos/servicios/registrarAcopio.php", {nombre:nombre, responsable:responsable, telefono:telefono, latitud:latitud, longitud:longitud,direccion:direccion},
                                         function (res){
                                                 $("#divRespuesta").css('opacity', '1').html(res);
+                                                
+                                                        
+                                                document.getElementById('nombre').value = "";
+                                                document.getElementById('responsable').value = "";
+                                                document.getElementById('telefono').value = "";
+                                                document.getElementById('direccion').value = "";
                                                 });
+                                                
                         }else{
                                 $("#divRespuesta").css('opacity', '1').html("Incluya todos los datos");
                         }      
