@@ -21,8 +21,6 @@ $(document).ready(function(){
         var latitud="";
         var longitud="";
         function mostrarMapa(direccion){
-            console.log(direccion);
-                                  
             var geocoder = new google.maps.Geocoder();
 
             geocoder.geocode( { 'address': direccion}, function(results, status) {
@@ -32,8 +30,6 @@ $(document).ready(function(){
                     longitud = results[0].geometry.location.lng();
                     myCenter=new google.maps.LatLng(latitud,longitud);                   
                     google.maps.event.addDomListener(window, 'load', initialize());
-                    console.log("lat" + latitud);
-                    console.log("lon" + longitud);
                 }
                 else{
                     $("#divRespuesta").css('opacity', '1').html("La dirección no es válida");

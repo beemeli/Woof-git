@@ -78,7 +78,6 @@ $(document).ready(function(){
                 alert('Wrong...!')  
                 return false;  
             }  */
-            console.log(contraIguales);
         }
 
         
@@ -108,6 +107,8 @@ $(document).ready(function(){
                                         document.getElementById('password1').value = "";
                                         document.getElementById('edad').value = "";
                                         document.getElementById('correo').value = "";
+                                        document.getElementById('mail-result').value="";
+                                        document.getElementById('user-result').value="";
                                         
                                         
                                         

@@ -125,7 +125,7 @@
             <form>
                 <div id="divRespuesta"></div>
 
-                <h1 class="text-center">Registrar Acopio </h1>
+                <h1 class="text-center">Registrar Centro de Acopio </h1>
                 <br>
                 <br>
 
@@ -141,7 +141,7 @@
 
                 <div class="input-field col s12 ">
                     <input id="telefono" name="telefono" type="number" class="validate" required>
-                    <label for="telefono">Telefono</label>
+                    <label for="telefono">Teléfono</label>
                 </div>
                 <div class="input-field col s12">
                     <input id="direccion" name="direccion" type="text" class="validate" required>

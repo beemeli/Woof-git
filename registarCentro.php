@@ -34,7 +34,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <link rel="stylesheet" href="css/ct-navbar.css" type="text/css">  
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script src="http://maps.googleapis.com/maps/api/js"></script>
         <script type="text/javascript" src="js/controllerCentro.js"></script>
         
         <title>Registrar Centro de Adopción</title>
@@ -134,20 +134,24 @@
                     <label for="centro">Centro de Adopción</label>
                 </div>
 
-                <div class="input-field col s12">
-                    <input id="direccion" name="direccion" type="text" class="validate" maxlength="80" required>
-                    <label for="direccion">Direccion</label>
-                </div>
-
-                <div class="input-field col s12 ">
-                    <input id="telefono" name="telefono" type="text" class="validate" maxlength="15" required>
-                    <label for="telefono">Telefono</label>
-                </div>
-                
                   <div class="input-field col s12 ">
                     <input id="contacto" name="contacto" type="text" class="validate" maxlength="100" required>
                     <label for="contacto">Nombre del Contacto</label>
+                </div>                
+
+                <div class="input-field col s12 ">
+                    <input id="telefono" name="telefono" type="text" class="validate" maxlength="15" required>
+                    <label for="telefono">Teléfono</label>
                 </div>
+                
+                <div class="input-field col s12">
+                    <input id="direccion" name="direccion" type="text" class="validate" maxlength="80" required>
+                    <label for="direccion">Dirección</label>
+                </div>
+                <div id="googleMap1" style="width:250px;height:190px;"></div>
+
+                
+
                 
                     
 
