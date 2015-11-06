@@ -120,12 +120,9 @@ and open the template in the editor.
     <div class="main">
         <div class="container">
 
-<div class="alert alert-danger fade in">
-    <a href="#" class="close" data-dismiss="alert">&times;</a>
-    <strong>Error!</strong> A problem has been occurred while submitting your data.
-</div>
+
             <form>
-    
+                <div id="divRespuesta"></div>
 
                 <h1 class="text-center">Regístrate </h1>
                 <br>
