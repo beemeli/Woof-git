@@ -15,7 +15,9 @@ $(document).ready(function(){
             $("#user-result").html('<img src="images/loading.gif" />');
             $.post('recursos/servicios/username-checker.php', {'username':username}, function(data) {
                 if(data==0){
-                    //ya existe el usuario                    
+                    //ya existe el usuario  
+                $("#usuario").removeClass('valid');
+             $("#usuario").addClass('invalid');
                     $("#user-result").html('<img src="images/notAvailable.png" />');                    
                 }else if(data==1){
                     //no existe el usuario
