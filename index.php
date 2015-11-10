@@ -1,13 +1,9 @@
-<?php
-    session_start();
- 
-    //$_SESSION['usuarioSesion'] = $_POST['usuarioSesion'];
- 
-    if(empty($_SESSION['usuarioSesion'])) { // Recuerda usar corchetes.
-        header('Location: login.php');
-    }
-?>
 
+<?php
+if(isset($_SESSION['usuarioSesion'])){
+    echo "Welcome '{$_SESSION['usuarioSesion']}'";
+}
+?>
     <html>
 
     <head>
@@ -48,7 +44,15 @@
 
     <body>
         
+        <?php
+    session_start();
+ 
+    //$_SESSION['usuarioSesion'] = $_POST['usuarioSesion'];
+ 
+    if(empty($_SESSION['usuarioSesion'])) { // Recuerda usar corchetes.
         
+    
+?>
         <div id="navbar-full">
             <div id="navbar">
                 <!--    
@@ -97,9 +101,8 @@
                                         <li><a href="login.php">Iniciar sesión</a></li>
                                         <li><a href="registrarUsuario.php">Regístrate</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="perfil.php">Ver Perfil</a></li>
-                                        <li><a href="modificarPerfil.php">Modificar Perfil</a></li>
 
+                                       
                                     </ul>
                                 </li>
                             </ul>
@@ -119,7 +122,94 @@
         </div>
         <!-- end menu-dropdown -->
        
+<?php
+}
+else
+{
+?>
+              <div id="navbar-full">
+            <div id="navbar">
+                <!--    
+        navbar-default can be changed with navbar-ct-blue navbar-ct-azzure navbar-ct-red navbar-ct-green navbar-ct-orange  
+        -->
+                <nav class="navbar navbar-ct-blue navbar-fixed-top navbar-transparent" role="navigation">
 
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <a class="navbar-brand navbar-brand-logo" href="index.php">
+                                <div class="logo">
+                                    <img src="images/wooficonNuevo.png">
+                                </div>
+                                <div class="brand"> Woof a Friend </div>
+                            </a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="consultarCentro.php">
+
+                                        <p>Centros de adopción</p>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <p>Adopta más</p>
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                                        <p><?php
+if(isset($_SESSION['usuarioSesion'])){
+    echo "Hola"." ".ucfirst("{$_SESSION['usuarioSesion']}");
+}
+?> <b class="caret"></b></p>
+                                    </a>
+                                    <ul class="dropdown-menu">
+              <li><a href="perfil.php">Ver Perfil</a></li>
+                                        <li><a href="modificarPerfil.php">Modificar Perfil</a></li>
+                    
+                                        <li class="divider"></li>
+                                                                                <li><a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a></li>
+                          
+
+                                    </ul>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+                <div class="blurred-container">
+                    <div class="img-src" style="background-image: url('images/bg.png')"></div>
+                </div>
+            </div>
+            <!--  end navbar -->
+
+        </div>
+        <!-- end menu-dropdown -->
+       <?php
+}
+?>
+        
+ <!-- end menu -->
+        
+        
+        
+        
         <div class="main">
 
 
@@ -254,7 +344,7 @@
 
 
 
-
+    
 
     </body>
 

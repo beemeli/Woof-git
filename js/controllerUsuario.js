@@ -21,7 +21,7 @@ $(document).ready(function(){
               //      $("#user-result").html('<img src="images/notAvailable.png" />');                    
                 }else if(data==1){
                     //no existe el usuario
-                    $("#usuario").removeClass('invalid');
+                    //$("#usuario").removeClass('invalid');
                     $("#usuario").addClass('valid');
                 //    $("#user-result").html('<img src="images/available.png" />');
                 }
