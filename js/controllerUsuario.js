@@ -17,10 +17,12 @@ $(document).ready(function(){
                 if(data==0){
                     //ya existe el usuario  
                 $("#usuario").removeClass('valid');
-             $("#usuario").addClass('invalid');
+                $("#usuario").addClass('invalid');
                     $("#user-result").html('<img src="images/notAvailable.png" />');                    
                 }else if(data==1){
                     //no existe el usuario
+                    $("#usuario").removeClass('invalid');
+                    $("#usuario").addClass('valid');
                     $("#user-result").html('<img src="images/available.png" />');
                 }
             });
