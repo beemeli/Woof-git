@@ -3,7 +3,7 @@ class generarReporte {
     
 
     function tipoUno(){
-        $conexion= new mysqli('127.0.0.1','root','150193','woof')
+        $conexion= new mysqli('127.0.0.1','root','56536535','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "SELECT YEAR(fecha) Anio,MONTH(fecha) Mes,COUNT(*) Registros
@@ -23,7 +23,7 @@ class generarReporte {
     }
     
     function tipoDos(){
-        $conexion= new mysqli('127.0.0.1','root','150193','woof')
+        $conexion= new mysqli('127.0.0.1','root','56536535','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "select centro_adopcion.nombre, count(*) from centro_adopcion, perrito where centro_adopcion.id_centro = perrito.id_centro group by centro_adopcion.nombre";
@@ -39,7 +39,7 @@ class generarReporte {
     }
     
     function tipoTres(){
-        $conexion= new mysqli('127.0.0.1','root','150193','woof')
+        $conexion= new mysqli('127.0.0.1','root','56536535','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "select tamano, count(*) from perrito group by tamano";
