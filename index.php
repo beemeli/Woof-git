@@ -153,20 +153,20 @@
                 <div class="row">
                     <!-- inicio tabla-->
                     <div class="col s12 m6 l4">
-                        <h4 class="light">Noticias</h4>
+                        <h4 class="light">Propósito</h4>
                         <div class="card medium">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img class="activator" src="images/noti.jpg">
                             </div>
                             <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4">Noticias<i class="material-icons right">more_vert</i></span>
+                                <span class="card-title activator grey-text text-darken-4">Educación<i class="material-icons right">more_vert</i></span>
                                 <p>
-                                    ultimakdslkdjflajdckl isjdlkfcj
+                                    Conciencia, acción y cambio.
                                 </p>
                             </div>
                             <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                <p>bla bla bla bla.</p>
+                                <span class="card-title grey-text text-darken-4">Educación<i class="material-icons right">close</i></span>
+                                <p><br>Buscamos crear conciencia en la población mexicana, fomentando el cuidado y trato digno de las mascotas de México.</p>
                             </div>
                         </div>
                     </div>
@@ -180,12 +180,19 @@
                                 <img class="activator" src="images/dato.jpg">
                             </div>
                             <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4">Datos curiosos<i class="material-icons right">more_vert</i></span>
-                                <p><a href="#"></a></p>
+                                <span class="card-title activator grey-text text-darken-4">¿Sabías que...<i class="material-icons right">more_vert</i></span>
+                                <p>Curiosidades caninas</p>
                             </div>
                             <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <span class="card-title grey-text text-darken-4">¿Sabías que <i class="material-icons right">close</i></span>
+                                <ul>
+                                    <li>&nbsp;</li>
+                                    <li>&#8226; Los perros tiene el sentido del oído tan desarrollado que pueden escuchar  sonidos desde una distancia de 225 hasta 230 metros.</li>
+                                    <li>&nbsp;</li>
+                                    <li>&#8226; Los perros machos, normalmente son territoriales y al momento de orinar levantan la pata para poder orinar la superficie lo más alto que puedan y hacer creer a otros perros que quien orinó ahí es más grande.</li>
+                                     <li>&nbsp;</li>
+                                    <li>&#8226; Los perros tienen una capacidad de aprendizaje equivalente a un niño de 2 años.</li>
+                                </ul>
                             </div>
                         </div>
 
@@ -194,20 +201,20 @@
 
 
                     <div class="col s12 m6 l4">
-                        <h4 class="light">Testimonios</h4>
+                        <h4 class="light">Eventos</h4>
                         <div class="card medium">
                             <div class="card-image waves-effect waves-block waves-light">
                                 <img class="activator" src="images/testi.jpg">
                             </div>
                             <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4">Testimonios<i class="material-icons right">more_vert</i></span>
+                                <span class="card-title activator grey-text text-darken-4">Próximos eventos<i class="material-icons right">more_vert</i></span>
                                 <p>
-                                    <a href="#"></a>
+                                    3 de diciembre - Xochimilco
                                 </p>
                             </div>
                             <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <span class="card-title grey-text text-darken-4">3 de diciembre<i class="material-icons right">close</i></span>
+                                <p><br>Nos reuniremos en el centro de Xochimilco para llevar a perritos que estén en adopción y que los conozcas. Puedes participar paseando un perrito, donando croquetas, y jugando con uno. Ven y participa en el cambio que nos beneficiará a todos como sociedad.</p>
                             </div>
                         </div>
 
