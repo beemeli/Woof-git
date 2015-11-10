@@ -222,6 +222,7 @@ if(isset($_SESSION['usuarioSesion'])){
                 <a href="registarCentro.php">Registrar Centro</a><br/>
                 <a href="registrarAcopio.php">Registrar Centro de Acopio</a><br/>
                 <a href="registrarPerrito.php">Registrar Perrito</a><br/>
+                <a href="consultarCentroA.php">Consultar Centros Admin</a><br/>
                 <a href="consultarCentro.php">Consultar Centros</a><br/>
                 <a href="GenerarReportes.php">Generar Reportes</a><br/>
                 <a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a><br/>
