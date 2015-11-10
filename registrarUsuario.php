@@ -129,7 +129,7 @@ and open the template in the editor.
                 <br>               
                 
                 <div class="input-field col s12 ">
-                    <input id="usuario" name="usuario" type="text" class="validate" required><span id="user-result"></span>
+                    <input id="usuario" name="usuario" type="text" class="validate" required><!--<span id="user-result"></span>-->
                     <label for="usuario">Usuario</label>
                 </div>
 
@@ -149,7 +149,7 @@ and open the template in the editor.
                 </div>
 
                 <div class="input-field col s12 ">
-                    <input id="correo" name="correo" type="email" class="validate" required><span id="mail-result"></span>
+                    <input id="correo" name="correo" type="email" class="validate" required><!--<span id="mail-result"></span>-->
                     <label for="correo">Correo Electronico</label>
                 </div>
 

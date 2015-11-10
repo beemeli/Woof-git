@@ -12,24 +12,43 @@ $(document).ready(function(){
         }); 
 
         function check_username_ajax(username){
-            $("#user-result").html('<img src="images/loading.gif" />');
+            //$("#user-result").html('<img src="images/loading.gif" />');
             $.post('recursos/servicios/username-checker.php', {'username':username}, function(data) {
                 if(data==0){
                     //ya existe el usuario  
                 $("#usuario").removeClass('valid');
                 $("#usuario").addClass('invalid');
-                    $("#user-result").html('<img src="images/notAvailable.png" />');                    
+              //      $("#user-result").html('<img src="images/notAvailable.png" />');                    
                 }else if(data==1){
                     //no existe el usuario
                     $("#usuario").removeClass('invalid');
                     $("#usuario").addClass('valid');
-                    $("#user-result").html('<img src="images/available.png" />');
+                //    $("#user-result").html('<img src="images/available.png" />');
                 }
             });
         }
 
-
-//---
+//--m
+        $("#edad").keyup(function (e){
+            clearTimeout(x_timer);
+            var user_age = $(this).val();
+            x_timer = setTimeout(function(){
+                check_userAge(user_age);
+            }, 1000);
+        }); 
+        var edadAceptada;
+        function check_userAge(user_age){
+            if(user_age <18 && user_age>85){
+                edadAceptada=0;//no puede registrarse
+                $("#edad").removeClass('valid');
+                $("#edad").addClass('invalid');                
+            }else{
+                edadAceptada=1;//puede registrarse
+                $("#edad").removeClass('invalid');
+                $("#edad").addClass('valid');                
+            }
+        }
+//---,
         $("#correo").keyup(function (e){
             clearTimeout(x_timer);
             var mail = $(this).val();
@@ -40,13 +59,17 @@ $(document).ready(function(){
 
         function check_mail_ajax(mail){
 
-            $("#mail-result").html('<img src="images/loading.gif" />');
+            //$("#mail-result").html('<img src="images/loading.gif" />');
             $.post('recursos/servicios/mail-checker.php', {'correo':mail}, function(data) {
                 if(data==0){
+                    $("#correo").removeClass('valid');
+                    $("#correo").addClass('invalid');
                     //correo invalido                  
-                    $("#mail-result").html('<img src="images/notAvailable.png" />');                    
+                    //$("#mail-result").html('<img src="images/notAvailable.png" />');                    
                 }else if(data==1){
-                    $("#mail-result").html('<img src="images/available.png" />');
+                    $("#correo").removeClass('invalid');
+                    $("#correo").addClass('valid');                    
+                    //$("#mail-result").html('<img src="images/available.png" />');
                     //correo valido
                     
                 }
@@ -65,9 +88,17 @@ $(document).ready(function(){
         
         function check_pass(pass, pass1){
             if(pass ==pass1){
+                $("#password").removeClass('invalid');
+                $("#password").addClass('valid');
+                $("#password1").removeClass('invalid');
+                $("#password1").addClass('valid');
                 contraIguales=true;
             }
             else{
+                $("#password").removeClass('valid');
+                $("#password").addClass('invalid');
+                $("#password1").removeClass('valid');
+                $("#password1").addClass('invalid');
                 contraIguales=false;
             }
             /*
