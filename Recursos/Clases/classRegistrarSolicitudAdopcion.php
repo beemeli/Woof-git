@@ -1,7 +1,7 @@
 <?php
 class registrarSolicitudAdopcion {
     function altaSolicitud($usuario,$fecha,$estatus,$observaciones,$experiencia,$tamano,$personalidad,$perrito){
-        $conexion= new mysqli('localhost','root','56536535','woof')
+        $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
         //modificar para adoptar a un perrito, enviando su id
         
@@ -15,7 +15,7 @@ class registrarSolicitudAdopcion {
     }
 
     function bajaSolicitud($id_solicitud){
-        $conexion= new mysqli('localhost','root','56536535','woof')
+        $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
         $sql = "DELETE FROM solicitud_adopcion WHERE id_solicitud=". $id_solicitud ."";
         if($conexion->query($sql) === false){
@@ -28,7 +28,7 @@ class registrarSolicitudAdopcion {
     }
     
     function cambioSolicitud($usuario,$fecha,$estatus,$observaciones,$experiencia,$tamano,$personalidad){
-        $conexion= new mysqli('localhost','root','56536535','woof')
+        $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
         $sql = "UPDATE solicitud_adopcion SET fecha = '".$fecha."', estatus='".$estatus."', observaciones='".$observaciones."', experiencia='".$experiencia."', tamano='".$tamano."', personalidad='".$personalidad."' WHERE id_usuario=".$usuario."";
 
@@ -42,7 +42,7 @@ class registrarSolicitudAdopcion {
     }
 
     function consultarSolicitud($id_solicitud){
-        $conexion= new mysqli('localhost','root','56536535','woof')
+        $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "SELECT * FROM solicitud_adopcion WHERE id_solicitud=".$id_solicitud."";
@@ -58,7 +58,7 @@ class registrarSolicitudAdopcion {
     }
 
     function consultarSolicitudTodos(){
-        $conexion= new mysqli('localhost','root','56536535','woof')
+        $conexion= new mysqli('localhost','root','150193','woof')
         or die("Fallo en el establecimiento de la conexion");
         
         $sql = "SELECT * FROM solicitud_adopcion";

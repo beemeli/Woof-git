@@ -31,9 +31,9 @@ $("#divCentros").on("click", "tr.centros", function(){
                             function (res){
 
                             var elem = document.getElementById("divCentros");
-                            console.log(res);
-                            //var centros=JSON.parse(res);
-                         /*   
+                            
+                            var centros=JSON.parse(res);
+                            
                            var tabla="<table>";
                                 for(var i = 0; i < centros.length; i++) {
                                     var centro = centros[i];
@@ -41,7 +41,7 @@ $("#divCentros").on("click", "tr.centros", function(){
                                     tabla +='<td>'+centros[i][0]+'</td>';
                                 }
                             tabla+="</table>";
-                            $("#divCentros").append(tabla);*/
+                            $("#divCentros").append(tabla);
 
                     });
 	}

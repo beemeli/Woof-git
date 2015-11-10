@@ -15,10 +15,10 @@
         //Le enviamos el parámetro a guardar. Idealmente, en un objeto de negocio para no pasar parámetros sueltos
 
         $result = $admin->consultaTodosLosCentros();
-console.log($result);
+
 	//$result = $admin->consultarHist();
 	//Respuesta del servicio
-       /* 
+        
 	if ($result->num_rows > 0) {
             $centros=array();
 		while($row = $result->fetch_assoc()) {
@@ -32,6 +32,6 @@ console.log($result);
 	} else {
 		echo "0 results";
 	}
-        */
+        
 
    

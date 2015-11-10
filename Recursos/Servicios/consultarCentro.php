@@ -6,11 +6,11 @@
 
    
 
-   if(isset($_GET['centro'])  ){
+   if(isset($_POST['centro'])  ){
 
 	require_once('../Clases/classRegistrarCentro.php');
 
-	$centro = $_GET['centro'];
+	$centro = $_POST['centro'];
         
         
 	
