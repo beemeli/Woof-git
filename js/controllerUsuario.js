@@ -36,14 +36,14 @@ $(document).ready(function(){
                 check_userAge(user_age);
             }, 1000);
         }); 
-        var edadAceptada;
+        var edadAceptada=false;
         function check_userAge(user_age){
             if(user_age <18 && user_age>85){
-                edadAceptada=0;//no puede registrarse
+                edadAceptada=false;//no puede registrarse
                 $("#edad").removeClass('valid');
                 $("#edad").addClass('invalid');                
             }else{
-                edadAceptada=1;//puede registrarse
+                edadAceptada=true;//puede registrarse
                 $("#edad").removeClass('invalid');
                 $("#edad").addClass('valid');                
             }
@@ -132,27 +132,20 @@ $(document).ready(function(){
                 var correo = $('#correo').val();
 
 		if(usuario!="" && password!="" && edad!="" && correo !="" && password1!=""){
-                    if(contraIguales){
+                    if(contraIguales && edadAceptada){                       
 			$.post("recursos/servicios/RegistrarPersona.php", {usuario:usuario, password:password, edad:edad, correo:correo},
-				function (res){
+                            function (res){
 
-					$("#divRespuesta").css('opacity', '1').html(res);
-                                        document.getElementById('usuario').value = "";
-                                        document.getElementById('password').value = "";
-                                        document.getElementById('password1').value = "";
-                                        document.getElementById('edad').value = "";
-                                        document.getElementById('correo').value = "";
-                                        document.getElementById('mail-result').value="";
-                                        document.getElementById('user-result').value="";
-                                        
-                                        
-                                        
-                                        
-					});
-
+                                $("#divRespuesta").css('opacity', '1').html(res);
+                                document.getElementById('usuario').value = "";
+                                document.getElementById('password').value = "";
+                                document.getElementById('password1').value = "";
+                                document.getElementById('edad').value = "";
+                                document.getElementById('correo').value = "";
+                            });
                     }
                     else{
-                        $("#divRespuesta").css('opacity', '1').html("Las contraseñas son diferentes");
+                        $("#divRespuesta").css('opacity', '1').html("Revise los campos marcados");
                     }
 
 		}else{

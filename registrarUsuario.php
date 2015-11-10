@@ -144,7 +144,7 @@ and open the template in the editor.
                 </div>
                 
                 <div class="input-field col s12 ">
-                    <input id="edad" name="edad" type="number" class="validate" required  min="18" max="90">
+                    <input id="edad" name="edad" type="number" class="validate" required  min="18" max="85">
                     <label for="edad">Edad</label>
                 </div>
 
