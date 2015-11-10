@@ -1,9 +1,4 @@
 
-<?php
-if(isset($_SESSION['usuarioSesion'])){
-    echo "Welcome '{$_SESSION['usuarioSesion']}'";
-}
-?>
     <html>
 
     <head>

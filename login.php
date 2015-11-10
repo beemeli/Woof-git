@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+
+<?php
+    session_start();
+ 
+    //$_SESSION['usuarioSesion'] = $_POST['usuarioSesion'];
+ 
+    
+    if(isset ($_SESSION['usuarioSesion'])) { // Recuerda usar corchetes.
+        header('Location: index.php');
+    }
+?>
+
+
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
