@@ -15,7 +15,7 @@ class iniciarSesion {
     
 
     function login($usuario, $password){
-        $conexion= new mysqli('localhost','root','150193','woof')
+        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "SELECT `id_usuario`,`usuario`,`password` FROM visitante WHERE usuario='$usuario'";

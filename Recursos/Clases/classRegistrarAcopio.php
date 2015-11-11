@@ -4,7 +4,7 @@
 class RegistrarAcopio {
 
     function altaAcopio($nombre, $responsable, $telefono, $latitud, $longitud,$direccion){
-        $conexion= new mysqli('localhost','root','150193','woof')
+        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "insert into acopio(nombre, responsable, telefono, latitud, longitud,direccion) values('". $nombre."','". $responsable."','".$telefono."',".$latitud.",".$longitud.",'".$direccion."')";
@@ -18,7 +18,7 @@ class RegistrarAcopio {
         }
     }
     function bajaAcopio($nombre){
-        $conexion= new mysqli('localhost','root','150193','woof')
+        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "DELETE FROM acopio WHERE nombre='". $nombre ."'";
@@ -33,7 +33,7 @@ class RegistrarAcopio {
     }
     
     function cambioAcopio($nombre, $responsable, $telefono, $latitud, $longitud){
-        $conexion= new mysqli('localhost','root','150193','woof')
+        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "UPDATE acopio SET responsable='".$responsable."', telefono='".$telefono."', latitud=".$latitud.", longitud=".$longitud." WHERE nombre='".$nombre."'";
@@ -48,7 +48,7 @@ class RegistrarAcopio {
     }
     
     function consultaAcopio($nombre){
-        $conexion= new mysqli('localhost','root','150193','woof')
+        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "SELECT * FROM acopio WHERE nombre='".$nombre."'";
@@ -64,7 +64,7 @@ class RegistrarAcopio {
         }
     }
     function consultaTodosAcopios(){
-        $conexion= new mysqli('localhost','root','150193','woof')
+        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "SELECT * FROM acopio";
