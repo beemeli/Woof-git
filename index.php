@@ -225,6 +225,7 @@ if(isset($_SESSION['usuarioSesion'])){
                 <a href="consultarCentroA.php">Consultar Centros Admin</a><br/>
                 <a href="consultarCentro.php">Consultar Centros</a><br/>
                 <a href="GenerarReportes.php">Generar Reportes</a><br/>
+                <a href="MascotaVirtual.php">Mascota Virtual</a><br/>
                 <a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a><br/>
                 
                 
