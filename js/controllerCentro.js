@@ -9,7 +9,7 @@ $(document).ready(function(){
 		$(this).animate({opacity:1}, 200);
 	});
     //----
-        var x_timer;    
+       /* var x_timer;    
         $("#direccion").keyup(function (e){
             clearTimeout(x_timer);
             var direccion1 = $(this).val();
@@ -17,7 +17,7 @@ $(document).ready(function(){
                 mostrarMapa(direccion1);
             }, 1000);
         }); 
-
+*/
         var myCenter="";
         var latitud="";
         var longitud="";
@@ -108,6 +108,15 @@ $(document).ready(function(){
                         $.post("recursos/servicios/RegistrarCentro.php", {centro:centro, direccion:direccion, telefono:telefono, contacto:contacto, latitud:latitud, longitud:longitud},
                                 function (res){
                                         $("#divRespuesta").css('opacity', '1').html(res);
+                                        
+                                        document.getElementById('centro').value = "";
+                                        document.getElementById('responsable').value = "";
+                                        document.getElementById('telefono').value = "";                                       
+                                        document.getElementById('calle').value = "";
+                                        document.getElementById('numero').value = "";
+                                        document.getElementById('colonia').value = "";
+                                        document.getElementById('cp').value = "";
+                                        
                                         });
                 }else{
                         $("#divRespuesta").css('opacity', '1').html("Incluya todos los datos");
