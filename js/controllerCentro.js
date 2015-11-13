@@ -1,6 +1,7 @@
 //Controller del convertidor, Lee los campos del formulario y manda la peticiÃ³n al PHP
 
 $(document).ready(function(){
+        $('#googleMap1').hide();
         
 	$('.botonEnviar').css('cursor', 'pointer').hover(function(){
 		$(this).animate({opacity:.7}, 200);
@@ -39,14 +40,41 @@ $(document).ready(function(){
 
 
         }
+        function getAddress(){
+            var address1 ="";
+            var calle = $('#calle').val();   
+            var numero = $('#numero').val();   
+            var colonia = $('#colonia').val();   
+            var cp = $('#cp').val(); 
+            
+            if(calle != ""){
+                   address1+= calle+ ",";
+               }  
+                if(numero != ""){
+                   address1+= numero+ ",";
+               }  
+               if(colonia){
+                   address1+= colonia+ ",";
+               }  
+               if(cp != ""){
+                   address1+= cp + ",";
+               }  
 
-
+               address1 += "México DF";
+               return address1;
+            
+        }
+	$("#verMapaBoton").click(function(){
+               var address1 = getAddress();
+               mostrarMapa(address1); 
+        });
         function initialize() {
             var mapProp = {
                 center:myCenter,
                 zoom:15,
                 mapTypeId:google.maps.MapTypeId.ROADMAP
             };
+            $('#googleMap1').show();
             var map=new google.maps.Map(document.getElementById("googleMap1"),mapProp);
             var marker=new google.maps.Marker({
                 position:myCenter,
@@ -71,7 +99,7 @@ $(document).ready(function(){
 	$(".botonEnviar").click(function(){
 		$("#divResultado").css('opacity', '0');
                 
-                var direccion = $('#direccion').val();                        
+                var direccion = getAddress();                  
                 var centro = $('#centro').val();
                 var telefono = $('#telefono').val();
                 var contacto = $('#contacto').val();
