@@ -15,7 +15,7 @@ $(document).ready(function(){
     mostrarCentros();
 
     function mostrarCentros(){
-        $.post("recursos/servicios/consultarCentros.php", {},
+        $.post("recursos/servicios/consultarCentros.php", {}, //consultarAcopios
                 function (res){
             var centros=JSON.parse(res);
             var tabla="<table>";
@@ -67,7 +67,7 @@ $(document).ready(function(){
             centro =$(this).attr('id');
 
             if(centro!=""){
-                    $.post("recursos/servicios/consultarCentro.php", {centro:centro},
+                    $.post("recursos/servicios/consultarCentro.php", {centro:centro}, //consultarAcopio
                             function (res){
 
                                     var centros=JSON.parse(res);
@@ -87,7 +87,7 @@ $(document).ready(function(){
                                     //$("#divRespuesta").css('opacity', '1').html(centros[0]);
 
 
-                                    $('.botonVerPerritos').show();
+                                    
 
 
                                     });
@@ -98,73 +98,73 @@ $(document).ready(function(){
     });
 
 
-    $(".botonVerPerritos").click(function(){
-            if(idCentro!==""){
-                $.post("recursos/servicios/ConsultarPerritos.php", {idCentro:idCentro},
-                    function (res){
-                        var perritos=JSON.parse(res);
+//    $(".botonVerPerritos").click(function(){
+//            if(idCentro!==""){
+//                $.post("recursos/servicios/ConsultarPerritos.php", {idCentro:idCentro},
+//                    function (res){
+//                        var perritos=JSON.parse(res);
+//
+//                       var tabla="<table>";
+//                            for(var i = 0; i < perritos.length; i++) {
+//
+//                                tabla +='<tr id="'+perritos[i][0]+'"class="perritos">';
+//                                tabla +='<td>'+perritos[i][1]+'</td>';
+//                            }
+//                        tabla+="</table>";
+//                        $("#divPerritos").html(tabla);
+//
+//                    });
+//
+//            }else{
+//                    $("#divRespuesta").css('opacity', '1').html("Incluya todos los datos");
+//            }
+//    });
+//        var personalidad;
+//        var tamano;
+//        var perrito;
+//
+//        $("#divPerritos").on("click", "tr.perritos", function(){
+//
+//            perrito =$(this).attr('id');
+//
+//            if(perrito!=""){
+//                    $.post("recursos/servicios/consultarPerrito.php", {idPerrito:perrito}, //
+//                            function (res){
+//                                    if(res ==0)
+//                                    var perrito=JSON.parse(res);
+//
+//                                    $("#nombreP").html("Nombre: "+perrito[0]);
+//                                    $("#edadP").html("Edad: "+perrito[1]);
+//                                    $("#razaP").html("Raza: "+perrito[2]);
+//                                    $("#tamanoP").html("Tamaño: "+perrito[3]);
+//                                    $("#consideracionesP").html("Consideraciones: "+perrito[4]);
+//                                    personalidad = perrito[4];
+//                                    tamano = perrito[3];
+//                                    $("#pesoP").html("Peso: "+perrito[5]);
+//
+//                                    $('.botonAdoptar').show();
+//                                    });
+//
+//
+//            }else{
+//                    $("#divRespuesta").css('opacity', '1').html("Incluya todos los datos");
+//            }
+//    });
 
-                       var tabla="<table>";
-                            for(var i = 0; i < perritos.length; i++) {
 
-                                tabla +='<tr id="'+perritos[i][0]+'"class="perritos">';
-                                tabla +='<td>'+perritos[i][1]+'</td>';
-                            }
-                        tabla+="</table>";
-                        $("#divPerritos").html(tabla);
-
-                    });
-
-            }else{
-                    $("#divRespuesta").css('opacity', '1').html("Incluya todos los datos");
-            }
-    });
-        var personalidad;
-        var tamano;
-        var perrito;
-
-        $("#divPerritos").on("click", "tr.perritos", function(){
-
-            perrito =$(this).attr('id');
-
-            if(perrito!=""){
-                    $.post("recursos/servicios/consultarPerrito.php", {idPerrito:perrito},
-                            function (res){
-                                    if(res ==0)
-                                    var perrito=JSON.parse(res);
-
-                                    $("#nombreP").html("Nombre: "+perrito[0]);
-                                    $("#edadP").html("Edad: "+perrito[1]);
-                                    $("#razaP").html("Raza: "+perrito[2]);
-                                    $("#tamanoP").html("Tamaño: "+perrito[3]);
-                                    $("#consideracionesP").html("Consideraciones: "+perrito[4]);
-                                    personalidad = perrito[4];
-                                    tamano = perrito[3];
-                                    $("#pesoP").html("Peso: "+perrito[5]);
-
-                                    $('.botonAdoptar').show();
-                                    });
-
-
-            }else{
-                    $("#divRespuesta").css('opacity', '1').html("Incluya todos los datos");
-            }
-    });
-
-
-    $(".botonAdoptar").click(function(){
-            if(perrito!==""){
-                var experiencia="";
-                $.post("recursos/servicios/registrarSolicitudAdopcion.php", {perrito:perrito,experiencia:experiencia, personalidad:personalidad, tamano:tamano},
-                    function (res){
-                        $("#resSolicitud").css('opacity', '1').html(res);
-
-                    });
-
-            }else{
-                    $("#divRespuesta").css('opacity', '1').html("Incluya todos los datos");
-            }
-    });
+//    $(".botonAdoptar").click(function(){
+//            if(perrito!==""){
+//                var experiencia="";
+//                $.post("recursos/servicios/registrarSolicitudAdopcion.php", {perrito:perrito,experiencia:experiencia, personalidad:personalidad, tamano:tamano},
+//                    function (res){
+//                        $("#resSolicitud").css('opacity', '1').html(res);
+//
+//                    });
+//
+//            }else{
+//                    $("#divRespuesta").css('opacity', '1').html("Incluya todos los datos");
+//            }
+//    });
 
     
 });

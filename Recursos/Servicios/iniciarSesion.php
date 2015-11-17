@@ -10,6 +10,7 @@
 
 	$usuario = $_POST['usuario'];
 	$password = $_POST['password'];
+        
 
         //instancia del DAO
         $admin = new iniciarSesion();
