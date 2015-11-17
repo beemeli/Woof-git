@@ -1,5 +1,12 @@
 <?php
-
+    session_start();
+ 
+    //$_SESSION['usuarioSesion'] = $_POST['usuarioSesion'];
+ 
+    
+    if(($_SESSION['tipo'])!="administrador") { // Recuerda usar corchetes.
+        header('Location: login.php');
+    }
 ?>
 <html>
     <head>

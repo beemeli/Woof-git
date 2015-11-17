@@ -25,6 +25,8 @@
                 session_start();
                 $_SESSION['id_usuario'] = $res['id_usuario'];
                 $_SESSION['usuarioSesion'] = $res['usuario'];
+                $_SESSION['tipo'] = $res['tipo'];
+                
                 header("Location: ../../index.php");
             }else{
                     
