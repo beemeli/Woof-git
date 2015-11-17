@@ -28,7 +28,8 @@
                     
                     //echo $centros[0][0];
                 }
-            echo json_encode($centros);
+            echo  json_encode($centros);
+            
 	} else {
 		echo "0 results";
 	}
