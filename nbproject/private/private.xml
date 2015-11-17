@@ -2,6 +2,22 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/C:/wamp/www/Woof%20git/Woof-git/js/controllerConsultarCentros.js</file>
+            <file>file:/C:/wamp/www/Woof%20git/Woof-git/registarCentro.php</file>
+            <file>file:/C:/wamp/www/Woof%20git/Woof-git/index.php</file>
+            <file>file:/C:/wamp/www/Woof%20git/Woof-git/js/controllerCentro.js</file>
+        </group>
+        <group name="Principal">
+            <file>file:/Applications/MAMP/htdocs/Woof-git/css/inicio.css</file>
+            <file>file:/Applications/MAMP/htdocs/Woof-git/js/controller.js</file>
+            <file>file:/Applications/MAMP/htdocs/Woof-git/js/comer.js</file>
+            <file>file:/Applications/MAMP/htdocs/Woof-git/Tamagochi.php</file>
+            <file>file:/Applications/MAMP/htdocs/Woof-git/index.php</file>
+        </group>
+>>>>>>> origin/master
     </open-files>
 </project-private>

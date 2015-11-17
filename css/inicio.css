@@ -1,0 +1,117 @@
+body{
+	font-family: 'VT323';
+}
+
+#presentacion{
+	background-color: #6fd8e0;
+	margin: 0 auto;
+	font-family: 'VT323';
+	font-size: 40px;
+	position: relative;
+	text-align: center;
+	width: 90%;
+	top: 30px;
+	border: solid #6fd8e0;
+	-webkit-border-radius: 15px 15px  0px 0px;
+  	-moz-border-radius: 15px 0px 0px 20px; 
+}
+
+#perritos{
+	position: relative;
+	width: 80%;
+	top: 130px;
+}
+
+
+#logo{
+	background-color: white;
+	height: 100px;
+	width: 200px;
+}
+
+#body{
+	-webkit-border-radius: 0px 0px  15px 15px;
+  	-moz-border-radius: 0px 0px 15px 15px; 	
+}
+
+#tituloSeccion{
+        margin: 0 auto;
+	width: 200px;
+	height: 40px;
+	color: white;
+	position: relative;
+	left: 20px;
+	top: 50px;
+	text-align: left;
+	font-size: 30px;
+}
+
+#body {
+	margin: 0 auto;
+	//background-color: #fdf8f5;
+	height: 450px;
+	width: 90%;
+	border: solid #6fd8e0;
+	text-align: center;
+	//background-color: #df467d;
+}
+
+
+#lienzo{
+	margin-top: 100px;
+	position: relative;
+	left: 10%;
+	width: 500px;
+	height: 200px;
+}
+
+#tazon{
+        position: relative;
+	left: 15%;
+	top: -70px;
+	width: 500px;
+	height: 200px;
+	background-color: pink;
+        display: none;
+}
+
+#taza{
+	position: relative;
+	top: 25px;
+	width: 80px;
+        //display: none;
+}
+
+#indicadores{
+        text-align: left;
+	position: absolute;
+	margin-top: 20px;
+	width: 400px;
+	height: 100px;
+}
+
+#apagado{
+	margin-top: 10px;
+	height: 50px;
+	width: 30px;
+        background-color:  transparent;
+}
+
+#comer, #dormir, #sentarse{
+	background-color: blue;
+	width: 100px;
+	height: 30px;
+	margin: 0 auto;
+	margin-top: 5px;
+	letter-spacing: 3px;
+	color: white;
+}
+
+.boton label{
+	position: relative;
+	top: 10px;
+}
+
+#comer, #dormir, #sentarse:hover{
+	cursor: pointer;
+}
