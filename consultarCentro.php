@@ -127,28 +127,41 @@ and open the template in the editor.
         <div class ="main">
         <div class ="container">
             
+ 
             
-        <div class="collection" >
-        
-        
-      </div>
             
+    
+             <br/><br/>
               <div id="divCentros"></div>
             
             
         
         <br/><br/>
 
-        <div id="divRespuesta">
-            <div id="nombreC"></div>
-            <div id="direccionC"></div>
+           
+                
+        <div id="divRespuesta" >               
+        <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1" >
+            <div class="card-content white-text">
+              <span class="card-title"><div id="nombreC"></div></span>
+              <p> <div id="direccionC"></div>
             <div id="telefonoC"></div>
             <div id="contactoC"></div>
             <div id="latitudC"></div>
-            <div id="longitudC"></div>
+            <div id="longitudC"></div></p>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+            </div>
+            
+        
             <div id="googleMap" style="width:500px;height:380px;"></div>
 
-        </div>
+        
 
         <br/>
         <div class="botonVerPerritos">
