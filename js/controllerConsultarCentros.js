@@ -34,9 +34,14 @@ $("#divCentros").on("click", "tr.centros", function(){
                             
                             var centros=JSON.parse(res);
                             
-                           var tabla="<table>";
+                           var tabla="<table class='highlight'>";
+                            tabla +="<thead>";
+                            tabla += "<th data-field='id'>Centros</th>";
+                            tabla +="</thead>";
+                        
                                 for(var i = 0; i < centros.length; i++) {
                                     var centro = centros[i];
+                                    
                                     tabla +='<tr id="'+centros[i][6]+'"class="centros">';
                                     tabla +='<td>'+centros[i][0]+'</td>';
                                 }

@@ -128,9 +128,14 @@ and open the template in the editor.
         <div class ="container">
             
             
-            
+        <div class="collection" >
+        
+        
+      </div>
             
               <div id="divCentros"></div>
+            
+            
         
         <br/><br/>
 
