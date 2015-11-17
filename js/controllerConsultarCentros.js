@@ -148,7 +148,7 @@ $("#divCentros").on("click", "tr.centros", function(){
 		if(perrito!=""){
 			$.post("recursos/servicios/consultarPerrito.php", {idPerrito:perrito},
 				function (res){
- 
+                                        if(res ==0)
                                         var perrito=JSON.parse(res);
                                         
                                         $("#nombreP").html("Nombre: "+perrito[0]);
