@@ -131,12 +131,10 @@ and open the template in the editor.
                 <br/><br/>
 
                 <div id="divRespuesta">
-                    <div id="nombreC"></div>
-                    <div id="direccionC"></div>
-                    <div id="telefonoC"></div>
-                    <div id="contactoC"></div>
-                    <div id="latitudC"></div>
-                    <div id="longitudC"></div>
+                    <div id="nombreA"></div>
+                    <div id="responsableA"></div>
+                    <div id="telefonoA"></div>
+                    <div id="direccionA"></div>
                     <div id="googleMap" style="width:500px;height:380px;"></div>
                 </div><br/>    
             </div>        
