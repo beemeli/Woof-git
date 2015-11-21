@@ -217,6 +217,7 @@ if(isset($_SESSION['usuarioSesion'])){
                 <a href="registrarSolicitudAdopcion.php">Solicitar Adopción </a><br/>
                 <a href="consultarSolicitudAdopcion.php">Consultar Solicitud Adopcion</a><br/>
                 <a href="consultarCentro.php">Consultar Centros</a><br/>
+                <a href="consultarAcopio.php">Consultar Centros de Acopio</a><br/>
                 <a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a><br/>
                 Admin:<br/>
                 <a href="registarCentro.php">Registrar Centro</a><br/>
