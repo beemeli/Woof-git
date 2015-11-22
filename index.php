@@ -215,11 +215,15 @@ if(isset($_SESSION['usuarioSesion'])){
                 <a href="perfil.php">Perfil</a><br/>
                 <a href="registrarUsuario.php">Registrar Usuario</a><br/>
                 <a href="registrarSolicitudAdopcion.php">Solicitar Adopción </a><br/>
-                <a href="consultarSolicitudAdopcion.php">Consultar Solicitud Adopcion</a><br/>
+                
                 <a href="consultarCentro.php">Consultar Centros</a><br/>
                 <a href="consultarAcopio.php">Consultar Centros de Acopio</a><br/>
                 <a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a><br/>
+                <a href="consultarSolicitudAdopcionUsuario.php">Consultar solicitud usuario</a><br/>
+                
+                
                 Admin:<br/>
+                <a href="consultarSolicitudAdopcion.php">Consultar Solicitud Adopcion</a><br/>
                 <a href="registarCentro.php">Registrar Centro</a><br/>
                 <a href="registrarAcopio.php">Registrar Centro de Acopio</a><br/>
                 <a href="registrarPerrito.php">Registrar Perrito</a><br/>

@@ -27,10 +27,10 @@ class registrarSolicitudAdopcion {
         }
     }
     
-    function cambioSolicitud($usuario,$fecha,$estatus,$observaciones,$experiencia,$tamano,$personalidad){
+    function cambioSolicitud($usuario,$estatus,$observaciones){
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
-        $sql = "UPDATE solicitud_adopcion SET fecha = '".$fecha."', estatus='".$estatus."', observaciones='".$observaciones."', experiencia='".$experiencia."', tamano='".$tamano."', personalidad='".$personalidad."' WHERE id_usuario=".$usuario."";
+        $sql = "UPDATE solicitud_adopcion SET estatus='".$estatus."', observaciones='".$observaciones."' WHERE id_usuario='".$usuario."'";
 
         if($conexion->query($sql) === false){
                 //echo "error";

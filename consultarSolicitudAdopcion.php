@@ -141,24 +141,21 @@ and open the template in the editor.
         
         <br/><br/>
 
-       <div id="divRespuesta">
+        <div id="divRespuesta">
            
-                       <ul class="collection">
-      <li class="collection-item " id="id_solicitud"></li>
-       <li class="collection-item" id="id_usuario"></li>
-       <li class="collection-item" id="id_perro"></li>
-        <li class="collection-item " id="fecha"></li>
-       <li class="collection-item" id="experiencia"></li>
-       <li class="collection-item" id="tamano"></li>
-
-       <li class="collection-item"id="personalidad"></li>
-       <li class="collection-item" id="estatus"></li>
-      
-      
-      
-    </ul>
-           
-            </div>
+        <ul class="collection">
+            <li class="collection-item " id="id_solicitud"></li>
+            <li class="collection-item" id="id_usuario"></li>
+            <li class="collection-item" id="id_perrito"></li>
+            <li class="collection-item " id="fecha"></li>
+            <li class="collection-item" id="experiencia"></li>
+            <li class="collection-item" id="tamano"></li>
+            <li class="collection-item"id="personalidad"></li>
+            <li class="collection-item" id="estatus"></li>     
+        </ul>
+        </div>
+        <div id="aceptar" class="boton">Aceptar</div>
+        <div id="denegar" class="boton">Denegar</div>
           
         <br>
         <br>
