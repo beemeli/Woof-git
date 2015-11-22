@@ -42,12 +42,12 @@ class RegistrarCentro {
         }
     }
     
-    function cambioCentro($centro, $direccion, $telefono, $contacto, $latitud, $longitud){
+    function cambioCentro($centro, $direccion, $telefono, $contacto){
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "UPDATE centro_adopcion SET direccion='".$direccion."', telefono='".$telefono."', contacto='".$contacto."', latitud=".$latitud.", longitud=".$longitud." WHERE nombre='".$centro."'";
-
+        //$sql = "UPDATE centro_adopcion SET direccion='".$direccion."', telefono='".$telefono."', contacto='".$contacto."', latitud=".$latitud.", longitud=".$longitud." WHERE nombre='".$centro."'";
+        $sql = "UPDATE centro_adopcion SET direccion='".$direccion."', telefono='".$telefono."', contacto='".$contacto."' WHERE nombre='".$centro."'";
         if($conexion->query($sql) === false){
                 //echo "error";
                 return "error";

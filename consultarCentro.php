@@ -184,31 +184,13 @@ and open the template in the editor.
             <form>
                   <div class="input-field col s12 ">
                     <input id="contacto" name="contacto" type="text" class="validate" maxlength="100" required>
-                    <label for="contacto">Nombre del Contacto</label>
                 </div>               
                 <div class="input-field col s12 ">
                     <input id="telefono" name="telefono" type="text" class="validate" maxlength="15" required>
-                    <label for="telefono">Teléfono</label>
                 </div>
                 <div class="input-field col s12">
-                    <input id="calle" name="calle" type="text" class="validate" maxlength="80" required>
-                    <label for="calle">Calle</label>
+                    <input id="direccion" name="calle" type="text" class="validate" maxlength="80" required>
                 </div>
-                <div class="input-field col s12">
-                    <input id="numero" name="numero" type="text" class="validate" maxlength="80" required>
-                    <label for="numero">Número</label>
-                </div>
-                <div class="input-field col s12">
-                    <input id="colonia" name="colonia" type="text" class="validate" maxlength="80" required>
-                    <label for="colonia">Colonia</label>
-                </div>
-                <div class="input-field col s12">
-                    <input id="cp" name="cp" type="text" class="validate" maxlength="80" required>
-                    <label for="cp">C.P.</label>
-                </div>
-                <div id="verMapaBoton">Ver mapa</div>
-                <div id="googleMap1" style="width:250px;height:190px;"></div>
-                <br>
             </form>
 
             <button class="btn waves-effect waves-light  blue lighten-3 botonEnviar">Enviar

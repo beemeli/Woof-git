@@ -231,10 +231,44 @@ $("#divCentros").on("click", "tr.centros", function(){
         });
         
         function mostrarLayerModificar(nombreCentro){ 
-               document.getElementById('layerModificar').style.display="block";
-               document.getElementById('layerModificar').style.opacity="1";
-               document.getElementById('nombreCentroModificar').innerHTML="<h3>"+nombreCentro+"</h3>";
+            document.getElementById('layerModificar').style.display="block";
+            document.getElementById('layerModificar').style.opacity="1";
+            document.getElementById('nombreCentroModificar').innerHTML="<h3>"+nombreCentro+"</h3>";
+            $.post("recursos/servicios/consultarCentro.php", {centro:centro},
+                function (res){
+                    console.log(res);
+                    var centros=JSON.parse(res);
+                    var con=document.getElementById("contacto");
+                            con.value=(centros[3]);
+                    var tel=document.getElementById("telefono");
+                            tel.value=(centros[2]);
+                    var dir=document.getElementById("direccion");
+                            dir.value=(centros[1]);
+
+                });
         }
+        
+	$(".botonEnviar").click(function(){
+                
+                    var contacto = $('#contacto').val();
+                    var telefono = $('#telefono').val();
+                    var direccion = $('#direccion').val();
+
+                    if(contacto!="" && telefono!="" &&direccion!=""){
+                            $.post("recursos/servicios/modificarCentro.php", {centro:centro,direccion:direccion,telefono:telefono,contacto:contacto },
+                                    function (res){
+
+                                           console.log(res);
+                                            document.getElementById('layerModificar').style.display="none";
+                                            document.getElementById('layerModificar').style.opacity="0";
+                                    });
+                    }else{
+                            
+                    }    
+                
+	});
+
+        
         
 	$("#cerrarModificar").click(function(){
             document.getElementById('layerModificar').style.display="none";
@@ -242,7 +276,10 @@ $("#divCentros").on("click", "tr.centros", function(){
         });
 
         
-        
+//---------
+
+
+//---------
     
 });
 
