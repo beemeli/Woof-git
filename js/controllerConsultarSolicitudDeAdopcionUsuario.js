@@ -3,23 +3,16 @@
 $(document).ready(function(){
 $("#divSolicitudes").on("click", "tr.solicitudes", function(){
     $(this).css('cursor', 'pointer');
-    
-    
 });
-
 	mostrarSolicitud();
-  
-        function mostrarSolicitud(){
-            
+ 
+        function mostrarSolicitud(){           
 		$("#divResultado").css('opacity', '0');
-                
 		if(user!==""){
 			$.post("recursos/servicios/consultarSolicitudUsuario.php", {user:user},
                             function (res){
                                 if (res != 0){
-                                    
                                     var solicitudes=JSON.parse(res);  
-                                    
                                         $("#id_solicitud").html("Id_solicitud: "+solicitudes[0]);
                                         $("#id_usuario").html("Id_usuario: "+solicitudes[1]);
                                         $("#id_perrito").html("Id_perrito: "+solicitudes[2]);
@@ -29,9 +22,7 @@ $("#divSolicitudes").on("click", "tr.solicitudes", function(){
                                         $("#estatus").html("Estatus: "+solicitudes[5]);
                                         $("#tamano").html("Tamaño de la mascota : "+solicitudes[7]);
                                         $("#personalidad").html("Personalida: "+solicitudes[8]);
-                                      
                                 }
-
                             });   
 		}
                 else{

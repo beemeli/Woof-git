@@ -153,7 +153,7 @@ $("#divCentros").on("click", "tr.centros", function(){
 		if(perrito!=""){
 			$.post("recursos/servicios/consultarPerrito.php", {idPerrito:perrito},
 				function (res){
-                                        if(res !=0)
+                                        if(res !=0){
                                         var perrito=JSON.parse(res);
                                         
                                         $("#nombreP").html("Nombre: "+perrito[0]);
@@ -166,9 +166,8 @@ $("#divCentros").on("click", "tr.centros", function(){
                                         $("#pesoP").html("Peso: "+perrito[5]);
                                         
                                         $('.botonAdoptar').show();
-					});
-                                        
-                                        
+                                    }
+                                });        
 		}else{
 			$("#divRespuesta").css('opacity', '1').html("Incluya todos los datos");
 		}
