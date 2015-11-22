@@ -136,7 +136,7 @@ and open the template in the editor.
             
             
                    
-        
+        <input type="text" id="search" placeholder="Type to search">
         <div id="divSolicitudes"></div>
         
         <br/><br/>

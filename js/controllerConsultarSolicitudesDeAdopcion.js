@@ -11,6 +11,18 @@ $(document).ready(function(){
 
 	mostrarSolicitudes();
         
+        var $rows;
+        $('#search').keyup(function() {
+            
+            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+            $rows.show().filter(function() {
+                var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                return !~text.indexOf(val);
+            }).hide();
+        });
+        
+        
         function mostrarSolicitudes(){
                     $.post("recursos/servicios/consultarSolicitud.php", {},
                             function (res){
@@ -29,6 +41,7 @@ $(document).ready(function(){
                                 }
                                  tabla+="</table>";
                             $("#divSolicitudes").append(tabla);
+                            $rows= $('#tablaSolicitudes tr');
                     });
 	}
         
