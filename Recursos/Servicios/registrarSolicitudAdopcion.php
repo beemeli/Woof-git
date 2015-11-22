@@ -9,7 +9,7 @@
 
        
         session_start();
-	$usuario =  $_SESSION['id_usuario'];
+	$usuario =  $_SESSION['usuarioSesion'];
 	$experiencia = $_POST['experiencia'];
         $estatus = "Nueva Solicitud";
         $observaciones = "pendiente";
