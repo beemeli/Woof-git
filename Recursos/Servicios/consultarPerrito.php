@@ -28,11 +28,11 @@
 	if ($result->num_rows > 0) {
             
 		if($row = $result->fetch_assoc()) {
-                    $perrito =array($row["nombre"], $row["edad"],$row["raza"],$row["tamano"],$row["consideraciones"],$row["peso"]);
+                    $perrito =array($row["nombre"], $row["edad"],$row["raza"],$row["tamano"],$row["consideraciones"],$row["peso"],$row["imagen"]);
             
                 }
             echo json_encode($perrito);
-                
+            
                 
 	} else {
 		echo "0 results";

@@ -15,11 +15,15 @@
 
 
 class registrarPerrito {
-    function altaPerrito($nombre, $edad,$raza,$tamano,$consideraciones,$peso){
+    
+    function altaPerrito($nombre, $edad,$raza,$tamano,$consideraciones,$peso,$imagen){
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
+        
 
-        $sql = "insert into perrito(nombre,edad,raza,tamano,consideraciones,peso) values('". $nombre ."',". $edad.",'".$raza."','".$tamano."','".$consideraciones."', ".$peso.")";
+        $sql = "insert into perrito(nombre,edad,raza,tamano,consideraciones,peso,imagen) values('". $nombre ."',". $edad.",'".$raza."','".$tamano."','".$consideraciones."', ".$peso.", '".$imagen."')";
+        
+        
         if($conexion->query($sql) === false){
                 //echo "error";
                 return "error";
@@ -48,7 +52,7 @@ class registrarPerrito {
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "UPDATE perrito SET nombre='".$nombre."', consideraciones='".$consideraciones."', peso='".$peso."'";
+        $sql = "UPDATE perrito SET nombre='".$nombre."', consideraciones='".$consideraciones."', peso='".$peso."', imagen='".$imagen."'";
         if($conexion->query($sql) === false){
                 //echo "error";
                 return "error";

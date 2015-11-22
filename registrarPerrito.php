@@ -155,10 +155,13 @@
                     <input id="peso" name="peso" type="number" class="validate" required>
                     <label for="peso">Peso</label>
                 </div>
+                
+                <div class="input-field col s12 ">
+                    <input id="imageUpload" name="imageUpload" type="file" class="validate" required>
+                    <label for="imageUpload">Foto del perrito</label>
+                </div>
 
-
-
-                <br>
+                <br><br>
             </form>
               
               
