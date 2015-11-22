@@ -65,18 +65,18 @@ $(document).ready(function(){
     var idCentro;
     var myCenter;
     var mapContent;
+    var nombreCentro;
 
     $("#divCentros").on("click", "tr.centros", function(){
-
+        $("#divRespuesta").show();
             $("#divResultado").css('opacity', '0');
-
             centro =$(this).attr('id');
-            console.log(centro);
-
+            mostrarCentroEspecifico(centro);
+        });
+        function mostrarCentroEspecifico(centro){
             if(centro!=""){
                     $.post("recursos/servicios/consultarAcopio.php", {centro:centro}, 
                             function (res){
-
                                     var centros=JSON.parse(res);
 
                                     $("#nombreA").html("Nombre: "+centros[0]);
@@ -89,13 +89,112 @@ $(document).ready(function(){
 
                                     idCentro = centros[6];
                                     $('#googleMap').show();
-
+                                    $('#botonModificar').show();
+                                    $('#botonBorrar').show();
+                                    nombreCentro = centros[0];
                                     });
 
             }else{
                     $("#divRespuesta").css('opacity', '1').html("Incluya todos los datos");
             }
-    });
+     }
+            
+
+	$("#botonBorrar").click(function(){
+            $.post("recursos/servicios/eliminarAcopio.php", {centro:centro},
+                function (res){
+                    if(res =="1"){
+                        $("#tablaCentros tr").remove();
+                        mostrarCentros();
+                        console.log("Centro de acopio eliminado");
+                        $("#divRespuesta").hide();
+                        $('#botonModificar').hide();
+                        $('#botonBorrar').hide();
+                    }
+                    else{
+                        console.log(res);
+                    }
+                });
+	});
+//--        
+	$("#botonModificar").click(function(){
+            mostrarLayerModificar(nombreCentro);
+        });
+        
+
+        function mostrarLayerModificar(nombreCentro){ 
+            document.getElementById('layerModificar').style.display="block";
+            document.getElementById('layerModificar').style.opacity="1";
+            document.getElementById('nombreCentroModificar').innerHTML="<h3>"+nombreCentro+"</h3>";
+            $.post("recursos/servicios/consultarAcopio.php", {centro:centro},
+                function (res){
+                    var centros=JSON.parse(res);
+                    var con=document.getElementById("responsable");
+                            con.value=(centros[1]);
+                    var tel=document.getElementById("telefono");
+                            tel.value=(centros[2]);
+                    var dir=document.getElementById("direccion");
+                            dir.value=(centros[5]);
+        
+                });
+        }
+        
+	$(".modificar").click(function(){
+            console.log("BLA" );    
+                    var responsable = $('#responsable').val();
+                    var telefono = $('#telefono').val();
+                    var direccion = $('#direccion').val();
+                    
+                    var geocoder1 = new google.maps.Geocoder();
+                    var latM;
+                    var lonM;
+
+                    geocoder1.geocode( { 'address': direccion}, function(results, status) {
+
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            latM = results[0].geometry.location.lat();
+                            lonM = results[0].geometry.location.lng();
+                            myCenter=new google.maps.LatLng(latM,lonM);                   
+                            google.maps.event.addDomListener(window, 'load', initialize());
+                        }
+                        modificar(responsable, telefono, direccion, latM, lonM);
+                    });
+                });
+        
+        function modificar(contacto, telefono,direccion,latitud,longitud){
+            
+                    if(contacto!="" && telefono!="" &&direccion!=""){
+                            $.post("recursos/servicios/modificarAcopio.php", {centro:centro,direccion:direccion,telefono:telefono,contacto:contacto, latitud:latitud, longitud:longitud},
+                                    function (res){
+                                        
+                                            document.getElementById('layerModificar').style.display="none";
+                                            document.getElementById('layerModificar').style.opacity="0";
+                                            $("#tablaCentros tr").remove();
+                                            mostrarCentros();
+                                            $("#nombreA").html(" ");
+                                            $("#direccionA").html(" ");
+                                            $("#telefonoA").html(" ");
+                                            $("#responsableA").html(" ");
+                                            mostrarCentroEspecifico(centro);
+                                            
+                                    });
+                    }else{
+                            
+                    }    
+                
+	}
+
+        
+        
+	$("#cerrarModificar").click(function(){
+            document.getElementById('layerModificar').style.display="none";
+           document.getElementById('layerModificar').style.opacity="0";
+        });
+
+//--
+            
+            
+    
 
     
 });

@@ -135,7 +135,7 @@ and open the template in the editor.
                     <div id="responsableA"></div>
                     <div id="telefonoA"></div>
                     <div id="direccionA"></div>
-                    <div id="googleMap" style="width:500px;height:380px;"></div>
+                    <div id="googleMap" style="width:200px;height:200px;"></div>
                 </div><br/>  
                 <div id="botonModificar">Modificar </div><br/>
                 <div id="botonBorrar">Borrar </div>
@@ -145,21 +145,16 @@ and open the template in the editor.
                     <form>
                         <div class="input-field col s12">
                             <input id="responsable" name="responsable" type="text" class="validate" required>
-                            <label for="responsable">Responsable</label>
                         </div>
 
                         <div class="input-field col s12 ">
                             <input id="telefono" name="telefono" type="number" class="validate" required>
-                            <label for="telefono">Teléfono</label>
                         </div>
                         <div class="input-field col s12">
                             <input id="direccion" name="direccion" type="text" class="validate" required>
-                            <label for="direccion">Dirección</label>
                         </div>       
 
-                    <button class="btn waves-effect waves-light  blue lighten-3 botonEnviar">Enviar
-                        <i class="material-icons right">send</i>
-                    </button>
+                        <div class="modificar">modificar</div>
 
                     <br/>
                     <div id="cerrarModificar">Cerrar</div>
