@@ -71,7 +71,7 @@ $("#divCentros").on("click", "tr.centros", function(){
         function initialize() {
             var mapProp = {
                 center:myCenter,
-                zoom:5,
+                zoom:9,
                 mapTypeId:google.maps.MapTypeId.ROADMAP
             };
             var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
@@ -108,7 +108,9 @@ $("#divCentros").on("click", "tr.centros", function(){
 		$("#divResultado").css('opacity', '0');
                 
                 centro =$(this).attr('id');
-                
+                mostrarCentroEspecifico(centro);
+        });
+        function mostrarCentroEspecifico(centro){
 		if(centro!=""){
 			$.post("recursos/servicios/consultarCentro.php", {centro:centro},
 				function (res){
@@ -144,7 +146,7 @@ $("#divCentros").on("click", "tr.centros", function(){
 		}else{
 			$("#divRespuesta").css('opacity', '1').html("Incluya todos los datos");
 		}
-	});
+	}
         
         
 	$(".botonVerPerritos").click(function(){
@@ -230,6 +232,7 @@ $("#divCentros").on("click", "tr.centros", function(){
             mostrarLayerModificar(nombreCentro);
         });
         
+
         function mostrarLayerModificar(nombreCentro){ 
             document.getElementById('layerModificar').style.display="block";
             document.getElementById('layerModificar').style.opacity="1";
@@ -244,7 +247,7 @@ $("#divCentros").on("click", "tr.centros", function(){
                             tel.value=(centros[2]);
                     var dir=document.getElementById("direccion");
                             dir.value=(centros[1]);
-
+        
                 });
         }
         
@@ -253,20 +256,47 @@ $("#divCentros").on("click", "tr.centros", function(){
                     var contacto = $('#contacto').val();
                     var telefono = $('#telefono').val();
                     var direccion = $('#direccion').val();
+                    
+                    var geocoder1 = new google.maps.Geocoder();
+                    var latM;
+                    var lonM;
 
+                    geocoder1.geocode( { 'address': direccion}, function(results, status) {
+
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            latM = results[0].geometry.location.lat();
+                            lonM = results[0].geometry.location.lng();
+                            myCenter=new google.maps.LatLng(latM,lonM);                   
+                            google.maps.event.addDomListener(window, 'load', initialize());
+                        }
+                        modificar(contacto, telefono, direccion, latM, lonM);
+                    });
+                });
+        
+        function modificar(contacto, telefono,direccion,latitud,longitud){
                     if(contacto!="" && telefono!="" &&direccion!=""){
-                            $.post("recursos/servicios/modificarCentro.php", {centro:centro,direccion:direccion,telefono:telefono,contacto:contacto },
+                            $.post("recursos/servicios/modificarCentro.php", {centro:centro,direccion:direccion,telefono:telefono,contacto:contacto, latitud:latitud, longitud:longitud},
                                     function (res){
 
                                            console.log(res);
                                             document.getElementById('layerModificar').style.display="none";
                                             document.getElementById('layerModificar').style.opacity="0";
+                                            $("#tablaCentros tr").remove();
+                                            mostrarCentros();
+                                            $("#nombreC").html(" ");
+                                            $("#direccionC").html(" ");
+                                            $("#telefonoC").html(" ");
+                                            $("#contactoC").html(" ");
+                                            $("#latitudC").html(" ");
+                                            $("#longitudC").html(" ");
+                                            mostrarCentroEspecifico(centro);
+                                            
                                     });
                     }else{
                             
                     }    
                 
-	});
+	}
 
         
         
