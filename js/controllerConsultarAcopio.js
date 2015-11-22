@@ -89,8 +89,10 @@ $(document).ready(function(){
 
                                     idCentro = centros[6];
                                     $('#googleMap').show();
-                                    $('#botonModificar').show();
-                                    $('#botonBorrar').show();
+                                    if(tipo=="administrador"){
+                                        $('#botonModificar').show();
+                                        $('#botonBorrar').show();
+                                    }
                                     nombreCentro = centros[0];
                                     });
 
@@ -140,7 +142,7 @@ $(document).ready(function(){
         }
         
 	$(".modificar").click(function(){
-            console.log("BLA" );    
+            
                     var responsable = $('#responsable').val();
                     var telefono = $('#telefono').val();
                     var direccion = $('#direccion').val();
@@ -166,7 +168,6 @@ $(document).ready(function(){
                     if(contacto!="" && telefono!="" &&direccion!=""){
                             $.post("recursos/servicios/modificarAcopio.php", {centro:centro,direccion:direccion,telefono:telefono,contacto:contacto, latitud:latitud, longitud:longitud},
                                     function (res){
-                                        
                                             document.getElementById('layerModificar').style.display="none";
                                             document.getElementById('layerModificar').style.opacity="0";
                                             $("#tablaCentros tr").remove();
@@ -190,7 +191,6 @@ $(document).ready(function(){
             document.getElementById('layerModificar').style.display="none";
            document.getElementById('layerModificar').style.opacity="0";
         });
-
 //--
             
             

@@ -46,11 +46,13 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/ct-navbar.css" type="text/css">
         <script src="http://maps.googleapis.com/maps/api/js"></script>
              
-        <script type="text/javascript" src="js/controllerConsultarAcopio.js"></script>
+        
         <script>
             var test = '<?php echo $_SESSION['usuarioSesion'] ?>';
-            console.log("user-->"+test);
+            var tipo = '<?php echo $_SESSION['tipo'] ?>';
+            
         </script>
+        <script type="text/javascript" src="js/controllerConsultarAcopio.js"></script>
     </head>
     <body>
       
