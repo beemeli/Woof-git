@@ -88,5 +88,21 @@ class registrarSolicitudAdopcion {
             return $result;            
         }
     }
+    function consultarSolicitudesPendientes($id_usuario){
+        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        or die("Fallo en el establecimiento de la conexion");
+        
+        $sql = "SELECT * FROM solicitud_adopcion WHERE id_usuario='".$id_usuario."' and observaciones='pendiente'";
+       // $results = mysqli_query($conexion, $sql);
+        $result = $conexion->query($sql);
+        
+        if($conexion->query($sql) === false){
+                return "error";
+        }
+        else{
+            //echo "Si los busca";
+            return $result;            
+        }
+    }    
 }
 

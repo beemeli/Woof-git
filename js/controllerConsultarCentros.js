@@ -31,7 +31,6 @@ $("#divCentros").on("click", "tr.centros", function(){
 
         
         $('#search').keyup(function() {
-            console.log($rows);
             
             var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
 
@@ -118,8 +117,7 @@ $("#divCentros").on("click", "tr.centros", function(){
                                         $('#googleMap').show();
                                         $('#botonBorrar').show();
                                         $('#botonModificar').show();
-                                        $('.botonAdoptar').show();
- 
+                                        
                                         var centros=JSON.parse(res);
                                         
                                         $("#nombreC").html("Nombre: "+centros[0]);
@@ -193,7 +191,14 @@ $("#divCentros").on("click", "tr.centros", function(){
                                         tamano = perrito[3];
                                         $("#pesoP").html("Peso: "+perrito[5]);
                                         
-                                        $('.botonAdoptar').show();
+
+                                        $.post('recursos/servicios/comprobarAdoptar.php', {}, function(data) {
+                                            if(data!=0){
+                                                $('.botonAdoptar').show();    
+                                            }
+                                        });
+
+                                        
                                     }
                                 });        
 		}else{
@@ -239,7 +244,6 @@ $("#divCentros").on("click", "tr.centros", function(){
             document.getElementById('nombreCentroModificar').innerHTML="<h3>"+nombreCentro+"</h3>";
             $.post("recursos/servicios/consultarCentro.php", {centro:centro},
                 function (res){
-                    console.log(res);
                     var centros=JSON.parse(res);
                     var con=document.getElementById("contacto");
                             con.value=(centros[3]);
@@ -278,7 +282,6 @@ $("#divCentros").on("click", "tr.centros", function(){
                             $.post("recursos/servicios/modificarCentro.php", {centro:centro,direccion:direccion,telefono:telefono,contacto:contacto, latitud:latitud, longitud:longitud},
                                     function (res){
 
-                                           console.log(res);
                                             document.getElementById('layerModificar').style.display="none";
                                             document.getElementById('layerModificar').style.opacity="0";
                                             $("#tablaCentros tr").remove();
@@ -305,6 +308,8 @@ $("#divCentros").on("click", "tr.centros", function(){
            document.getElementById('layerModificar').style.opacity="0";
         });
 
+        
+        
         
 //---------
 
