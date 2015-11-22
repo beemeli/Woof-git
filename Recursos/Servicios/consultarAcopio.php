@@ -21,7 +21,7 @@
         $admin = new registrarAcopio();
         //Le enviamos el parámetro a guardar. Idealmente, en un objeto de negocio para no pasar parámetros sueltos
 
-        $result = $admin->consultaTodosAcopios($centro);
+        $result = $admin->consultaAcopio($centro);
 
 	//$result = $admin->consultarHist();
 	//Respuesta del servicio

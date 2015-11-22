@@ -144,8 +144,8 @@ and open the template in the editor.
                             <p> <div id="direccionC"></div>
                             <div id="telefonoC"></div>
                             <div id="contactoC"></div>
-                            <div id="latitudC"></div>
-                            <div id="longitudC"></div></p>
+<!--                            <div id="latitudC"></div>
+                            <div id="longitudC"></div></p>-->
                         </div>
                     </div>
                 </div>

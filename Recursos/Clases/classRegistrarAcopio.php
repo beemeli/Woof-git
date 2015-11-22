@@ -47,17 +47,17 @@ class RegistrarAcopio {
         }
     }
     
-    function consultaAcopio($nombre){
+    function consultaAcopio($id_acopio){
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "SELECT * FROM acopio WHERE nombre='".$nombre."'";
+        $sql = "SELECT * FROM acopio WHERE id_acopio=".$id_acopio."";
        // $results = mysqli_query($conexion, $sql);
         $result = $conexion->query($sql);
 
         
         if($conexion->query($sql) === false){
-                return "error";
+                return "error";            
         }
         else{      
             return $result;            

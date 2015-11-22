@@ -55,10 +55,11 @@ $("#divCentros").on("click", "tr.centros", function(){
                             tabla +="</thead>";
                         
                                 for(var i = 0; i < centros.length; i++) {
-                                    var centro = centros[i];
                                     
                                     tabla +='<tr id="'+centros[i][6]+'"class="centros">';
                                     tabla +='<td>'+centros[i][0]+'</td>';
+                                    tabla +='<td>'+centros[i][1]+'</td>';
+                                    tabla +='</tr>';
                                 }
                             tabla+="</table>";
                             $("#divCentros").append(tabla);
@@ -124,8 +125,8 @@ $("#divCentros").on("click", "tr.centros", function(){
                                         $("#direccionC").html("Direccion: "+centros[1]);
                                         $("#telefonoC").html("Telefono: "+centros[2]);
                                         $("#contactoC").html("Contacto: "+centros[3]);
-                                        $("#latitudC").html("Latitud: "+centros[4]);
-                                        $("#longitudC").html("Longitud: "+centros[5]);
+                                        /*$("#latitudC").html("Latitud: "+centros[4]);
+                                        $("#longitudC").html("Longitud: "+centros[5]);*/
                                         myCenter=new google.maps.LatLng(centros[4],centros[5]);                   
                                         mapContent="Telefono: "+centros[2];
                                         google.maps.event.addDomListener(window, 'load', initialize());

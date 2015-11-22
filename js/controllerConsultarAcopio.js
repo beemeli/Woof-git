@@ -1,7 +1,10 @@
 //Controller del convertidor, Lee los campos del formulario y manda la peticiÃ³n al PHP
 
 $(document).ready(function(){
-    $('.botonEnviar').css('cursor', 'pointer').hover(function(){
+        $('#botonModificar').hide();
+        $('#botonBorrar').hide();
+        $('#googleMap').hide();
+    $('.botonEnviar,#botonBorrar,#botonModificar').css('cursor', 'pointer').hover(function(){
             $(this).animate({opacity:.7}, 200);
 
     }, function(){
@@ -17,8 +20,11 @@ $(document).ready(function(){
     function mostrarCentros(){
         $.post("recursos/servicios/consultarAcopios.php", {}, 
                 function (res){
-            var centros=JSON.parse(res);
-            var tabla="<table>";
+                var centros=JSON.parse(res);
+                var tabla="<table id='tablaCentros' class='highlight'>";
+                tabla +="<thead>";
+                tabla += "<th data-field='id'>Centros de acopio </th>";
+                tabla +="</thead>";
                 for(var i = 0; i < centros.length; i++) {
                     tabla +='<tr id="'+centros[i][6]+'"class="centros">';
                     tabla +='<td>'+centros[i][0]+'</td>';
@@ -31,7 +37,7 @@ $(document).ready(function(){
     function initialize() {
         var mapProp = {
             center:myCenter,
-            zoom:5,
+            zoom:9,
             mapTypeId:google.maps.MapTypeId.ROADMAP
         };
         var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
@@ -65,6 +71,7 @@ $(document).ready(function(){
             $("#divResultado").css('opacity', '0');
 
             centro =$(this).attr('id');
+            console.log(centro);
 
             if(centro!=""){
                     $.post("recursos/servicios/consultarAcopio.php", {centro:centro}, 
@@ -81,7 +88,7 @@ $(document).ready(function(){
                                     google.maps.event.addDomListener(window, 'load', initialize());
 
                                     idCentro = centros[6];
-
+                                    $('#googleMap').show();
 
                                     });
 
