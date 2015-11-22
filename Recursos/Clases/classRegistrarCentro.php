@@ -31,11 +31,11 @@ class RegistrarCentro {
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "DELETE FROM centro_adopcion WHERE nombre='". $centro ."'";
+        $sql = "DELETE FROM centro_adopcion WHERE id_centro=". $centro ."";
         
         if($conexion->query($sql) === false){
                 //echo "error";
-                return "error";
+                return 0; //hay perritos en el centro
         }
         else{
             return 1;

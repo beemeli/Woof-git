@@ -2,6 +2,10 @@
 
 $(document).ready(function(){
         $('.botonVerPerritos').hide();
+        $('#divRespuesta').hide();
+        $('#googleMap').hide();
+        $('#botonModificar').hide();
+        $('#botonBorrar').hide();
         $('.botonAdoptar').hide();
 	$('.botonEnviar').css('cursor', 'pointer').hover(function(){
 		$(this).animate({opacity:.7}, 200);
@@ -10,9 +14,8 @@ $(document).ready(function(){
 		$(this).animate({opacity:1}, 200);
 
 	});
-	$('.botonVerPerritos').css('cursor', 'pointer').hover(function(){
-		
-                
+	$('.botonVerPerritos,#botonModificar,#botonBorrar').css('cursor', 'pointer').hover(function(){
+          
 	}, function(){
 		
 
@@ -23,7 +26,20 @@ $("#divCentros").on("click", "tr.centros", function(){
     
 });
 
+        var $rows;
 	mostrarCentros();
+
+        
+        $('#search').keyup(function() {
+            console.log($rows);
+            
+            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+            $rows.show().filter(function() {
+                var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                return !~text.indexOf(val);
+            }).hide();
+        });
         
         function mostrarCentros(){
 
@@ -34,7 +50,7 @@ $("#divCentros").on("click", "tr.centros", function(){
                             
                             var centros=JSON.parse(res);
                             
-                           var tabla="<table class='highlight'>";
+                           var tabla="<table id='tablaCentros' class='highlight'>";
                             tabla +="<thead>";
                             tabla += "<th data-field='id'>Centros</th>";
                             tabla +="</thead>";
@@ -47,6 +63,7 @@ $("#divCentros").on("click", "tr.centros", function(){
                                 }
                             tabla+="</table>";
                             $("#divCentros").append(tabla);
+                            $rows= $('#tablaCentros tr');
 
                     });
 	}
@@ -78,10 +95,13 @@ $("#divCentros").on("click", "tr.centros", function(){
               });
           
         }
+        var nombreCentro;
+        
         var centro="";
         var idCentro;
         var myCenter;
         var mapContent;
+        
         
         $("#divCentros").on("click", "tr.centros", function(){
                                       
@@ -92,6 +112,11 @@ $("#divCentros").on("click", "tr.centros", function(){
 		if(centro!=""){
 			$.post("recursos/servicios/consultarCentro.php", {centro:centro},
 				function (res){
+                                        $('#divRespuesta').show();
+                                        $('#googleMap').show();
+                                        $('#botonBorrar').show();
+                                        $('#botonModificar').show();
+                                        $('.botonAdoptar').show();
  
                                         var centros=JSON.parse(res);
                                         
@@ -106,6 +131,7 @@ $("#divCentros").on("click", "tr.centros", function(){
                                         google.maps.event.addDomListener(window, 'load', initialize());
                                         
                                         idCentro = centros[6];
+                                        nombreCentro = centros[0];
                                         
 					//$("#divRespuesta").css('opacity', '1').html(centros[0]);
                                         
@@ -187,7 +213,36 @@ $("#divCentros").on("click", "tr.centros", function(){
 			$("#divRespuesta").css('opacity', '1').html("Incluya todos los datos");
 		}
 	});
-    
+
+	$("#botonBorrar").click(function(){
+            $.post("recursos/servicios/eliminarCentro.php", {centro:centro},
+                function (res){
+                    if(res =="1"){
+                        console.log("Centro eliminado");
+                    }
+                    else{
+                        console.log(res);
+                    }
+                });
+	});
+        
+	$("#botonModificar").click(function(){
+            mostrarLayerModificar(nombreCentro);
+        });
+        
+        function mostrarLayerModificar(nombreCentro){ 
+               document.getElementById('layerModificar').style.display="block";
+               document.getElementById('layerModificar').style.opacity="1";
+               document.getElementById('nombreCentroModificar').innerHTML="<h3>"+nombreCentro+"</h3>";
+        }
+        
+	$("#cerrarModificar").click(function(){
+            document.getElementById('layerModificar').style.display="none";
+           document.getElementById('layerModificar').style.opacity="0";
+        });
+
+        
+        
     
 });
 

@@ -130,54 +130,38 @@ and open the template in the editor.
        
         <div class ="main">
         <div class ="container">
-            
- 
-            
-            
-    
-             <br/><br/>
-              <div id="divCentros"></div>
-            
-            
-        
+        <br/><br/>
+        <input type="text" id="search" placeholder="Buscar">
+        <div id="divCentros"></div>
         <br/><br/>
 
-           
-                
         <div id="divRespuesta" >               
-        <div class="row">
-        <div class="col s12 m6">
-          <div class="card blue-grey darken-1" >
-            <div class="card-content white-text">
-              <span class="card-title"><div id="nombreC"></div></span>
-              <p> <div id="direccionC"></div>
-            <div id="telefonoC"></div>
-            <div id="contactoC"></div>
-            <div id="latitudC"></div>
-            <div id="longitudC"></div></p>
-            </div>
-           
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card blue-grey darken-1" >
+                        <div class="card-content white-text">
+                            <span class="card-title"><div id="nombreC"></div></span>
+                            <p> <div id="direccionC"></div>
+                            <div id="telefonoC"></div>
+                            <div id="contactoC"></div>
+                            <div id="latitudC"></div>
+                            <div id="longitudC"></div></p>
+                        </div>
+                    </div>
+                </div>
           </div>
         </div>
-      </div>
-            </div>
-            
-        
-            <div id="googleMap" style="width:500px;height:380px;"></div>
+        <div id="googleMap" style="width:200px;height:200px;"></div>
+        <br/>
 
-        
-
+        <br/>
+        <div id="botonModificar">Modificar </div><br/>
+        <div id="botonBorrar">Borrar </div>
+           
         <br/>
         <div class="botonVerPerritos">
             Clic para ver perritos
         </div>
-        <form action="modificarCentro.php">
-            <button class="btn waves-effect waves-light  blue lighten-3" id="botonModificar" type="submit" Value="modificar">Modificar</button>
-        </form>
-        <form action="eliminarCentro.php">
-        <button class="btn waves-effect waves-light  blue lighten-3" id="botonBorrar" type="submit" Value="borrar">Borrar</button>
-        </form>        
-        
         <br/>
         <div id="divPerritos"></div>
         <br/><br/>
@@ -193,20 +177,54 @@ and open the template in the editor.
         <div class="botonAdoptar">
             Clic para solicitar adoptar a este perrito
         </div>       
-        <div id="resSolicitud">
+        <div id="resSolicitud"> </div>                   
+
+        <div id="layerModificar">
+            <h3 id ="nombreCentroModificar"></h3>
+            <form>
+                  <div class="input-field col s12 ">
+                    <input id="contacto" name="contacto" type="text" class="validate" maxlength="100" required>
+                    <label for="contacto">Nombre del Contacto</label>
+                </div>               
+                <div class="input-field col s12 ">
+                    <input id="telefono" name="telefono" type="text" class="validate" maxlength="15" required>
+                    <label for="telefono">Teléfono</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="calle" name="calle" type="text" class="validate" maxlength="80" required>
+                    <label for="calle">Calle</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="numero" name="numero" type="text" class="validate" maxlength="80" required>
+                    <label for="numero">Número</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="colonia" name="colonia" type="text" class="validate" maxlength="80" required>
+                    <label for="colonia">Colonia</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="cp" name="cp" type="text" class="validate" maxlength="80" required>
+                    <label for="cp">C.P.</label>
+                </div>
+                <div id="verMapaBoton">Ver mapa</div>
+                <div id="googleMap1" style="width:250px;height:190px;"></div>
+                <br>
+            </form>
+
+            <button class="btn waves-effect waves-light  blue lighten-3 botonEnviar">Enviar
+                <i class="material-icons right">send</i>
+            </button>
+
+            <br/>
+            <div id="cerrarModificar">Cerrar</div>
             
-        </div>                   
-            
+        </div>
+        
             
         </div>
         
         
         </div>
         
-        
-        
-        
-      
-     
     </body>
 </html>
