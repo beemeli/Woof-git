@@ -17,11 +17,11 @@ class RegistrarAcopio {
             return 1;
         }
     }
-    function bajaAcopio($nombre){
+    function bajaAcopio($id_acopio){
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "DELETE FROM acopio WHERE nombre='". $nombre ."'";
+        $sql = "DELETE FROM acopio WHERE id_acopio=". $id_acopio ."";
         
         if($conexion->query($sql) === false){
                 //echo "error";
@@ -32,11 +32,11 @@ class RegistrarAcopio {
         }
     }
     
-    function cambioAcopio($nombre, $responsable, $telefono, $latitud, $longitud){
+    function cambioAcopio($nombre, $responsable, $telefono, $latitud, $longitud,$direccion){
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "UPDATE acopio SET responsable='".$responsable."', telefono='".$telefono."', latitud=".$latitud.", longitud=".$longitud." WHERE nombre='".$nombre."'";
+        $sql = "UPDATE acopio SET responsable='".$responsable."',direccion='".$direccion."', telefono='".$telefono."', latitud=".$latitud.", longitud=".$longitud." WHERE id_acopio=".$nombre."";
 
         if($conexion->query($sql) === false){
                 //echo "error";
@@ -47,17 +47,17 @@ class RegistrarAcopio {
         }
     }
     
-    function consultaAcopio($nombre){
+    function consultaAcopio($id_acopio){
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "SELECT * FROM acopio WHERE nombre='".$nombre."'";
+        $sql = "SELECT * FROM acopio WHERE id_acopio=".$id_acopio."";
        // $results = mysqli_query($conexion, $sql);
         $result = $conexion->query($sql);
 
         
         if($conexion->query($sql) === false){
-                return "error";
+                return "error";            
         }
         else{      
             return $result;            

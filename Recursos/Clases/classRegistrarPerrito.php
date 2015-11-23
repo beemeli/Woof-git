@@ -21,9 +21,10 @@ class registrarPerrito {
         or die("Fallo en el establecimiento de la conexion");
         
 
+
         $sql = "insert into perrito(nombre,edad,raza,tamano,consideraciones,peso,imagen) values('". $nombre ."',". $edad.",'".$raza."','".$tamano."','".$consideraciones."', ".$peso.", '".$imagen."')";
         
-        
+
         if($conexion->query($sql) === false){
                 //echo "error";
                 return "error";
@@ -81,7 +82,7 @@ class registrarPerrito {
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "SELECT * FROM perrito WHERE id_centro=".$idCentro."";
+        $sql = "SELECT * FROM perrito WHERE id_centro=".$idCentro." and adoptado='no'";
         $result = $conexion->query($sql);
 
         

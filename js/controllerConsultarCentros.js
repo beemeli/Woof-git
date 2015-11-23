@@ -2,6 +2,10 @@
 
 $(document).ready(function(){
         $('.botonVerPerritos').hide();
+        $('#divRespuesta').hide();
+        $('#googleMap').hide();
+        $('#botonModificar').hide();
+        $('#botonBorrar').hide();
         $('.botonAdoptar').hide();
 	$('.botonEnviar').css('cursor', 'pointer').hover(function(){
 		$(this).animate({opacity:.7}, 200);
@@ -10,9 +14,8 @@ $(document).ready(function(){
 		$(this).animate({opacity:1}, 200);
 
 	});
-	$('.botonVerPerritos').css('cursor', 'pointer').hover(function(){
-		
-                
+	$('.botonVerPerritos,#botonModificar,#botonBorrar').css('cursor', 'pointer').hover(function(){
+          
 	}, function(){
 		
 
@@ -23,7 +26,19 @@ $("#divCentros").on("click", "tr.centros", function(){
     
 });
 
+        var $rows;
 	mostrarCentros();
+
+        
+        $('#search').keyup(function() {
+            
+            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+            $rows.show().filter(function() {
+                var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                return !~text.indexOf(val);
+            }).hide();
+        });
         
         function mostrarCentros(){
 
@@ -34,19 +49,21 @@ $("#divCentros").on("click", "tr.centros", function(){
                             
                             var centros=JSON.parse(res);
                             
-                           var tabla="<table class='highlight'>";
+                           var tabla="<table id='tablaCentros' class='highlight'>";
                             tabla +="<thead>";
                             tabla += "<th data-field='id'>Centros</th>";
                             tabla +="</thead>";
                         
                                 for(var i = 0; i < centros.length; i++) {
-                                    var centro = centros[i];
                                     
                                     tabla +='<tr id="'+centros[i][6]+'"class="centros">';
                                     tabla +='<td>'+centros[i][0]+'</td>';
+                                    tabla +='<td>'+centros[i][1]+'</td>';
+                                    tabla +='</tr>';
                                 }
                             tabla+="</table>";
                             $("#divCentros").append(tabla);
+                            $rows= $('#tablaCentros tr');
 
                     });
 	}
@@ -54,7 +71,7 @@ $("#divCentros").on("click", "tr.centros", function(){
         function initialize() {
             var mapProp = {
                 center:myCenter,
-                zoom:5,
+                zoom:9,
                 mapTypeId:google.maps.MapTypeId.ROADMAP
             };
             var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
@@ -78,34 +95,45 @@ $("#divCentros").on("click", "tr.centros", function(){
               });
           
         }
+        var nombreCentro;
+        
         var centro="";
         var idCentro;
         var myCenter;
         var mapContent;
+        
         
         $("#divCentros").on("click", "tr.centros", function(){
                                       
 		$("#divResultado").css('opacity', '0');
                 
                 centro =$(this).attr('id');
-                
+                mostrarCentroEspecifico(centro);
+        });
+        function mostrarCentroEspecifico(centro){
 		if(centro!=""){
 			$.post("recursos/servicios/consultarCentro.php", {centro:centro},
 				function (res){
- 
+                                        $('#divRespuesta').show();
+                                        $('#googleMap').show();
+                                        if(tipo=="administrador"){
+                                            $('#botonBorrar').show();
+                                            $('#botonModificar').show();
+                                        }
                                         var centros=JSON.parse(res);
                                         
                                         $("#nombreC").html("Nombre: "+centros[0]);
                                         $("#direccionC").html("Direccion: "+centros[1]);
                                         $("#telefonoC").html("Telefono: "+centros[2]);
                                         $("#contactoC").html("Contacto: "+centros[3]);
-                                        $("#latitudC").html("Latitud: "+centros[4]);
-                                        $("#longitudC").html("Longitud: "+centros[5]);
+                                        /*$("#latitudC").html("Latitud: "+centros[4]);
+                                        $("#longitudC").html("Longitud: "+centros[5]);*/
                                         myCenter=new google.maps.LatLng(centros[4],centros[5]);                   
                                         mapContent="Telefono: "+centros[2];
                                         google.maps.event.addDomListener(window, 'load', initialize());
                                         
                                         idCentro = centros[6];
+                                        nombreCentro = centros[0];
                                         
 					//$("#divRespuesta").css('opacity', '1').html(centros[0]);
                                         
@@ -118,7 +146,7 @@ $("#divCentros").on("click", "tr.centros", function(){
 		}else{
 			$("#divRespuesta").css('opacity', '1').html("Incluya todos los datos");
 		}
-	});
+	}
         
         
 	$(".botonVerPerritos").click(function(){
@@ -165,7 +193,15 @@ $("#divCentros").on("click", "tr.centros", function(){
                                         tamano = perrito[3];
                                         $("#pesoP").html("Peso: "+perrito[5]);
                                         
-                                        $('.botonAdoptar').show();
+                                        if(tipo == "usuario"){
+                                            $.post('recursos/servicios/comprobarAdoptar.php', {}, function(data) {
+                                                if(data!=0){
+                                                    $('.botonAdoptar').show();    
+                                                }
+                                            });
+                                        }
+
+                                        
                                     }
                                 });        
 		}else{
@@ -187,7 +223,108 @@ $("#divCentros").on("click", "tr.centros", function(){
 			$("#divRespuesta").css('opacity', '1').html("Incluya todos los datos");
 		}
 	});
-    
+
+	$("#botonBorrar").click(function(){
+            $.post("recursos/servicios/eliminarCentro.php", {centro:centro},
+                function (res){
+                    if(res =="1"){
+                        $("#tablaCentros tr").remove();
+                        mostrarCentros();
+                        console.log("Centro eliminado");
+                        $("#divRespuesta").hide();
+                        $('#botonModificar').hide();
+                        $('#botonBorrar').hide();
+                        $('#googleMap').hide();
+                        $('.botonVerPerritos').hide();
+                    }
+                    else{
+                        console.log(res);
+                    }
+                });
+	});
+        
+	$("#botonModificar").click(function(){
+            mostrarLayerModificar(nombreCentro);
+        });
+        
+
+        function mostrarLayerModificar(nombreCentro){ 
+            document.getElementById('layerModificar').style.display="block";
+            document.getElementById('layerModificar').style.opacity="1";
+            document.getElementById('nombreCentroModificar').innerHTML="<h3>"+nombreCentro+"</h3>";
+            $.post("recursos/servicios/consultarCentro.php", {centro:centro},
+                function (res){
+                    var centros=JSON.parse(res);
+                    var con=document.getElementById("contacto");
+                            con.value=(centros[3]);
+                    var tel=document.getElementById("telefono");
+                            tel.value=(centros[2]);
+                    var dir=document.getElementById("direccion");
+                            dir.value=(centros[1]);
+        
+                });
+        }
+        
+	$(".botonEnviar").click(function(){
+                
+                    var contacto = $('#contacto').val();
+                    var telefono = $('#telefono').val();
+                    var direccion = $('#direccion').val();
+                    
+                    var geocoder1 = new google.maps.Geocoder();
+                    var latM;
+                    var lonM;
+
+                    geocoder1.geocode( { 'address': direccion}, function(results, status) {
+
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            latM = results[0].geometry.location.lat();
+                            lonM = results[0].geometry.location.lng();
+                            myCenter=new google.maps.LatLng(latM,lonM);                   
+                            google.maps.event.addDomListener(window, 'load', initialize());
+                        }
+                        modificar(contacto, telefono, direccion, latM, lonM);
+                    });
+                });
+        
+        function modificar(contacto, telefono,direccion,latitud,longitud){
+                    if(contacto!="" && telefono!="" &&direccion!=""){
+                            $.post("recursos/servicios/modificarCentro.php", {centro:centro,direccion:direccion,telefono:telefono,contacto:contacto, latitud:latitud, longitud:longitud},
+                                    function (res){
+
+                                            document.getElementById('layerModificar').style.display="none";
+                                            document.getElementById('layerModificar').style.opacity="0";
+                                            $("#tablaCentros tr").remove();
+                                            mostrarCentros();
+                                            $("#nombreC").html(" ");
+                                            $("#direccionC").html(" ");
+                                            $("#telefonoC").html(" ");
+                                            $("#contactoC").html(" ");
+                                            $("#latitudC").html(" ");
+                                            $("#longitudC").html(" ");
+                                            mostrarCentroEspecifico(centro);
+                                            
+                                    });
+                    }else{
+                            
+                    }    
+                
+	}
+
+        
+        
+	$("#cerrarModificar").click(function(){
+            document.getElementById('layerModificar').style.display="none";
+           document.getElementById('layerModificar').style.opacity="0";
+        });
+
+        
+        
+        
+//---------
+
+
+//---------
     
 });
 

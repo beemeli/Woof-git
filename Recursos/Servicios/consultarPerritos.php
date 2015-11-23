@@ -28,7 +28,7 @@
 	if ($result->num_rows > 0) {
             $perritos=array();
 		while($row = $result->fetch_assoc()) {
-                    $perrito =array($row["id_perrito"],$row["nombre"], $row["edad"],$row["raza"],$row["tamano"],$row["consideraciones"],$row["peso"]);
+                    $perrito =array($row["id_perrito"],$row["nombre"], $row["edad"],$row["raza"],$row["tamano"],$row["consideraciones"],$row["peso"],$row["imagen"]);
                     array_push($perritos, $perrito);
                 }
             echo json_encode($perritos);

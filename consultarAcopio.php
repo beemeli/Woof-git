@@ -4,9 +4,9 @@
     //$_SESSION['usuarioSesion'] = $_POST['usuarioSesion'];
  
     
-    if(empty($_SESSION['usuarioSesion'])) { // Recuerda usar corchetes.
-        header('Location: login.php');
-    }
+//    if(empty($_SESSION['usuarioSesion'])) { // Recuerda usar corchetes.
+//        header('Location: login.php');
+//    }
 ?>
 <!DOCTYPE html>
 <!--
@@ -46,11 +46,28 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/ct-navbar.css" type="text/css">
         <script src="http://maps.googleapis.com/maps/api/js"></script>
              
-        <script type="text/javascript" src="js/controllerConsultarAcopio.js"></script>
+        
         <script>
-            var test = '<?php echo $_SESSION['usuarioSesion'] ?>';
-            console.log("user-->"+test);
+            var test = '<?php 
+            if(!empty($_SESSION['usuarioSesion'])) {
+                echo $_SESSION['usuarioSesion'] ;
+            }
+            else{
+                echo"-";
+            }
+                    ?>';
+                        
+            var tipo = '<?php 
+            if(!empty($_SESSION['tipo'])) {
+                echo $_SESSION['tipo'] ;
+            }
+            else{
+                echo"-";
+            } 
+                    ?>';
+            
         </script>
+        <script type="text/javascript" src="js/controllerConsultarAcopio.js"></script>
     </head>
     <body>
       
@@ -126,6 +143,9 @@ and open the template in the editor.
        
         <div class ="main">
             <div class ="container">
+                <br/><br/>
+                <input type="text" id="search" placeholder="Buscar">
+
                 <div id="divCentros"></div>
 
                 <br/><br/>
@@ -135,15 +155,32 @@ and open the template in the editor.
                     <div id="responsableA"></div>
                     <div id="telefonoA"></div>
                     <div id="direccionA"></div>
-                    <div id="googleMap" style="width:500px;height:380px;"></div>
-                </div><br/>    
+                    <div id="googleMap" style="width:200px;height:200px;"></div>
+                </div><br/>  
+                <div id="botonModificar">Modificar </div><br/>
+                <div id="botonBorrar">Borrar </div>
+           
+                <div id="layerModificar">
+                    <h3 id ="nombreCentroModificar"></h3>
+                    <form>
+                        <div class="input-field col s12">
+                            <input id="responsable" name="responsable" type="text" class="validate" required>
+                        </div>
+
+                        <div class="input-field col s12 ">
+                            <input id="telefono" name="telefono" type="number" class="validate" required>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="direccion" name="direccion" type="text" class="validate" required>
+                        </div>       
+
+                        <div class="modificar">modificar</div>
+
+                    <br/>
+                    <div id="cerrarModificar">Cerrar</div>
+                </div>
             </div>        
         </div>
-        
-        
-        
-        
-      
      
     </body>
 </html>

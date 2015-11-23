@@ -39,7 +39,7 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <link rel="stylesheet" href="css/ct-navbar.css" type="text/css">
-        <script type="text/javascript" src="js/controllerPerrito.js"></script>
+       <!-- <script type="text/javascript" src="js/controllerPerrito.js"></script>-->
         
         <title>Registrar Perrito</title>
     </head>
@@ -119,7 +119,7 @@
               
 
               
-                          <form>
+                          <form action="recursos/servicios/RegistrarPerrito.php" method="post" enctype="multipart/form-data">
                 <div id="divRespuesta"></div>
 
                 <h1 class="text-center">Registrar Perrito </h1>
@@ -157,19 +157,21 @@
                 </div>
                 
                 <div class="input-field col s12 ">
-                    <input id="imageUpload" name="imageUpload" type="file" class="validate" required>
+                    <input name="imageUpload" type="file">
                     <label for="imageUpload">Foto del perrito</label>
                 </div>
 
                 <br><br>
+                              
+            <button class="btn waves-effect waves-light  blue lighten-3 botonEnviar">Enviar
+                <i class="material-icons right">send</i>
+            </button>
             </form>
               
               
               
      
-           <button class="btn waves-effect waves-light  blue lighten-3 botonEnviar">Enviar
-                <i class="material-icons right">send</i>
-            </button>
+          
            <div id="divRespuesta"></div>
           
         

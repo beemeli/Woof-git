@@ -31,11 +31,11 @@ class RegistrarCentro {
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "DELETE FROM centro_adopcion WHERE nombre='". $centro ."'";
+        $sql = "DELETE FROM centro_adopcion WHERE id_centro=". $centro ."";
         
         if($conexion->query($sql) === false){
                 //echo "error";
-                return "error";
+                return 0; //hay perritos en el centro
         }
         else{
             return 1;
@@ -46,8 +46,8 @@ class RegistrarCentro {
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "UPDATE centro_adopcion SET direccion='".$direccion."', telefono='".$telefono."', contacto='".$contacto."', latitud=".$latitud.", longitud=".$longitud." WHERE nombre='".$centro."'";
-
+        $sql = "UPDATE centro_adopcion SET direccion='".$direccion."', telefono='".$telefono."', contacto='".$contacto."', latitud=".$latitud.", longitud=".$longitud." WHERE id_centro='".$centro."'";
+       // $sql = "UPDATE centro_adopcion SET direccion='".$direccion."', telefono='".$telefono."', contacto='".$contacto."' WHERE id_centro=".$centro."";
         if($conexion->query($sql) === false){
                 //echo "error";
                 return "error";
