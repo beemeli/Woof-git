@@ -19,7 +19,7 @@ class registrarPerrito {
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
-        $sql = "insert into perrito(nombre,edad,raza,tamano,consideraciones,peso) values('". $nombre ."',". $edad.",'".$raza."','".$tamano."','".$consideraciones."', ".$peso.")";
+        $sql = "insert into perrito(nombre,edad,raza,tamano,consideraciones,peso,adoptado) values('". $nombre ."',". $edad.",'".$raza."','".$tamano."','".$consideraciones."', ".$peso.",'no')";
         if($conexion->query($sql) === false){
                 //echo "error";
                 return "error";
