@@ -15,7 +15,22 @@ $(document).ready(function(){
         $(this).css('cursor', 'pointer');
     });
 
-    mostrarCentros();
+        var $rows;
+	mostrarCentros();
+
+        
+        $('#search').keyup(function() {
+            
+            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+            $rows.show().filter(function() {
+                var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                return !~text.indexOf(val);
+            }).hide();
+        });
+        
+        
+    
 
     function mostrarCentros(){
         $.post("recursos/servicios/consultarAcopios.php", {}, 
@@ -28,9 +43,13 @@ $(document).ready(function(){
                 for(var i = 0; i < centros.length; i++) {
                     tabla +='<tr id="'+centros[i][6]+'"class="centros">';
                     tabla +='<td>'+centros[i][0]+'</td>';
+                    tabla +='<td>'+centros[i][5]+'</td>';
+                    tabla +='</tr>'
                 }
             tabla+="</table>";
             $("#divCentros").append(tabla);
+            $rows= $('#tablaCentros tr');
+
         });
     }
 

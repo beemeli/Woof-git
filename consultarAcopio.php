@@ -143,6 +143,9 @@ and open the template in the editor.
        
         <div class ="main">
             <div class ="container">
+                <br/><br/>
+                <input type="text" id="search" placeholder="Buscar">
+
                 <div id="divCentros"></div>
 
                 <br/><br/>
