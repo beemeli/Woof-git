@@ -4,9 +4,9 @@
     //$_SESSION['usuarioSesion'] = $_POST['usuarioSesion'];
  
     
-    if(empty($_SESSION['usuarioSesion'])) { // Recuerda usar corchetes.
-        header('Location: login.php');
-    }
+//    if(empty($_SESSION['usuarioSesion'])) { // Recuerda usar corchetes.
+//        header('Location: login.php');
+//    }
 ?>
 <!DOCTYPE html>
 <!--
@@ -48,8 +48,23 @@ and open the template in the editor.
              
         
         <script>
-            var test = '<?php echo $_SESSION['usuarioSesion'] ?>';
-            var tipo = '<?php echo $_SESSION['tipo'] ?>';
+            var test = '<?php 
+            if(!empty($_SESSION['usuarioSesion'])) {
+                echo $_SESSION['usuarioSesion'] ;
+            }
+            else{
+                echo"-";
+            }
+                    ?>';
+                        
+            var tipo = '<?php 
+            if(!empty($_SESSION['tipo'])) {
+                echo $_SESSION['tipo'] ;
+            }
+            else{
+                echo"-";
+            } 
+                    ?>';
             
         </script>
         <script type="text/javascript" src="js/controllerConsultarAcopio.js"></script>
