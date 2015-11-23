@@ -192,6 +192,10 @@ $("#divCentros").on("click", "tr.centros", function(){
                                         personalidad = perrito[4];
                                         tamano = perrito[3];
                                         $("#pesoP").html("Peso: "+perrito[5]);
+                            $("#imagenP").html('<img src="uploads/'+perrito[6]+'"/>');
+                                        
+                                                    //$("#user-result").html('<img src="images/loading.gif" />');
+
                                         
                                         if(tipo == "usuario"){
                                             $.post('recursos/servicios/comprobarAdoptar.php', {}, function(data) {
