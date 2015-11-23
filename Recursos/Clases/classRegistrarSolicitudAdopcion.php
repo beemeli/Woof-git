@@ -104,5 +104,22 @@ class registrarSolicitudAdopcion {
             return $result;            
         }
     }    
+    
+    function actualizarPerrito($id_perrito){
+        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        or die("Fallo en el establecimiento de la conexion");
+
+        $sql = "UPDATE perrito SET adoptado='yes' WHERE id_perrito=".$id_perrito."";
+       // $results = mysqli_query($conexion, $sql);
+        $result = $conexion->query($sql);
+        
+        if($conexion->query($sql) === false){
+                return "error";
+        }
+        else{
+            //echo "Si los busca";
+            return $sql;            
+        }
+    }
 }
 

@@ -54,8 +54,10 @@ $(document).ready(function(){
 		
 	});
 //--
+        var id_perrito;
+        var id_usuario;
         function mostrarSolicitudEspecifica(solicitud){
-                console.log("sol :" + solicitud);
+                
                 
 		if(solicitud!==""){
 			$.post("recursos/servicios/consultarSolicitudEspecifica.php", {solicitud:solicitud},
@@ -72,6 +74,8 @@ $(document).ready(function(){
                                             $("#estatus").html("Estatus: "+solicitudes[i][5]);
                                             $("#tamano").html("Tamaño de la mascota : "+solicitudes[i][7]);
                                             $("#personalidad").html("Personalida: "+solicitudes[i][8]);
+                                            id_perrito=solicitudes[i][2];
+                                            id_usuario=solicitudes[i][1];
                                         }   
                                         $('.boton').show();
                                 });        
@@ -85,12 +89,19 @@ $(document).ready(function(){
                 var accion =$(this).attr('id');
                 
 		if(accion!==""){
-			$.post("recursos/servicios/accionSolicitudAdopcion.php", {accion:accion},
-				function (){
+			$.post("recursos/servicios/accionSolicitudAdopcion.php", {accion:accion, id_usuario:id_usuario},
+				function (res){
+                                    console.log(res);
                                     $("#tablaSolicitudes tr").remove();
                                         mostrarSolicitudes();
                                         mostrarSolicitudEspecifica(solicitud);   
-                                });        
+                                });  
+                        if(accion =="aceptar"){
+                            $.post("recursos/servicios/accionSolicitudAdopcionPerrito.php", {id_perrito:id_perrito},
+				function (res){
+                                    console.log(res);  
+                                });    
+                        }
 		}else{
 			$("#divRespuesta").css('opacity', '1').html("No hay registros");
 		}

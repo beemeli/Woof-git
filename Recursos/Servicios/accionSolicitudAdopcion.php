@@ -3,13 +3,13 @@
 	ini_set('display_errors',1);
 	error_reporting(E_ALL);
 
-   if(isset($_POST['accion']) ){
+   if(isset($_POST['accion']) && isset($_POST['id_usuario']) ){
 
 	require_once('../Clases/classRegistrarSolicitudAdopcion.php');
 
        
         session_start();
-	$usuario =  $_SESSION['usuarioSesion'];
+	$usuario= $_POST['id_usuario'];
 	
         $estatus;
         $observaciones;
@@ -24,7 +24,7 @@
             $observaciones = "La solicitud fue denegada el "; 
         }
         $observaciones = $observaciones.$fecha;
-;
+
         
         //instancia del DAO
         $admin = new registrarSolicitudAdopcion();
@@ -32,7 +32,7 @@
         
         $resultado = $admin->cambioSolicitud($usuario,$estatus,$observaciones);
 
-
+echo $resultado;
 
 
     }
