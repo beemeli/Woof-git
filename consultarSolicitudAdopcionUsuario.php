@@ -3,8 +3,7 @@
  
     //$_SESSION['usuarioSesion'] = $_POST['usuarioSesion'];
  
-    
-    if(empty($_SESSION['usuarioSesion'])) { // Recuerda usar corchetes.
+   if(($_SESSION['tipo'])!="usuario") { // Recuerda usar corchetes.
         header('Location: login.php');
     }
 ?>

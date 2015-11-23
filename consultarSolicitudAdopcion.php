@@ -2,11 +2,9 @@
     session_start();
  
     //$_SESSION['usuarioSesion'] = $_POST['usuarioSesion'];
- 
-    
-    if(empty($_SESSION['usuarioSesion'])) { // Recuerda usar corchetes.
-        header('Location: login.php');
-    }
+    if(($_SESSION['tipo'])!="administrador") { // Recuerda usar corchetes.
+          header('Location: login.php');
+      }
 ?>
 <!DOCTYPE html>
 <!--
