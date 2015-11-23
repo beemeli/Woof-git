@@ -209,29 +209,32 @@ if(isset($_SESSION['usuarioSesion'])){
 
 
             <div class="container" id="contenido">
-
-
+                Usuario no registrado: <br/>
+                <a href="registrarUsuario.php">Registrar Usuario</a><br/>
+                <br/>
+                Admin, usuario, usuario NO registrado:<br/>
+                <a href="consultarAcopio.php">Consultar Centros de Acopio</a><br/>
+                <a href="consultarCentro.php">Consultar Centros</a><br/>
+                <br/>
+                Admin y usuario <br/>
+                <a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a><br/>
+                <br/>
                 Usuario: <br/>
                 <a href="perfil.php">Perfil</a><br/>
-                <a href="registrarUsuario.php">Registrar Usuario</a><br/>
                 <a href="registrarSolicitudAdopcion.php">Solicitar Adopción </a><br/>
-                
-                <a href="consultarCentro.php">Consultar Centros</a><br/>
-                <a href="consultarAcopio.php">Consultar Centros de Acopio</a><br/>
-                <a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a><br/>
                 <a href="consultarSolicitudAdopcionUsuario.php">Consultar solicitud usuario</a><br/>
                 
-                
+                <br/>
                 Admin:<br/>
                 <a href="consultarSolicitudAdopcion.php">Consultar Solicitud Adopcion</a><br/>
                 <a href="registarCentro.php">Registrar Centro</a><br/>
                 <a href="registrarAcopio.php">Registrar Centro de Acopio</a><br/>
                 <a href="registrarPerrito.php">Registrar Perrito</a><br/>
-                <a href="consultarCentroA.php">Consultar Centros Admin</a><br/>
-                <a href="consultarCentro.php">Consultar Centros</a><br/>
+                <a href="consultarCentroA.php">Consultar Centros Admin ****</a><br/>
+                <a href="consultarCentro.php">Consultar Centros*****</a><br/>
                 <a href="GenerarReportes.php">Generar Reportes</a><br/>
                 <a href="MascotaVirtual.php">Mascota Virtual</a><br/>
-                <a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a><br/>
+
                 
                 
                 

@@ -116,9 +116,10 @@ $("#divCentros").on("click", "tr.centros", function(){
 				function (res){
                                         $('#divRespuesta').show();
                                         $('#googleMap').show();
-                                        $('#botonBorrar').show();
-                                        $('#botonModificar').show();
-                                        
+                                        if(tipo=="administrador"){
+                                            $('#botonBorrar').show();
+                                            $('#botonModificar').show();
+                                        }
                                         var centros=JSON.parse(res);
                                         
                                         $("#nombreC").html("Nombre: "+centros[0]);
@@ -192,12 +193,13 @@ $("#divCentros").on("click", "tr.centros", function(){
                                         tamano = perrito[3];
                                         $("#pesoP").html("Peso: "+perrito[5]);
                                         
-
-                                        $.post('recursos/servicios/comprobarAdoptar.php', {}, function(data) {
-                                            if(data!=0){
-                                                $('.botonAdoptar').show();    
-                                            }
-                                        });
+                                        if(tipo == "usuario"){
+                                            $.post('recursos/servicios/comprobarAdoptar.php', {}, function(data) {
+                                                if(data!=0){
+                                                    $('.botonAdoptar').show();    
+                                                }
+                                            });
+                                        }
 
                                         
                                     }
@@ -226,7 +228,14 @@ $("#divCentros").on("click", "tr.centros", function(){
             $.post("recursos/servicios/eliminarCentro.php", {centro:centro},
                 function (res){
                     if(res =="1"){
+                        $("#tablaCentros tr").remove();
+                        mostrarCentros();
                         console.log("Centro eliminado");
+                        $("#divRespuesta").hide();
+                        $('#botonModificar').hide();
+                        $('#botonBorrar').hide();
+                        $('#googleMap').hide();
+                        $('.botonVerPerritos').hide();
                     }
                     else{
                         console.log(res);
