@@ -30,12 +30,19 @@ function inicio() {
     window.history.forward(1);
     animacion = setInterval('pintarImagen(sentado)', 300);
 
+    //if (localStorage["ultima_sesion"] === "undefined") {
+
+
     if (localStorage["ultima_sesion"] === "" || localStorage["ultima_sesion"] === "undefined") {
+<<<<<<< HEAD
 >>>>>>> origin/master
+=======
+
+>>>>>>> 1b2a800fda67f475464deb2d00fccbf7910c3df4
         infoMascota();
-    } else {
-        mostrarMascota();
-    }
+    //} else {
+    //    mostrarMascota();
+    //}
     seccion_actual = "alimento";
 }
 

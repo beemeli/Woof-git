@@ -143,6 +143,7 @@
                     <label for="raza">Raza</label>
                 </div>
 
+<<<<<<< HEAD
 
                 <div class="input-field col s12">
                     <select id="tamano" name="tamano">
@@ -154,6 +155,10 @@
                     </select>
                     <label>Selecciona el tamaño</label>
                 </div>
+=======
+              
+                
+>>>>>>> 1b2a800fda67f475464deb2d00fccbf7910c3df4
                               
                 
                 <div class="input-field col s12 ">
@@ -166,10 +171,24 @@
                     <label for="peso">Peso</label>
                 </div>
                 
-                <div class="input-field col s12 ">
+                              
+    
+           
+                  <div class="file-field input-field">            
+                              
+                <div class="btn">
+        <span>File</span>
                     <input name="imageUpload" type="file">
-                    <label for="imageUpload">Foto del perrito</label>
-                </div>
+                     </div>
+                      <div class="file-path-wrapper">
+        <input class="file-path " type="text">
+      </div>
+                   
+                      
+                        </div>
+                              
+                               <label for="imageUpload">Foto del perrito</label>
+
 
                 <br><br>
                               
