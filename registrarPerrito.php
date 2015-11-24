@@ -179,16 +179,16 @@
 
                   <div class="file-field input-field">            
                               
-                <div class="btn">
-        <span>File</span>
-                    <input name="imageUpload" type="file">
-                     </div>
-                      <div class="file-path-wrapper">
-        <input class="file-path " type="text">
-      </div>
-                   
-                      
+                        <div class="btn">
+                            <span>File</span>
+                            <input name="imageUpload" type="file" class="validate" required="">
                         </div>
+                        <div class="file-path-wrapper">
+                          <input class="file-path " type="text">
+                        </div>
+
+
+                    </div>
                               
                                <label for="imageUpload">Foto del perrito</label>
 

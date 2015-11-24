@@ -15,13 +15,13 @@
 
 
 class registrarPerrito {
-    function altaPerrito($nombre, $edad,$raza,$tamano,$consideraciones,$peso,$imagen){
+    function altaPerrito($nombre, $edad,$raza,$tamano,$consideraciones,$peso,$imagen,$idCentro){
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
         
 
 
-        $sql = "insert into perrito(nombre,edad,raza,tamano,consideraciones,peso,imagen) values('". $nombre ."',". $edad.",'".$raza."','".$tamano."','".$consideraciones."', ".$peso.", '".$imagen."')";
+        $sql = "insert into perrito(nombre,edad,raza,tamano,consideraciones,peso,imagen,id_centro) values('". $nombre ."',". $edad.",'".$raza."','".$tamano."','".$consideraciones."', ".$peso.", '".$imagen."',". $idCentro." )";
         
 
         if($conexion->query($sql) === false){
