@@ -10,13 +10,13 @@
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<<<<<<< HEAD
+
     <script src="js/ct-navbar.js"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <script src="js/controller"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="js/controller.js"></script>
-=======
+
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         
         <script src="js/ct-navbar.js"></script>
@@ -24,7 +24,7 @@
     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script type="text/javascript" src="js/controller.js"></script>
->>>>>>> origin/master
+
 
 
     <!--Import Google Icon Font-->
