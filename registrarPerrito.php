@@ -144,15 +144,17 @@
                     <input id="tamano" name="tamano" type="text" class="validate" required>
                     <label for="tamano">Tamaño</label>
                 </div>
-                
-                    <select id="tamano">
-                        <option value="mini">Mini</option>
-                        <option value="chico">Chico</option>
-                        <option value="mediano">Mediano</option>
-                        <option value="grande">Grande</option>
 
+                <div class="input-field col s12">
+                    <select id="tamano">
+                        <option value="" disabled selected>Selecciona el tamaño</option>
+                        <option value="Mini">Mini</option>
+                        <option value="Chico">Chico</option>
+                        <option value="Mediano">Mediano</option>
+                        <option value="Grande">Grande</option>
                     </select>
-                
+                    <label>Selecciona el tamaño</label>
+                </div>
                               
                 
                 <div class="input-field col s12 ">
