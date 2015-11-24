@@ -252,6 +252,8 @@ if(isset($_SESSION['usuarioSesion'])){
                                             </ul>
                                         </li>
                                 
+                                
+                                
                                              <li class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Centros de Adopción <b class="caret"></b></p>
                                     </a>
@@ -279,29 +281,31 @@ if(isset($_SESSION['usuarioSesion'])){
                                            
                                             <li><a href="GenerarReportes.php">Generar Reportes</a>
                         </li>
+                        
+                        <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
                                            
-                                       
-
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-
-                                                <p>
-                                                    <?php
+                                                <?php
 if(isset($_SESSION['usuarioSesion'])){
     echo "Hola"." ".ucfirst("{$_SESSION['usuarioSesion']}");
 }
-?> <b class="caret"></b></p>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="perfil.php">Ver Perfil</a></li>
-                                                <li><a href="modificarPerfil.php">Modificar Perfil</a></li>
+?> <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="perfil.php">Ver Perfil</a></li>
+                                            <li><a href="modificarPerfil.php">Modificar Perfil</a></li>
 
-                                                <li class="divider"></li>
-                                                <li><a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a></li>
 
 
-                                            </ul>
-                                        </li>
+                                        </ul>
+                                    </li>
+                                           
+                                       
+
+
                                     </ul>
 
 
