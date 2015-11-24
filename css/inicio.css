@@ -178,3 +178,10 @@ body{
     left: 67%;
     top: -200px;
 }
+
+#regresar{
+    background-color: blue;
+    position: absolute;
+    left: -20px;
+    height: 40px;
+}
