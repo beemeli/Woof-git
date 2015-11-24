@@ -98,11 +98,8 @@ body{
 }
 
 #forma{
-	margin: 0 auto;
-	background-color: #fdf8f5;
-	height: 450px;
-	width: 90%;
-	border: solid #6fd8e0;
+    position: relative;
+    top: 100px;
 }
 
 #body {
@@ -115,6 +112,11 @@ body{
 }
 
 a:link{
+    text-decoration:none;
+    color: black;
+}
+
+a :visited { 
     text-decoration:none;
     color: black;
 }

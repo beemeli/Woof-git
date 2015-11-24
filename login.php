@@ -2,10 +2,6 @@
 
 <?php
     session_start();
- 
-    //$_SESSION['usuarioSesion'] = $_POST['usuarioSesion'];
- 
-    
     if(isset ($_SESSION['usuarioSesion'])) { // Recuerda usar corchetes.
         header('Location: index.php');
     }
