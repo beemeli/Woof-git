@@ -14,7 +14,7 @@
 class RegistrarCentro {
 
     function altaCentro($centro, $direccion, $telefono, $contacto, $latitud, $longitud){
-        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "insert into centro_adopcion(nombre, direccion, telefono, contacto, latitud, longitud) values('". $centro ."','". $direccion."','".$telefono."','".$contacto."',".$latitud.",".$longitud.")";
@@ -28,7 +28,7 @@ class RegistrarCentro {
         }
     }
     function bajaCentro($centro){
-        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "DELETE FROM centro_adopcion WHERE id_centro=". $centro ."";
@@ -43,7 +43,7 @@ class RegistrarCentro {
     }
     
     function cambioCentro($centro, $direccion, $telefono, $contacto, $latitud, $longitud){
-        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "UPDATE centro_adopcion SET direccion='".$direccion."', telefono='".$telefono."', contacto='".$contacto."', latitud=".$latitud.", longitud=".$longitud." WHERE id_centro='".$centro."'";
@@ -58,7 +58,7 @@ class RegistrarCentro {
     }
     
     function consultaCentro($centro){
-        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "SELECT * FROM centro_adopcion WHERE id_centro='".$centro."'";
@@ -74,7 +74,7 @@ class RegistrarCentro {
         }
     }
     function consultaTodosLosCentros(){
-        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "SELECT * FROM centro_adopcion";

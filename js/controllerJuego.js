@@ -14,7 +14,6 @@ var higiene = 0;
 var alimentacion = 0;
 var diversion = 0;
 
-
 var nhambre;
 var juego;
 
@@ -23,9 +22,16 @@ var seccion_actual = "";
 $(document).ready(inicio);
 
 function inicio() {
+<<<<<<< HEAD
 
     animacion = setInterval('pintarImagen(sentado)', 300);
     if (localStorage["ultima_sesion"] === 'undefined') {
+=======
+    window.history.forward(1);
+    animacion = setInterval('pintarImagen(sentado)', 300);
+
+    if (localStorage["ultima_sesion"] === "" || localStorage["ultima_sesion"] === "undefined") {
+>>>>>>> origin/master
         infoMascota();
     } else {
         mostrarMascota();
@@ -105,6 +111,7 @@ function infoMascota() {
                 diversion = mascota[0][4];
                 salud = mascota[0][5];
 
+
                 var f = new Date();
                 var cad = f.getHours() + ":" + f.getMinutes() + ":" + f.getSeconds();
 
@@ -112,7 +119,6 @@ function infoMascota() {
                 localStorage["nombre_mascota"] = nombre_mascota;
                 localStorage["higiene"] = higiene;
                 localStorage["diversion"] = diversion;
-                alert("Esta es la diversion de la base" + diversion);
                 localStorage["salud"] = salud;
                 localStorage["ultima_sesion"] = cad;
                 localStorage["alimentacion"] = alimentacion;
@@ -305,4 +311,10 @@ function comida() {
     $("#comer").attr('onclick','comiendo()');
     actualizarIndicadores('alimento',alimentacion);
     seccion_actual = "alimento";
+}
+
+
+
+function regresar(){
+     window.location='Index.php';
 }

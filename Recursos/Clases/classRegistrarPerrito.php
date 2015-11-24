@@ -15,7 +15,6 @@
 
 
 class registrarPerrito {
-    
     function altaPerrito($nombre, $edad,$raza,$tamano,$consideraciones,$peso,$imagen){
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
@@ -36,7 +35,7 @@ class registrarPerrito {
 
     
     function bajaPerrito($id_perrito){
-        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "DELETE FROM perrito WHERE id_perrito='". $id_perrito ."'";
@@ -50,7 +49,7 @@ class registrarPerrito {
     }
     
     function cambioPerrito($nombre,$consideraciones,$peso){
-        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "UPDATE perrito SET nombre='".$nombre."', consideraciones='".$consideraciones."', peso='".$peso."', imagen='".$imagen."'";
@@ -64,7 +63,7 @@ class registrarPerrito {
     }
     
     function consultaPerrito($id_perrito){
-        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "SELECT * FROM perrito WHERE id_perrito='".$id_perrito."'";
@@ -95,7 +94,7 @@ class registrarPerrito {
         }
     }
     function consultaPerritoCentro($idCentro){
-        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "SELECT * FROM perrito WHERE id_centro=".$idCentro." and adoptado='no'";

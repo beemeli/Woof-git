@@ -3,7 +3,7 @@ class generarReporte {
     
 
     function tipoUno(){
-        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "SELECT YEAR(fecha) Anio,MONTH(fecha) Mes,COUNT(*) Registros
