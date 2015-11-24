@@ -40,12 +40,16 @@
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <link rel="stylesheet" href="css/ct-navbar.css" type="text/css">
        <!-- <script type="text/javascript" src="js/controllerPerrito.js"></script>-->
+        <script type="text/javascript" src="js/controllerConsultarCentrosPerrito.js"></script> 
+        
+       
         
         <title>Registrar Perrito</title>
     </head>
     <body>
         <script>$(document).ready(function() {
             $('select').material_select();
+            
         });</script>
             <div id="navbar-full">
             <div id="navbar">
@@ -155,7 +159,7 @@
                     </select>
                     <label>Selecciona el tamaño</label>
                 </div>
-                              
+                
                 
                 <div class="input-field col s12 ">
                     <input id="consideraciones" name="consideraciones" type="text" class="validate" required>
@@ -167,9 +171,12 @@
                     <label for="peso">Peso</label>
                 </div>
                 
-                              
+
+                <div id="selectCentrosDiv"> 
+   
+                </div>                              
     
-           
+
                   <div class="file-field input-field">            
                               
                 <div class="btn">
