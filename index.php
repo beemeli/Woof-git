@@ -215,6 +215,7 @@ if(isset($_SESSION['usuarioSesion'])){
                 Admin, usuario, usuario NO registrado:<br/>
                 <a href="consultarAcopio.php">Consultar Centros de Acopio</a><br/>
                 <a href="consultarCentro.php">Consultar Centros</a><br/>
+                <a href="inicio.php">Ver perritos por tamaño **** (ver las imágenes en un carousel o algo así cool y que cuando  haya hover, aparezca encima de la imagen la info del perrito (o algo así))</a><br
                 <br/>
                 Admin y usuario <br/>
                 <a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a><br/>
