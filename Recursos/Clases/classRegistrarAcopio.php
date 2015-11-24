@@ -4,7 +4,7 @@
 class RegistrarAcopio {
 
     function altaAcopio($nombre, $responsable, $telefono, $latitud, $longitud,$direccion){
-        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "insert into acopio(nombre, responsable, telefono, latitud, longitud,direccion) values('". $nombre."','". $responsable."','".$telefono."',".$latitud.",".$longitud.",'".$direccion."')";

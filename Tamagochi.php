@@ -18,12 +18,16 @@
         <script src="js/controllerJuego.js"></script>
         <script src="js/durmiendo.js"></script>
          <script>
+            window.history.forward(1);
             var test = '<?php echo $_SESSION['usuarioSesion'] ?>';
             console.log("user-->"+test);
         </script>
 <head>
 <body>
 	<div id="presentacion">
+            <div id="regreso">
+                <label id="regresar" class="mensaje" onclick="regresar()"> <=Regresar </label>
+            </div>
             <img id="logo" src="images/tamagochi/wooficon.png" alt="" /><br/>
 		Woof a Friend.
 	</div>

@@ -13,7 +13,7 @@
  */
 class registrarPersona {
     function altaPersona($usuario, $password, $edad,$correo){
-        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "insert into visitante(usuario, password, edad, correo) values('". $usuario ."','". $password."',".$edad.",'".$correo."')";
@@ -27,7 +27,7 @@ class registrarPersona {
     }
 
     function bajaPersona($usuario){
-        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "DELETE FROM VISITANTE WHERE usuario='". $usuario ."'";
@@ -41,7 +41,7 @@ class registrarPersona {
     }
     
     function cambioPersona($usuario, $password,$correo){
-        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "UPDATE VISITANTE SET password='".$password."', correo='".$correo."' WHERE usuario='".$usuario."'";
@@ -57,7 +57,7 @@ class registrarPersona {
     }
 
     function consultarPersona($usuario){
-        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "SELECT * FROM visitante WHERE usuario='".$usuario."'";

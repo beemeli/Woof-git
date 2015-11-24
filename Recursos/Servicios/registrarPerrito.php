@@ -8,7 +8,7 @@
 
 	require_once('../Clases/classRegistrarPerrito.php');
     
-    $target_dir='/Applications/MAMP/htdocs/Woof-git/uploads/';
+    $target_dir='C:/wamp/www/Woof git/Woof-git/uploads/';
     
     $target_file = $target_dir . basename($_FILES["imageUpload"]["name"]);
     //$uploadOk = 1;
@@ -34,11 +34,13 @@
     $consideraciones = $_POST['consideraciones'];
     $peso = $_POST['peso'];
     //$imagen = $_POST['imagen'];
+
       $target_nombre = basename($_FILES["imageUpload"]["name"]);   
 
         //instancia del DAO
         $admin = new registrarPerrito();
         //Le enviamos el parámetro a guardar. Idealmente, en un objeto de negocio para no pasar parámetros sueltos
+
 
         $resultado = $admin->altaPerrito($nombre,$edad,$raza,$tamano,$consideraciones,$peso,$target_nombre);
 
