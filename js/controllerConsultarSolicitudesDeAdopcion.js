@@ -22,7 +22,7 @@ $(document).ready(function(){
             }).hide();
         });
         
-        
+        var idSol;
         function mostrarSolicitudes(){
                     $.post("recursos/servicios/consultarSolicitud.php", {},
                             function (res){
@@ -32,6 +32,7 @@ $(document).ready(function(){
                             
                            var tabla="<table id ='tablaSolicitudes'>";
                                 for(var i = 0; i < solicitudes.length; i++) {
+                                    
                                     var centro = solicitudes[i];
                                     tabla +='<tr id="'+solicitudes[i][0]+'"class="solicitudes">';
                                     tabla +='<td>'+solicitudes[i][0]+'</td>';
@@ -89,7 +90,7 @@ $(document).ready(function(){
                 var accion =$(this).attr('id');
                 
 		if(accion!==""){
-			$.post("recursos/servicios/accionSolicitudAdopcion.php", {accion:accion, id_usuario:id_usuario},
+			$.post("recursos/servicios/accionSolicitudAdopcion.php", {solicitud:solicitud, accion:accion, id_usuario:id_usuario},
 				function (res){
                                     console.log(res);
                                     $("#tablaSolicitudes tr").remove();
