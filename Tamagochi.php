@@ -11,6 +11,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+     <meta charset="utf-8">
 	<title> Woof a friend, aprende a cuidar a un amigo </title>
 	<link rel="stylesheet" type ="text/css" href="css/inicio.css">
 	<link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
