@@ -338,7 +338,7 @@ if(isset($_SESSION['usuarioSesion'])){
                 <?php
 } 
 ?>
-<<<<<<< HEAD
+
         
  <!-- end menu -->
         
@@ -406,8 +406,7 @@ if(isset($_SESSION['usuarioSesion'])){
                             </div>
                         </div>
                     </div>
-=======
->>>>>>> 1b2a800fda67f475464deb2d00fccbf7910c3df4
+
 
                     <!-- end menu -->
 
