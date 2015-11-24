@@ -142,14 +142,21 @@ and open the template in the editor.
         <div class ="container">
         <br/><br/>
             
+        <div class="input-field col s12">
+          <input id="search" type="search" required>
+          <label for="search"><i class="material-icons">search</i>Buscar</label>
+        </div>
+            
+             
+            
            
-        <input type="text" id="search" placeholder="Buscar">
+        
         <div id="divCentros"></div>
         <br/><br/>
 
-        <div id="divRespuesta" >               
+        <div id="divRespuesta"  >               
             <div class="row">
-                <div class="col s12 m6">
+                <div class="col s6 offset-s3 m6 offset-m3">
                     <div class="card blue-grey darken-1" >
                         <div class="card-content white-text">
                             <span class="card-title"><div id="nombreC"></div></span>
@@ -160,10 +167,10 @@ and open the template in the editor.
                             <div id="longitudC"></div></p>-->
                         </div>
                     </div>
-                </div>
+                
           </div>
         </div>
-        <div id="googleMap" style="width:200px;height:200px;"></div>
+        <div id="googleMap" style="width:300px;height:300px;  margin:0 auto"></div>
         <br/>
 
         <br/>
@@ -171,9 +178,13 @@ and open the template in the editor.
         <div id="botonBorrar">Borrar </div>
            
         <br/>
-        <div class="botonVerPerritos">
-            Clic para ver perritos
-        </div>
+            
+    <button class="btn waves-effect waves-light  blue lighten-3  botonVerPerritos">Ver Perritos
+                <i class="material-icons right">send</i>
+            </button>
+            
+            
+        
         <br/>
         <div id="divPerritos"></div>
         <br/><br/>
