@@ -373,7 +373,7 @@ if(isset($_SESSION['usuarioSesion'])){
                 <br>               
                 
                 <div class="input-field col s12 ">
-                    <input id="usuario" name="usuario" type="text" class="validate" required><!--<span id="user-result"></span>-->
+                    <input id="usuario" name="usuario" type="text" class="validate" required><span id="user-result"></span>
                     <label for="usuario">Usuario</label>
                 </div>
 

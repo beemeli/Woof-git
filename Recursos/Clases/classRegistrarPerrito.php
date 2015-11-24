@@ -21,7 +21,7 @@ class registrarPerrito {
         
 
 
-        $sql = "insert into perrito(nombre,edad,raza,tamano,consideraciones,peso,imagen,id_centro) values('". $nombre ."',". $edad.",'".$raza."','".$tamano."','".$consideraciones."', ".$peso.", '".$imagen."',". $idCentro." )";
+        $sql = "insert into perrito(nombre,edad,raza,tamano,consideraciones,peso,imagen,id_centro,adoptado) values('". $nombre ."',". $edad.",'".$raza."','".$tamano."','".$consideraciones."', ".$peso.", '".$imagen."',". $idCentro.",'no' )";
         
 
         if($conexion->query($sql) === false){

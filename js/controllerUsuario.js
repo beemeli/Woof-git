@@ -12,18 +12,18 @@ $(document).ready(function(){
         }); 
 
         function check_username_ajax(username){
-            //$("#user-result").html('<img src="images/loading.gif" />');
+            $("#user-result").html('<img src="images/loading.gif" />');
             $.post('recursos/servicios/username-checker.php', {'username':username}, function(data) {
                 if(data==0){
                     //ya existe el usuario  
-                $("#usuario").removeClass('valid');
-                $("#usuario").addClass('invalid');
-              //      $("#user-result").html('<img src="images/notAvailable.png" />');                    
+            //    $("#usuario").removeClass('valid');
+              //  $("#usuario").addClass('invalid');
+                    $("#user-result").html('<img src="images/notAvailable.png" />');                    
                 }else if(data==1){
                     //no existe el usuario
                     //$("#usuario").removeClass('invalid');
-                    $("#usuario").addClass('valid');
-                //    $("#user-result").html('<img src="images/available.png" />');
+              //      $("#usuario").addClass('valid');
+                    $("#user-result").html('<img src="images/available.png" />');
                 }
             });
         }
