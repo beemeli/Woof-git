@@ -155,7 +155,10 @@ $("#divCentros").on("click", "tr.centros", function(){
                         function (res){
                             var perritos=JSON.parse(res);
                             
-                           var tabla="<table>";
+                           var tabla="<table class='highlight'>";
+                          tabla +="<thead>";
+                            tabla += "<th data-field='id'>Perritos</th>";
+                            tabla +="</thead>";
                                 for(var i = 0; i < perritos.length; i++) {
 
                                     tabla +='<tr id="'+perritos[i][0]+'"class="perritos">';

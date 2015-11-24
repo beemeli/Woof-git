@@ -132,7 +132,7 @@ and open the template in the editor.
                     </div>
 
                     <div class="input-field col s12">
-                        <input id="dsfs" name="password" type="password" class="validate" maxlength="15" required>
+                        <input id="password" name="password" type="password" class="validate" maxlength="15" required>
                         <label for="password">Contraseña</label>
                     </div>
 

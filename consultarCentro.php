@@ -167,7 +167,7 @@ and open the template in the editor.
                             <div id="longitudC"></div></p>-->
                         </div>
                     </div>
-                
+                </div>
           </div>
         </div>
         <div id="googleMap" style="width:300px;height:300px;  margin:0 auto"></div>
