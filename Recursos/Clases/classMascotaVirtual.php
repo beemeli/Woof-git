@@ -3,7 +3,7 @@
 class MascotaVirtual{
     
     function altaMascotaVirtual($nombre, $higiene, $alimento, $diversion, $salud, $id_usuario){
-        $conexion= new mysqli('127.0.0.1','root','150193','woof')
+        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "insert into mascota_virtual(nombre, higiene, alimento, diversion, salud, id_usuario) values('". $nombre."','". $higiene."','".$alimento."',".$diversion.",".$salud.",".$id_usuario.")";
@@ -19,7 +19,7 @@ class MascotaVirtual{
     }
     
     function loginTamagochi($id_usuario){
-       $conexion= new mysqli('127.0.0.1','root','150193','woof')
+       $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "SELECT * FROM mascota_virtual WHERE id_usuario='".$id_usuario."'";
@@ -36,7 +36,7 @@ class MascotaVirtual{
     }
     
     function bajaMascotaVirtual($nombre){
-        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
+        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "DELETE FROM mascota_virtual WHERE nombre='". $nombre."'";
@@ -66,7 +66,7 @@ class MascotaVirtual{
     }
     
     function consultaMascota($id_usuario){
-        $conexion= new mysqli('127.0.0.1','root','150193','woof')
+        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "SELECT * FROM mascota_virtual WHERE id_usuario='".$id_usuario."'";

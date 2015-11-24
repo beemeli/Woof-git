@@ -23,8 +23,9 @@ var seccion_actual = "";
 $(document).ready(inicio);
 
 function inicio() {
+
     animacion = setInterval('pintarImagen(sentado)', 300);
-    if (localStorage["ultima_sesion"] === "undefined") {
+    if (localStorage["ultima_sesion"] === 'undefined') {
         infoMascota();
     } else {
         mostrarMascota();
@@ -95,7 +96,7 @@ function infoMascota() {
     $.post("recursos/servicios/consultarMascotaVirtual.php", {},
             function (res) {
                 var mascota = JSON.parse(res);
-
+                alert(res);
                 //Cargando Estado del Juego desde la base de datos
                 id_mascota = mascota[0][0];
                 nombre_mascota += mascota[0][1];
