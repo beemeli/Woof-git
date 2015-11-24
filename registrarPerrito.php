@@ -140,10 +140,18 @@
                     <label for="raza">Raza</label>
                 </div>
 
-                <div class="input-field col s12 ">
-                    <input id="tamano" name="tamano" type="text" class="validate" required>
-                    <label for="tamano">Tamaño</label>
-                </div>
+              
+                              
+                <div class="file-field col s12 ">
+                    <select id="tamano" name="tamano" type="text" class="validate" required >
+                        <option value="mini">Mini</option>
+                        <option value="chico">Chico</option>
+                        <option value="mediano">Mediano</option>
+                        <option value="grande">Grande</option>
+                    </select>
+                    
+                </div>             
+                              
                               
                 
                 <div class="input-field col s12 ">

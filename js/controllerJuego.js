@@ -24,11 +24,11 @@ $(document).ready(inicio);
 
 function inicio() {
     animacion = setInterval('pintarImagen(sentado)', 300);
-    if (localStorage["ultima_sesion"] === "undefined") {
+    //if (localStorage["ultima_sesion"] === "undefined") {
         infoMascota();
-    } else {
-        mostrarMascota();
-    }
+    //} else {
+    //    mostrarMascota();
+    //}
     seccion_actual = "alimento";
 }
 
