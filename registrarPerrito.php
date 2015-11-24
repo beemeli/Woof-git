@@ -142,7 +142,7 @@
 
               
                               
-                <div class="file-field col s12 ">
+                <div class="input-field col s12 ">
                     <select id="tamano" name="tamano" type="text" class="validate" required >
                         <option value="mini">Mini</option>
                         <option value="chico">Chico</option>
