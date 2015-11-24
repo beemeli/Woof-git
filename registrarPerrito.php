@@ -51,7 +51,20 @@
             $('select').material_select();
             
         });</script>
-            <div id="navbar-full">
+        
+        
+            <?php
+        
+       
+   
+ 
+    //$_SESSION['usuarioSesion'] = $_POST['usuarioSesion'];
+ 
+    if(empty($_SESSION['usuarioSesion'])) { 
+        
+    
+?><!-- Sin registrar -->
+        <div id="navbar-full">
             <div id="navbar">
                 <!--    
         navbar-default can be changed with navbar-ct-blue navbar-ct-azzure navbar-ct-red navbar-ct-green navbar-ct-orange  
@@ -78,16 +91,26 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
+                                 
+                                <li>
+                                    <a href="inicio.php">
+
+                                        <p>Adopta</p>
+                                    </a>
+                                </li>
+                                
+                                
                                 <li>
                                     <a href="consultarCentro.php">
 
-                                        <p>Centros de adopción</p>
+                                        <p>Centros de Adopción</p>
                                     </a>
                                 </li>
+                               
 
                                 <li>
-                                    <a href="#">
-                                        <p>Adopta mas</p>
+                                    <a href="consultarAcopio.php">
+                                        <p>Centros de Acopio</p>
                                     </a>
                                 </li>
                                 <li class="dropdown">
@@ -99,8 +122,7 @@
                                         <li><a href="login.php">Iniciar sesión</a></li>
                                         <li><a href="registrarUsuario.php">Regístrate</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="perfil.php">Ver Perfil</a></li>
-                                        <li><a href="modificarPerfil.php">Modificar Perfil</a></li>
+
 
                                     </ul>
                                 </li>
@@ -120,6 +142,237 @@
 
         </div>
         <!-- end menu-dropdown -->
+
+        <?php
+}
+else if (($_SESSION['tipo'])!="administrador") 
+{
+?><!-- Usuario -->
+            <div id="navbar-full">
+                <div id="navbar">
+                    <!--    
+        navbar-default can be changed with navbar-ct-blue navbar-ct-azzure navbar-ct-red navbar-ct-green navbar-ct-orange  
+        -->
+                    <nav class="navbar navbar-ct-blue navbar-fixed-top navbar-transparent" role="navigation">
+
+                        <div class="container">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+
+                                <a class="navbar-brand navbar-brand-logo" href="index.php">
+                                    <div class="logo">
+                                        <img src="images/wooficonNuevo.png">
+                                    </div>
+                                    <div class="brand"> Woof a Friend </div>
+                                </a>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav navbar-right">
+                                    
+                                     
+                                <li>
+                                    <a href="inicio.php">
+
+                                        <p>Adopta</p>
+                                    </a>
+                                </li>
+                                    
+                                    
+                                    <li>
+                                        <a href="consultarCentro.php">
+
+                                            <p>Centros de adopción</p>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="consultarAcopio.php">
+                                            <p>Centros de Acopio</p>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="MascotaVirtual.php">
+                                            <p>Mascota Virtual</p>
+                                        </a>
+                                    </li>
+                                   
+ <li>                                      <a href="consultarSolicitudAdopcionUsuario.php">Consultar Solicitudes</a>
+                        </li>
+
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                                           
+                                                <?php
+if(isset($_SESSION['usuarioSesion'])){
+    echo "Hola"." ".ucfirst("{$_SESSION['usuarioSesion']}");
+}
+?> <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="perfil.php">Ver Perfil</a></li>
+                                            <li><a href="modificarPerfil.php">Modificar Perfil</a></li>
+
+                                            <li class="divider"></li>
+                                            <li><a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a></li>
+
+
+                                        </ul>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                            <!-- /.navbar-collapse -->
+                        </div>
+                        <!-- /.container-fluid -->
+                    </nav>
+                    <div class="blurred-container">
+                        <div class="img-src" style="background-image: url('images/bg.png')"></div>
+                    </div>
+                </div>
+                <!--  end navbar -->
+
+            </div>
+            <!-- end menu-dropdown -->
+            <?php
+}else{
+?>  <!-- Admin -->
+
+                <div id="navbar-full">
+                    <div id="navbar">
+                        <!--    
+        navbar-default can be changed with navbar-ct-blue navbar-ct-azzure navbar-ct-red navbar-ct-green navbar-ct-orange  
+        -->
+                        <nav class="navbar navbar-ct-blue navbar-fixed-top navbar-transparent" role="navigation">
+
+                            <div class="container">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+
+                                    <a class="navbar-brand navbar-brand-logo" href="index.php">
+                                        <div class="logo">
+                                            <img src="images/wooficonNuevo.png">
+                                        </div>
+                                        <div class="brand"> Woof a Friend </div>
+                                    </a>
+                                </div>
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav navbar-right">
+
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Centros de Acopio <b class="caret"></b></p>
+                                    </a>
+
+                                            <ul class="dropdown-menu">
+                                                <li><a href="consultarAcopio.php">Centros de Acopio</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="registrarAcopio.php">Registrar Centro Acopio</a></li>
+
+
+
+
+
+                                            </ul>
+                                        </li>
+                                
+                                
+                                
+                                             <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Centros de Adopción <b class="caret"></b></p>
+                                    </a>
+
+                                            <ul class="dropdown-menu">
+                                                <li><a href="consultarCentro.php">Centros de Adopción</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="registarCentro.php">Registrar Centro Adopción</a></li>
+
+
+
+
+
+                                            </ul>
+                                        </li>
+
+
+                                       
+
+
+                                             
+                                           
+   <li>                                          <a href="registrarPerrito.php">Registrar Perrito</a>
+                        </li>
+                        
+                        <li>                                          <a href="consultarSolicitudAdopcion.php">Consultar Solicitudes Adpoción</a>
+                        </li>
+                                           
+                                            <li><a href="GenerarReportes.php">Generar Reportes</a>
+                        </li>
+                        
+                        <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                                           
+                                                <?php
+if(isset($_SESSION['usuarioSesion'])){
+    echo "Hola"." ".ucfirst("{$_SESSION['usuarioSesion']}");
+}
+?> <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="perfil.php">Ver Perfil</a></li>
+                                            <li><a href="modificarPerfil.php">Modificar Perfil</a></li>
+
+                                            <li class="divider"></li>
+                                            <li><a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a></li>
+
+
+                                        </ul>
+                                    </li>
+                                           
+                                       
+
+
+                                    </ul>
+
+
+                                </div>
+                                <!-- /.navbar-collapse -->
+                            </div>
+                            <!-- /.container-fluid -->
+                        </nav>
+                        <div class="blurred-container">
+                            <div class="img-src" style="background-image: url('images/bg.png')"></div>
+                        </div>
+                    </div>
+                    <!--  end navbar -->
+
+                </div>
+                <!-- end menu-dropdown -->
+
+
+
+                <?php
+} 
+?>
+
+                    <!-- end menu -->
+
 
         <div class="main">
           <div class="container">

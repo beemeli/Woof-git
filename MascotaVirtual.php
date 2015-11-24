@@ -56,7 +56,9 @@
     
          
     <?php
-    
+        
+       
+   
  
     //$_SESSION['usuarioSesion'] = $_POST['usuarioSesion'];
  
@@ -203,17 +205,19 @@ else if (($_SESSION['tipo'])!="administrador")
                                             <p>Mascota Virtual</p>
                                         </a>
                                     </li>
-
+                                   
+ <li>                                      <a href="consultarSolicitudAdopcionUsuario.php">Consultar Solicitudes</a>
+                        </li>
 
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-                                            <p>
+                                           
                                                 <?php
 if(isset($_SESSION['usuarioSesion'])){
     echo "Hola"." ".ucfirst("{$_SESSION['usuarioSesion']}");
 }
-?> <b class="caret"></b></p>
+?> <b class="caret"></b>
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li><a href="perfil.php">Ver Perfil</a></li>
@@ -315,6 +319,9 @@ if(isset($_SESSION['usuarioSesion'])){
                                            
    <li>                                          <a href="registrarPerrito.php">Registrar Perrito</a>
                         </li>
+                        
+                        <li>                                          <a href="consultarSolicitudAdopcion.php">Consultar Solicitudes Adpoción</a>
+                        </li>
                                            
                                             <li><a href="GenerarReportes.php">Generar Reportes</a>
                         </li>
@@ -367,6 +374,8 @@ if(isset($_SESSION['usuarioSesion'])){
 ?>
 
                     <!-- end menu -->
+
+       
     
     <div class="main">
             <div class="container">
