@@ -44,6 +44,9 @@
         <title>Registrar Perrito</title>
     </head>
     <body>
+        <script>$(document).ready(function() {
+            $('select').material_select();
+        });</script>
             <div id="navbar-full">
             <div id="navbar">
                 <!--    
@@ -140,13 +143,9 @@
                     <label for="raza">Raza</label>
                 </div>
 
-                <div class="input-field col s12 ">
-                    <input id="tamano" name="tamano" type="text" class="validate" required>
-                    <label for="tamano">Tamaño</label>
-                </div>
 
                 <div class="input-field col s12">
-                    <select id="tamano">
+                    <select id="tamano" name="tamano">
                         <option value="" disabled selected>Selecciona el tamaño</option>
                         <option value="Mini">Mini</option>
                         <option value="Chico">Chico</option>

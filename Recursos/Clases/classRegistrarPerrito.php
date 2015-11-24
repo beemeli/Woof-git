@@ -78,6 +78,22 @@ class registrarPerrito {
             return $result;            
         }
     }
+    
+    function consultaPerritoTamano($tamano){
+        $conexion= new mysqli('localhost','woofUser','woofPass','woof')
+        or die("Fallo en el establecimiento de la conexion");
+
+        $sql = "SELECT * FROM perrito WHERE tamano='".$tamano."'";
+        $result = $conexion->query($sql);
+
+        
+        if($conexion->query($sql) === false){
+                return "error";
+        }
+        else{      
+            return $result;            
+        }
+    }
     function consultaPerritoCentro($idCentro){
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
         or die("Fallo en el establecimiento de la conexion");
