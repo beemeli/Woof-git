@@ -15,14 +15,8 @@
 
 
 class registrarPerrito {
-<<<<<<< Updated upstream
-    
     function altaPerrito($nombre, $edad,$raza,$tamano,$consideraciones,$peso,$imagen){
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
-=======
-    function altaPerrito($nombre, $edad,$raza,$tamano,$consideraciones,$peso){
-        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
->>>>>>> Stashed changes
         or die("Fallo en el establecimiento de la conexion");
         
 

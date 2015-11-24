@@ -17,13 +17,8 @@ class RegistrarAcopio {
             return 1;
         }
     }
-<<<<<<< Updated upstream
     function bajaAcopio($id_acopio){
         $conexion= new mysqli('localhost','woofUser','woofPass','woof')
-=======
-    function bajaAcopio($nombre){
-        $conexion= new mysqli('127.0.0.1','woofUser','woofPass','woof')
->>>>>>> Stashed changes
         or die("Fallo en el establecimiento de la conexion");
 
         $sql = "DELETE FROM acopio WHERE id_acopio=". $id_acopio ."";
