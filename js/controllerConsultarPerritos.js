@@ -1,6 +1,7 @@
 //Controller del convertidor, Lee los campos del formulario y manda la peticiÃ³n al PHP
 
 $(document).ready(function(){
+    $('.materialboxed').materialbox();
     $('.botonAdoptar').hide();
 
 
@@ -19,12 +20,18 @@ $(document).ready(function(){
         $.post("recursos/servicios/consultarPerritosTamano.php", {opcion:opcion}, 
                 function (res){
                 var perritos=JSON.parse(res);
-                var tabla='<ul id="listaPerritos">';
+              var tabla="<div  class='slider'>";
+                          tabla +="<ul class=slides' id='listaPerritos'>";
+            
+                
                 for(var i = 0; i < perritos.length; i++) {
                     
-                    $( "#listaPerritos" ).append( '<li class="perritos" style="display:inline;"><img id="'+perritos[i][0]+'" src="uploads/'+ perritos[i][1]+'" style="height:300px;"/> </li>');
+                    $( "#listaPerritos" ).append( '<li class="perritos" ><img class="materialboxed" id="'+perritos[i][0]+'" src="uploads/'+ perritos[i][1]+'" style="height:300px;"/> </li>');
                 }
             
+            
+            tabla +="</ul>";
+            tabla +="</div>";
 
         });
     });
