@@ -68,7 +68,17 @@ $(document).ready(function(){
 
 
 
-
+        $("#mv").click(function(){
+            //var id_usuario = 
+          $.post('recursos/servicios/consultarMascotaVirtual.php', function(data) {
+                if(data === "0 results"){
+                    window.location='MascotaVirtual.php';
+                }
+                else{
+                    window.location='Tamagochi.php';
+                }
+            });  
+        });
 
 });
 /*

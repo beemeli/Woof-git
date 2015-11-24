@@ -13,7 +13,7 @@
         
         <script src="js/ct-navbar.js"></script>
         <link rel="stylesheet" href="css/style.css" type="text/css">
-
+        <script src="js/controller"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script type="text/javascript" src="js/controller.js"></script>
 
@@ -231,8 +231,13 @@ if(isset($_SESSION['usuarioSesion'])){
                 <a href="registrarAcopio.php">Registrar Centro de Acopio</a><br/>
                 <a href="registrarPerrito.php">Registrar Perrito</a><br/>
                 <a href="GenerarReportes.php">Generar Reportes</a><br/>
+<<<<<<< Updated upstream
                 <a href="MascotaVirtual.php">Mascota Virtual</a><br/>
 
+=======
+                <label id="mv">Mascota Virtual</label><br/>
+                <a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a><br/>
+>>>>>>> Stashed changes
                 
                 
                 

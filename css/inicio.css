@@ -53,7 +53,6 @@ body{
 	width: 90%;
 	border: solid #6fd8e0;
 	text-align: center;
-	//background-color: #df467d;
 }
 
 
@@ -61,11 +60,11 @@ body{
 	margin-top: 100px;
 	position: relative;
 	left: 10%;
-	width: 500px;
+	width: 338px;
 	height: 200px;
 }
 
-#tazon{
+#item{
         position: relative;
 	left: 15%;
 	top: -70px;
@@ -75,25 +74,27 @@ body{
         display: none;
 }
 
-#taza{
+#accesorio{
 	position: relative;
 	top: 25px;
 	width: 80px;
-        //display: none;
 }
 
 #indicadores{
         text-align: left;
+	background-color: orange;
 	position: absolute;
-	margin-top: 20px;
-	width: 400px;
-	height: 100px;
+	margin-top: 10px;
+        margin-left: 10px;
+	width: 338px;
+	height: 80px;
 }
 
-#apagado{
+.indicador{
 	margin-top: 10px;
 	height: 50px;
 	width: 30px;
+        margin-left: 10px;
         background-color:  transparent;
 }
 
@@ -114,4 +115,66 @@ body{
 
 #comer, #dormir, #sentarse:hover{
 	cursor: pointer;
+}
+
+#nombreMascota{
+    margin: 0 auto;
+    position: relative;
+    background-color: #0089ec;
+    width: 338px;
+    height: 40px;
+}
+
+.mensaje{
+	position: relative;
+	top: 10px;
+	margin-left: 5px;
+	font-size: 20px;
+}
+
+#comida{
+    background-color: #FF9500;
+    height: 40px;
+    width: 110px;
+    margin-right: 20px;
+    position: relative;;
+    left: 67%;
+    top: -210px;
+}
+
+#diversion{
+    background-color: Red;
+    height: 40px;
+    width: 110px;
+    margin-right: 20px;
+    position: relative;;
+    left: 67%;
+    top: -200px;
+}
+
+#diversion label:hover{
+    cursor: pointer;
+}
+
+
+#higiene{
+    margin-top: 5px;
+    background-color: green;
+    height: 40px;
+    width: 110px;
+    margin-right: 20px;
+    position: relative;;
+    left: 67%;
+    top: -200px;
+}
+
+#sueno{
+    margin-top: 5px;
+    background-color: purple;
+    height: 40px;
+    width: 110px;
+    margin-right: 20px;
+    position: relative;;
+    left: 67%;
+    top: -200px;
 }
