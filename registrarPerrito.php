@@ -143,7 +143,7 @@
                     <label for="raza">Raza</label>
                 </div>
 
-<<<<<<< HEAD
+
 
                 <div class="input-field col s12">
                     <select id="tamano" name="tamano">
@@ -155,10 +155,6 @@
                     </select>
                     <label>Selecciona el tamaño</label>
                 </div>
-=======
-              
-                
->>>>>>> 1b2a800fda67f475464deb2d00fccbf7910c3df4
                               
                 
                 <div class="input-field col s12 ">
