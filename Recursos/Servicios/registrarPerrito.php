@@ -46,10 +46,11 @@
         $resultado = $admin->altaPerrito($nombre,$edad,$raza,$tamano,$consideraciones,$peso,$target_nombre, $idCentro);
 
         echo $resultado;
-     
+        header('Location: ../../registrarPerrito.php');
 
 
     }else{
         echo "Error servicio registrarPerrito";
+        header('Location: ../../registrarPerrito.php');
     }
 

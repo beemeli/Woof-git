@@ -31,6 +31,7 @@
             }else{
                     
                     echo "contraseña incorrecta!!!!";
+                    header('Location: ../../login.php');
                 }
         }else{
             echo "El usuario o contraseña son incorrectos";
