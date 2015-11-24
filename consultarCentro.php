@@ -182,6 +182,7 @@ and open the template in the editor.
             <div id="tamanoP"></div>
             <div id="consideracionesP"></div>
             <div id="pesoP"></div>
+            <div id="imagenP"></div>
         </div>        
         <br/><br/>
         <div class="botonAdoptar">
