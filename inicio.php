@@ -8,12 +8,10 @@
         header('Location: login.php');
     }
 ?>
-<!DOCTYPE html>
-
 <html>
     <head>
-    	 <meta charset="UTF-8">
-    	        <meta charset="UTF-8">
+        <title>Generar Reportes</title>
+        <meta charset="utf-8">
         <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -25,7 +23,8 @@
         <link rel="stylesheet" href="css/style.css" type="text/css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        
+        <script type="text/javascript" src="js/controller.js"></script>
+
 
         <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -38,13 +37,24 @@
         <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
-        <link rel="stylesheet" href="css/ct-navbar.css" type="text/css">
-       <!-- <script type="text/javascript" src="js/controllerPerrito.js"></script>-->
+        <link rel="stylesheet" href="css/ct-navbar.css" type="text/css">    
+        <script type="text/javascript" src="js/controllerGenerarReporte.js"></script>
+        <script>
+            var test = '<?php echo $_SESSION['usuarioSesion'] ?>';
+            console.log("user-->"+test);
+        </script>
         
-        <title>Registrar Perrito</title>
     </head>
+    
     <body>
-            <div id="navbar-full">
+        
+                    <script>$(document).ready(function() {
+    $('select').material_select();
+});</script>
+        
+        
+           
+        <div id="navbar-full">
             <div id="navbar">
                 <!--    
         navbar-default can be changed with navbar-ct-blue navbar-ct-azzure navbar-ct-red navbar-ct-green navbar-ct-orange  
@@ -113,91 +123,39 @@
 
         </div>
         <!-- end menu-dropdown -->
-
+       
+        
         <div class="main">
-          <div class="container">
-              
-
-              
-                          <form action="recursos/servicios/RegistrarPerrito.php" method="post" enctype="multipart/form-data">
-                <div id="divRespuesta"></div>
-
-                <h1 class="text-center">Registrar Perrito </h1>
-               
-
-                <div class="input-field col s12 ">
-                    <input id="nombre" name="nombre" type="text" class="validate" required>
-                    <label for="nombre">Nombre</label>
-                </div>
-
-                <div class="input-field col s12">
-                    <input id="edad" name="edad" type="number" class="validate" required>
-                    <label for="edad">Edad</label>
-                </div>
-
-                <div class="input-field col s12 ">
-                    <input id="raza" name="raza" type="text" class="validate" required>
-                    <label for="raza">Raza</label>
-                </div>
-
-                <div class="input-field col s12 ">
-                    <input id="tamano" name="tamano" type="text" class="validate" required>
-                    <label for="tamano">Tamaño</label>
-                </div>
-                
-                    <select id="tamano">
-                        <option value="mini">Mini</option>
-                        <option value="chico">Chico</option>
-                        <option value="mediano">Mediano</option>
-                        <option value="grande">Grande</option>
-
-                    </select>
-                
-                              
-                
-                <div class="input-field col s12 ">
-                    <input id="consideraciones" name="consideraciones" type="text" class="validate" required>
-                    <label for="consideraciones">Consideraciones</label>
-                </div>
-                              
-                 <div class="input-field col s12 ">
-                    <input id="peso" name="peso" type="number" class="validate" required>
-                    <label for="peso">Peso</label>
-                </div>
-                
-                <div class="input-field col s12 ">
-                    <input name="imageUpload" type="file">
-                    <label for="imageUpload">Foto del perrito</label>
-                </div>
-
-                <br><br>
-                              
-            <button class="btn waves-effect waves-light  blue lighten-3 botonEnviar">Enviar
+        <div class="container">
+            
+             <h1 class="text-center">Reportes </h1>
+            
+                    <div class="input-field col s12">
+    <select id="opcionesReporte">
+      <option value="" disabled selected>Selecciona el Reporte</option>
+     <option value="1"> Número de Solicitudes de adopción ordenadas por mes y año </option>
+        <option value="2"> Número de perritos en cada albergue</option>
+        <option value="3"> Número de perritos ordenados por tamaño </option> 
+    </select>
+    <label>Selecciona el Reporte</label>
+  </div>
+            
+                    
+        <button id="generarReporte" class="btn waves-effect waves-light  blue lighten-3 botonEnviar">Enviar
                 <i class="material-icons right">send</i>
-            </button>
-            </form>
-              
-              
-              
-     
-          
-           <div id="divRespuesta"></div>
-          
-        
-          
-        
-        
-         
-          
-         
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-         
-            </div>
-        
+            </button> 
+            
+            <div id="Contenedor"></div>
+            
         </div>
+        </div>
+
+        
+        
+       
+
+        
+     
+    
     </body>
 </html>
