@@ -168,7 +168,7 @@
                     <label for="colonia">Colonia</label>
                 </div>
                 <div class="input-field col s12">
-                    <input id="cp" name="cp" type="text" class="validate" maxlength="80" required>
+                    <input id="cp" name="cp" type="text" class="validate" maxlength="80" >
                     <label for="cp">C.P.</label>
                 </div>
                 <div id="verMapaBoton">Ver mapa</div>
@@ -177,13 +177,13 @@
 
 
 
+            <button class="btn waves-effect waves-light  blue lighten-3 botonEnviar">Enviar
+                <i class="material-icons right">send</i>
+            </button>
 
                 <br>
             </form>
 
-            <button class="btn waves-effect waves-light  blue lighten-3 botonEnviar">Enviar
-                <i class="material-icons right">send</i>
-            </button>
             <br>
             <br>
             <br>
