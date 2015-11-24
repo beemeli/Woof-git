@@ -29,11 +29,8 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <link rel="stylesheet" href="css/ct-navbar.css" type="text/css">    
-        <script type="text/javascript" src="js/controllerGenerarReporte.js"></script>
-        <script>
-            var test = '<?php echo $_SESSION['usuarioSesion'] ?>';
-            console.log("user-->"+test);
-        </script>
+        
+        
         
     </head>
 
@@ -77,12 +74,22 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
+                                 
+                                <li>
+                                    <a href="inicio.php">
+
+                                        <p>Adopta</p>
+                                    </a>
+                                </li>
+                                
+                                
                                 <li>
                                     <a href="consultarCentro.php">
 
                                         <p>Centros de Adopción</p>
                                     </a>
                                 </li>
+                               
 
                                 <li>
                                     <a href="consultarAcopio.php">
@@ -151,6 +158,16 @@ else if (($_SESSION['tipo'])!="administrador")
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-right">
+                                    
+                                     
+                                <li>
+                                    <a href="inicio.php">
+
+                                        <p>Adopta</p>
+                                    </a>
+                                </li>
+                                    
+                                    
                                     <li>
                                         <a href="consultarCentro.php">
 
@@ -340,49 +357,7 @@ if(isset($_SESSION['usuarioSesion'])){
                     <div class="main">
 
 
-                        <div class="container" id="contenido">
-                            Usuario no registrado:
-                            <br/>
-                            <a href="registrarUsuario.php">Registrar Usuario</a>
-                            <br/>
-                            <br/> Admin, usuario, usuario NO registrado:
-                            <br/>
-                            <a href="consultarAcopio.php">Consultar Centros de Acopio</a>
-                            <br/>
-                            <a href="consultarCentro.php">Consultar Centros</a>
-                            <br/>
-                            <br/> Admin y usuario
-                            <br/>
-                            <a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a>
-                            <br/>
-                            <br/> Usuario:
-                            <br/>
-                            <a href="perfil.php">Perfil</a>
-                            <br/>
-                            <a href="registrarSolicitudAdopcion.php">Solicitar Adopción </a>
-                            <br/>
-                            <a href="consultarSolicitudAdopcionUsuario.php">Consultar solicitud usuario</a>
-                            <br/>
-
-                            <br/> Admin:
-                            <br/>
-                            <a href="consultarSolicitudAdopcion.php">Consultar Solicitud Adopcion</a>
-                            <br/>
-                            <a href="registarCentro.php">Registrar Centro</a>
-                            <br/>
-                            <a href="registrarAcopio.php">Registrar Centro de Acopio</a>
-                            <br/>
-                            <a href="registrarPerrito.php">Registrar Perrito</a>
-                            <br/>
-                            <a href="GenerarReportes.php">Generar Reportes</a>
-                            <br/>
-                            <a href="MascotaVirtual.php">Mascota Virtual</a>
-                            <br/>
-                            <label id="mv">Mascota Virtual</label>
-                            <br/>
-                            <a href="recursos/Servicios/cerrarSesion.php">Cerrar Sesión</a>
-                            <br/>
-
+                        
 
 
 
