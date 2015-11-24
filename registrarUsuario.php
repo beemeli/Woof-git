@@ -399,11 +399,12 @@ if(isset($_SESSION['usuarioSesion'])){
 
 
                 <br>
-            </form>
-
+                
             <button class="btn waves-effect waves-light  blue lighten-3 botonEnviar">Enviar
                 <i class="material-icons right">send</i>
             </button>
+            </form>
+
             <br>
             <br>
             <br>

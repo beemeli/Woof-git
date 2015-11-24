@@ -131,6 +131,12 @@ $(document).ready(function(){
                 var edad = $('#edad').val();
                 var correo = $('#correo').val();
 
+console.log("usuario: "+ usuario);
+                        console.log("edad: "+ edad);
+                        console.log("correo: "+ correo);
+                        console.log("password: "+ password);
+                        console.log("password1: "+ password1);
+
 		if(usuario!="" && password!="" && edad!="" && correo !="" && password1!=""){
                     if(contraIguales && edadAceptada){                       
 			$.post("recursos/servicios/RegistrarPersona.php", {usuario:usuario, password:password, edad:edad, correo:correo},
@@ -145,6 +151,7 @@ $(document).ready(function(){
                             });
                     }
                     else{
+                        
                         $("#divRespuesta").css('opacity', '1').html("Revise los campos marcados");
                     }
 
