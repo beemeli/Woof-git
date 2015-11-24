@@ -22,27 +22,14 @@ var seccion_actual = "";
 $(document).ready(inicio);
 
 function inicio() {
-<<<<<<< HEAD
 
     animacion = setInterval('pintarImagen(sentado)', 300);
-    if (localStorage["ultima_sesion"] === 'undefined') {
-=======
-    window.history.forward(1);
-    animacion = setInterval('pintarImagen(sentado)', 300);
-
-    //if (localStorage["ultima_sesion"] === "undefined") {
-
-
     if (localStorage["ultima_sesion"] === "" || localStorage["ultima_sesion"] === "undefined") {
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
-
->>>>>>> 1b2a800fda67f475464deb2d00fccbf7910c3df4
+        animacion = setInterval('pintarImagen(sentado)', 300);
         infoMascota();
-    //} else {
-    //    mostrarMascota();
-    //}
+    } else {
+        mostrarMascota();
+    }
     seccion_actual = "alimento";
 }
 
@@ -109,7 +96,6 @@ function infoMascota() {
     $.post("recursos/servicios/consultarMascotaVirtual.php", {},
             function (res) {
                 var mascota = JSON.parse(res);
-                alert(res);
                 //Cargando Estado del Juego desde la base de datos
                 id_mascota = mascota[0][0];
                 nombre_mascota += mascota[0][1];
@@ -325,3 +311,4 @@ function comida() {
 function regresar(){
      window.location='Index.php';
 }
+   
