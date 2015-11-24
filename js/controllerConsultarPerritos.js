@@ -36,7 +36,7 @@ $(document).ready(function(){
         });
     });
     var idPerrito;
-    $( "#listaPerritos" ).on( "mouseenter mouseleave", "img", function( ) {
+    $( "#listaPerritos" ).on( "click", "img", function( ) {
         idPerrito = $(this).attr('id');
         if(idPerrito!=""){
             $.post("recursos/servicios/consultarPerrito.php", {idPerrito:idPerrito},
